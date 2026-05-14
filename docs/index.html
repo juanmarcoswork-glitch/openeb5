@@ -1,0 +1,426 @@
+---
+layout: home
+title: Dashboard SEO
+description: Auditoría técnica SEO y plan de acción para openeb5.com — Open EB5 Regional Center
+permalink: /
+---
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="badge">Auditoría SEO completa · Mayo 2026</span>
+        <h1><span class="accent">openeb5.com</span> · SEO Audit Dashboard</h1>
+        <p class="hero-meta">
+          <strong>Open EB5 Regional Center</strong> · USCIS-Approved · McAllen, Texas<br/>
+          Sector: <strong>YMYL</strong> (Inmigración + Inversión) · Stack: <strong>WordPress 6.9.4 + Yoast + Elementor</strong><br/>
+          Baseline: <strong>14 de mayo de 2026</strong> · Fuentes: Ahrefs API · PageSpeed Insights · SEMrush · Claude Code audit
+        </p>
+        <div class="cta-row">
+          <a href="{{ '/audit/' | relative_url }}" class="btn primary">Ver auditoría completa →</a>
+          <a href="{{ '/technical-fixes-5days/' | relative_url }}" class="btn">Plan de 5 días</a>
+          <a href="{{ '/sow/' | relative_url }}" class="btn">Statement of Work</a>
+        </div>
+      </div>
+      <div class="score-circle" style="background: conic-gradient(var(--critical) 0% 29%, #2a3548 29% 100%);">
+        <div class="score-inner">
+          <div class="score-value" style="color:var(--critical)">29</div>
+          <div class="score-label">/ 100 · Crítico</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<nav class="toc">
+  <a href="#summary">Resumen</a>
+  <a href="#kpis">KPIs Baseline</a>
+  <a href="#findings">Hallazgos Críticos</a>
+  <a href="#scoring">Scoring</a>
+  <a href="#competition">Competencia</a>
+  <a href="#roadmap">Roadmap 90 días</a>
+  <a href="#docs">Documentos</a>
+  <a href="#kpis-target">Metas KPI</a>
+</nav>
+
+<section id="summary">
+  <h2><span class="num">01</span>Resumen Ejecutivo</h2>
+  <p class="section-sub">Open EB5 tiene un negocio sano (USCIS regional center, oficina física, equipo nombrado, proyectos reales en TX), pero es <strong>estructuralmente invisible</strong> para buscadores y motores de IA. La realidad medida por Ahrefs API (13-may-2026) confirma que el sitio está en estado crítico.</p>
+
+  <div class="grid grid-3" style="margin-top:24px">
+    <div class="card card-critical">
+      <h3 style="margin-top:0">El problema</h3>
+      <p style="color:var(--text-dim);font-size:14px;margin-top:8px">17 meses estancado en DR 0.5, 0 competidores orgánicos identificados, perfil de backlinks con 94% de toxicidad, Core Web Vitals destruidos.</p>
+    </div>
+    <div class="card card-high">
+      <h3 style="margin-top:0">La oportunidad</h3>
+      <p style="color:var(--text-dim);font-size:14px;margin-top:8px">Nicho EB-5 tiene <strong>13 keywords con KD≤13</strong> sin competencia agresiva. "i-526e processing time" tiene traffic potential de 170,000.</p>
+    </div>
+    <div class="card card-good">
+      <h3 style="margin-top:0">La meta</h3>
+      <p style="color:var(--text-dim);font-size:14px;margin-top:8px">12 semanas, 30+ horas, $64/mes en herramientas. Target: DR 8 a 90 días, 500 visitas/mes a 180 días, 5,000 visitas/mes a 12 meses.</p>
+    </div>
+  </div>
+</section>
+
+<section id="kpis">
+  <h2><span class="num">02</span>KPIs Baseline (14-may-2026)</h2>
+  <p class="section-sub">Validación cruzada Ahrefs API en vivo vs audit Claude Code (10-may-2026).</p>
+
+  <div class="grid grid-4">
+    <div class="card card-critical">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--critical)">0.5</div>
+        <div class="stat-label">Domain Rating (Ahrefs)</div>
+        <div class="stat-delta">Audit inicial sobreestimó a "2"</div>
+      </div>
+    </div>
+    <div class="card card-critical">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--critical)">1</div>
+        <div class="stat-label">Visita orgánica · mayo 2026</div>
+        <div class="stat-delta">vs 6,333 eb5investors.com</div>
+      </div>
+    </div>
+    <div class="card card-critical">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--critical)">4</div>
+        <div class="stat-label">Keywords rankeando</div>
+        <div class="stat-delta">Todas ES · posiciones 9-12</div>
+      </div>
+    </div>
+    <div class="card card-critical">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--critical)">0</div>
+        <div class="stat-label">Competidores orgánicos</div>
+        <div class="stat-delta">en US, MX, ES · señal de invisibilidad</div>
+      </div>
+    </div>
+    <div class="card card-high">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--high)">38 / 17</div>
+        <div class="stat-label">Lighthouse Mobile / Desktop</div>
+        <div class="stat-delta">Target: 90+ ambos</div>
+      </div>
+    </div>
+    <div class="card card-critical">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--critical)">7.0s</div>
+        <div class="stat-label">LCP (Largest Contentful Paint)</div>
+        <div class="stat-delta">Umbral aprobación: &lt; 2.5s</div>
+      </div>
+    </div>
+    <div class="card card-critical">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--critical)">90 / 96</div>
+        <div class="stat-label">Ref. domains marcados spam</div>
+        <div class="stat-delta">94% toxicidad · disavow P0</div>
+      </div>
+    </div>
+    <div class="card card-high">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--high)">138 / 154</div>
+        <div class="stat-label">Páginas sin meta description</div>
+        <div class="stat-delta">90% del sitio sin SEO básico</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="findings">
+  <h2><span class="num">03</span>Top 5 Hallazgos Críticos</h2>
+  <p class="section-sub">Issues que bloquean visibilidad orgánica y violan baseline YMYL. <a href="{{ '/audit/' | relative_url }}">Ver auditoría completa →</a></p>
+
+  <ul class="findings">
+    <li>
+      <div class="find-title">Title de homepage roto en 94/154 URLs <span class="tag tag-critical">CRÍTICO</span></div>
+      <div class="find-detail"><code>&lt;title&gt;OpenEB5 - openeb5&lt;/title&gt;</code> — 17 caracteres, sin keywords, marca en minúscula. Causa raíz: Yoast Site Representation mal configurado.</div>
+    </li>
+    <li>
+      <div class="find-title">Hreflang inexistente · 51 pares EN/ES sin declarar <span class="tag tag-critical">CRÍTICO</span></div>
+      <div class="find-detail">0 hreflang tags en 30,151 links analizados. <strong>57 URLs /ES/ NO están en sitemap_index.xml</strong>. Riesgo de auto-canibalización entre EN y ES.</div>
+    </li>
+    <li>
+      <div class="find-title">Core Web Vitals destruidos · "No aprobada" <span class="tag tag-critical">CRÍTICO</span></div>
+      <div class="find-detail">LCP: 7.0s (umbral &lt; 2.5s) · TTFB: 2.5s · FCP: 6.4s · Performance Lighthouse: 38 mobile / 17 desktop. Cache desactivado a nivel HTTP.</div>
+    </li>
+    <li>
+      <div class="find-title">94% de backlinks tóxicos · 90 de 96 domains marcados spam <span class="tag tag-critical">CRÍTICO</span></div>
+      <div class="find-detail">Anchors literales: "Boost openeb5.com For Ahrefs DR", "Premium SEO Backlinks Gambling/Casino/Crypto". TLDs <code>.shop</code> <code>.click</code> <code>.agency</code>. <strong>Acción P0: disavow inmediato</strong>.</div>
+    </li>
+    <li>
+      <div class="find-title">Baseline E-E-A-T YMYL ausente <span class="tag tag-critical">CRÍTICO</span></div>
+      <div class="find-detail">Cero menciones de USCIS.gov en pillar guide; TEA usado 4× sin definirlo; sin EB-5 Reform Act 2022; sin abogado de inmigración nombrado; sin disclaimers SEC Reg D. Crítico para nicho de inversión + inmigración.</div>
+    </li>
+    <li>
+      <div class="find-title">23 plugins WordPress activos · 7 candidatos a eliminar <span class="tag tag-high">ALTO</span></div>
+      <div class="find-detail">WooCommerce + WooCommerce Payments (causa doble slash en 308 URLs), ct-mega-menu (deja <code>demo.casethemes.net</code> en producción), Slider Revolution, crypto widget, Booked, demo importers.</div>
+    </li>
+    <li>
+      <div class="find-title">Sin headers HTTP de seguridad <span class="tag tag-high">ALTO</span></div>
+      <div class="find-detail">Sin HSTS · sin CSP · sin X-Frame-Options · sin Referrer-Policy · sin COOP. Para un sitio que solicita inversiones de $800K, falla expectativa baseline de confianza.</div>
+    </li>
+    <li>
+      <div class="find-title">2 links internos a 404s + canonical roto <span class="tag tag-high">ALTO</span></div>
+      <div class="find-detail"><code>/collaborative-investments/</code> y <code>/home-onepage</code> retornan 404. Canonical <code>/author/user_open/</code> redirige a <code>/author/yarrdo/</code> (también 404).</div>
+    </li>
+  </ul>
+</section>
+
+<section id="scoring">
+  <h2><span class="num">04</span>Scoring por Categoría</h2>
+  <p class="section-sub">7 dimensiones ponderadas según SEO Health Score. Total: <strong>29 / 100</strong> · estado <span class="tag tag-critical">CRÍTICO</span></p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th class="num">Peso</th>
+          <th class="num">Score</th>
+          <th>Progreso</th>
+          <th class="num">Ponderado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Technical SEO</td><td class="num">22%</td><td class="num">30</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:30%;background:var(--critical)"></div></div></td>
+          <td class="num">6.60</td>
+        </tr>
+        <tr>
+          <td>Content Quality & E-E-A-T</td><td class="num">23%</td><td class="num">35</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:35%;background:var(--critical)"></div></div></td>
+          <td class="num">8.05</td>
+        </tr>
+        <tr>
+          <td>On-Page SEO</td><td class="num">20%</td><td class="num">25</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:25%;background:var(--critical)"></div></div></td>
+          <td class="num">5.00</td>
+        </tr>
+        <tr>
+          <td>Schema / Structured Data</td><td class="num">10%</td><td class="num">25</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:25%;background:var(--critical)"></div></div></td>
+          <td class="num">2.50</td>
+        </tr>
+        <tr>
+          <td>Performance (CWV)</td><td class="num">10%</td><td class="num">25</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:25%;background:var(--critical)"></div></div></td>
+          <td class="num">2.50</td>
+        </tr>
+        <tr>
+          <td>AI Search Readiness (GEO)</td><td class="num">10%</td><td class="num">28</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:28%;background:var(--critical)"></div></div></td>
+          <td class="num">2.80</td>
+        </tr>
+        <tr>
+          <td>Images</td><td class="num">5%</td><td class="num">30</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:30%;background:var(--critical)"></div></div></td>
+          <td class="num">1.50</td>
+        </tr>
+        <tr style="font-weight:700;background:rgba(56,189,248,.06)">
+          <td>TOTAL</td><td class="num">100%</td><td class="num">29</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:29%;background:var(--critical)"></div></div></td>
+          <td class="num">29.0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="competition">
+  <h2><span class="num">05</span>Posición Competitiva</h2>
+  <p class="section-sub">Comparativa con los principales competidores del nicho EB-5 en EE.UU. (datos SEMrush + Ahrefs).</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Dominio</th>
+          <th class="num">Authority</th>
+          <th class="num">KWs orgánicas</th>
+          <th class="num">Tráfico est.</th>
+          <th class="num">Backlinks</th>
+          <th class="num">Ref. domains</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:rgba(239,68,68,.05)">
+          <td><strong>openeb5.com</strong> <span class="tag tag-critical">tú</span></td>
+          <td class="num"><strong>0.5</strong></td>
+          <td class="num"><strong>4</strong></td>
+          <td class="num"><strong>1</strong></td>
+          <td class="num"><strong>47</strong></td>
+          <td class="num"><strong>38</strong></td>
+        </tr>
+        <tr>
+          <td>eb5investors.com</td>
+          <td class="num">35</td><td class="num">9,174</td><td class="num">6,333</td>
+          <td class="num">49,561</td><td class="num">2,090</td>
+        </tr>
+        <tr>
+          <td>iiusa.org</td>
+          <td class="num">34</td><td class="num">2,121</td><td class="num">5,486</td>
+          <td class="num">27,020</td><td class="num">3,333</td>
+        </tr>
+        <tr>
+          <td>eb5affiliatenetwork.com</td>
+          <td class="num">—</td><td class="num">2,862</td><td class="num">1,288</td>
+          <td class="num">—</td><td class="num">—</td>
+        </tr>
+        <tr>
+          <td>civitascapital.com</td>
+          <td class="num">—</td><td class="num">609</td><td class="num">2,755</td>
+          <td class="num">—</td><td class="num">—</td>
+        </tr>
+        <tr>
+          <td>eb5capital.com</td>
+          <td class="num">—</td><td class="num">462</td><td class="num">1,085</td>
+          <td class="num">—</td><td class="num">—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid grid-2" style="margin-top:20px">
+    <div class="card card-accent">
+      <h3 style="margin-top:0">Gap de keywords</h3>
+      <p style="color:var(--text-dim);font-size:14px;margin-top:8px">vs eb5investors.com: <strong>9,170 keywords de ventaja</strong> (458× más).</p>
+      <ul style="margin-top:10px;color:var(--text-dim);font-size:13px;list-style:none;padding:0">
+        <li>→ 11 de 20 keywords actuales son en español</li>
+        <li>→ 3 de 20 son off-topic (Dunkin Donuts, marcas competidor)</li>
+        <li>→ Solo 1 alcanza top 20: "midtown brownsville" pos 18</li>
+      </ul>
+    </div>
+    <div class="card card-accent">
+      <h3 style="margin-top:0">Oportunidades quick win</h3>
+      <p style="color:var(--text-dim);font-size:14px;margin-top:8px"><strong>6 keywords con KD≤13</strong> sin competencia agresiva:</p>
+      <ul style="margin-top:10px;color:var(--text-dim);font-size:13px;list-style:none;padding:0">
+        <li>→ <strong>i-526e processing time</strong> · KD 0 · TP 170,000</li>
+        <li>→ <strong>eb-5 minimum investment</strong> · KD 6 · TP 20,000</li>
+        <li>→ <strong>eb-5 priority date</strong> · KD 31 · TP 355,000</li>
+        <li>→ <a href="{{ '/keyword-strategy/' | relative_url }}">Ver estrategia completa →</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <h2><span class="num">06</span>Roadmap 90 Días</h2>
+  <p class="section-sub">Plan estratégico de 4 fases. <a href="{{ '/timeline/' | relative_url }}">Ver timeline detallado →</a></p>
+
+  <div class="timeline">
+    <div class="phase">
+      <div class="phase-week">Días 1-7 · Fase 0</div>
+      <div class="phase-title">Quick Wins Emergencia</div>
+      <ul>
+        <li>Disavow file a GSC</li>
+        <li>Fix title homepage</li>
+        <li>Yoast Site Representation</li>
+        <li>Hreflang plugin</li>
+        <li>Sitemap URLs /ES/</li>
+        <li>Security headers Cloudflare</li>
+        <li>Backup completo</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-week">Semana 2 · Fase 1</div>
+      <div class="phase-title">Performance</div>
+      <ul>
+        <li>WP Rocket + Cloudflare APO</li>
+        <li>Eliminar 7 plugins inútiles</li>
+        <li>Reemplazar Slider Revolution</li>
+        <li>Target: CWV aprobada</li>
+        <li>Target: Lighthouse 75+</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-week">Semanas 3-6 · Fase 2</div>
+      <div class="phase-title">Contenido + Schema</div>
+      <ul>
+        <li>6 páginas nuevas KD≤13</li>
+        <li>i-526e processing time</li>
+        <li>eb-5 minimum investment</li>
+        <li>eb-5 grandfathering (urgencia 2027)</li>
+        <li>FinancialService + FAQPage</li>
+        <li>Rewrite 10 titles hub</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-week">Semanas 7-12 · Fase 3+4</div>
+      <div class="phase-title">Cleanup + Autoridad</div>
+      <ul>
+        <li>301 redirects · 18 orphan pages</li>
+        <li>Eliminar 23 categorías vacías</li>
+        <li>Fix 308 doble slash</li>
+        <li>Outreach EB5Investors · IIUSA</li>
+        <li>Press release I-956F</li>
+        <li>Rio Grande Guardian (DR 61)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="kpis-target">
+  <h2><span class="num">07</span>Metas KPI · 12 meses</h2>
+  <p class="section-sub">Objetivos medibles por checkpoint.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>KPI</th>
+          <th class="num">Baseline · 14-may</th>
+          <th class="num">Día 90</th>
+          <th class="num">Día 180</th>
+          <th class="num">Día 365</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Domain Rating</td><td class="num">0.5</td><td class="num">8</td><td class="num">15</td><td class="num">25</td></tr>
+        <tr><td>Tráfico orgánico/mes</td><td class="num">1</td><td class="num">300</td><td class="num">1,500</td><td class="num">5,000</td></tr>
+        <tr><td>Keywords rankeando top 10</td><td class="num">0</td><td class="num">5</td><td class="num">25</td><td class="num">100</td></tr>
+        <tr><td>Ref. domains legítimos</td><td class="num">6</td><td class="num">15</td><td class="num">35</td><td class="num">80</td></tr>
+        <tr><td>Core Web Vitals mobile</td><td class="num">No aprobada</td><td class="num">Aprobada</td><td class="num">Aprobada</td><td class="num">Aprobada</td></tr>
+        <tr><td>Lighthouse Mobile</td><td class="num">38</td><td class="num">75</td><td class="num">85</td><td class="num">90+</td></tr>
+        <tr><td>Leads orgánicos/mes</td><td class="num">0</td><td class="num">2</td><td class="num">10</td><td class="num">30</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="docs">
+  <h2><span class="num">08</span>Documentos del Proyecto</h2>
+  <p class="section-sub">Navegación a los 6 documentos operativos generados a partir de esta auditoría.</p>
+
+  <div class="grid grid-2">
+    <a href="{{ '/audit/' | relative_url }}" class="card card-accent" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
+      <h3 style="margin-top:0;color:var(--accent-2)">01 · Auditoría completa →</h3>
+      <p style="color:var(--text-dim);font-size:14px;margin-top:8px">Hallazgos validados de 3 fuentes (Ahrefs API, PageSpeed CrUX, Claude Code audit). Resumen ejecutivo + 5 categorías de issues.</p>
+    </a>
+    <a href="{{ '/sow/' | relative_url }}" class="card card-accent" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
+      <h3 style="margin-top:0;color:var(--accent-2)">02 · Statement of Work →</h3>
+      <p style="color:var(--text-dim);font-size:14px;margin-top:8px">Alcance del proyecto (12 semanas · 30+ horas), entregables, KPIs, riesgos y out-of-scope.</p>
+    </a>
+    <a href="{{ '/timeline/' | relative_url }}" class="card card-accent" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
+      <h3 style="margin-top:0;color:var(--accent-2)">03 · Timeline →</h3>
+      <p style="color:var(--text-dim);font-size:14px;margin-top:8px">Calendario maestro día a día, fechas de entrega Q2-Q3 2026, milestones de medición y reuniones recurrentes.</p>
+    </a>
+    <a href="{{ '/architecture-fix/' | relative_url }}" class="card card-accent" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
+      <h3 style="margin-top:0;color:var(--accent-2)">04 · Plan de Arquitectura →</h3>
+      <p style="color:var(--text-dim);font-size:14px;margin-top:8px">Reestructuración del sitio, 301 redirects, robots.txt, sitemap, internal linking y limpieza de 7 plugins.</p>
+    </a>
+    <a href="{{ '/keyword-strategy/' | relative_url }}" class="card card-accent" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
+      <h3 style="margin-top:0;color:var(--accent-2)">05 · Estrategia de Keywords →</h3>
+      <p style="color:var(--text-dim);font-size:14px;margin-top:8px">Tier 1 (KD≤13) + Tier 2 + KWs español MX. 13 oportunidades identificadas con demanda Q3 2026.</p>
+    </a>
+    <a href="{{ '/technical-fixes-5days/' | relative_url }}" class="card card-accent" style="text-decoration:none;color:inherit;display:block;cursor:pointer">
+      <h3 style="margin-top:0;color:var(--accent-2)">06 · Plan Técnico 5 días →</h3>
+      <p style="color:var(--text-dim);font-size:14px;margin-top:8px">Tareas día por día (15-19 may 2026) · 13 horas totales · 8 errores técnicos críticos resueltos.</p>
+    </a>
+  </div>
+</section>
+
+</div>

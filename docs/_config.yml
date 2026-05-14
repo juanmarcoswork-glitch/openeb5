@@ -1,10 +1,14 @@
 title: openeb5.com SEO Audit
 description: Auditoría técnica SEO y plan de acción — Open EB5 Regional Center, McAllen, TX
-theme: jekyll-theme-cayman
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+
+# No theme — usamos layouts custom para diseño dashboard
+# theme: jekyll-theme-cayman  <-- desactivado
 
 # Site author
 author:
@@ -16,6 +20,18 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+# URL base — necesario para GitHub Pages bajo subpath
+baseurl: "/openeb5-seo-audit"
+url: "https://juanmarcoswork-glitch.github.io"
+
+# Default layout para todas las páginas markdown
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
 # Exclude from processing
 exclude:
   - vendor/
@@ -25,7 +41,19 @@ exclude:
   - .gitignore
   - README.md
 
-# Navigation
-nav_external_links:
-  - title: openeb5.com
-    url: https://openeb5.com
+# Navegación principal
+nav:
+  - title: Dashboard
+    url: /
+  - title: Auditoría
+    url: /audit/
+  - title: SOW
+    url: /sow/
+  - title: Timeline
+    url: /timeline/
+  - title: Arquitectura
+    url: /architecture-fix/
+  - title: Keywords
+    url: /keyword-strategy/
+  - title: Plan 5 días
+    url: /technical-fixes-5days/
