@@ -6,19 +6,20 @@
 <title>Auditoría SEO · openeb5.com · Mayo 2026</title>
 <style>
   :root {
-    --bg: #0b0f17;
-    --bg-card: #131a26;
-    --bg-card-2: #1a2333;
-    --border: #243044;
-    --text: #e6ecf5;
-    --text-dim: #9fb0c8;
-    --accent: #4ade80;
-    --accent-2: #38bdf8;
-    --critical: #ef4444;
-    --high: #f59e0b;
-    --medium: #eab308;
-    --low: #64748b;
-    --good: #22c55e;
+    /* Brand: Open EB5 — navy #0B2A49 + white #FFFFFF */
+    --bg: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --bg-card-2: #F7FAFD;
+    --border: #E1E8F0;
+    --text: #0B2A49;
+    --text-dim: #5B6B82;
+    --accent: #16A34A;
+    --accent-2: #0B2A49;
+    --critical: #DC2626;
+    --high: #EA580C;
+    --medium: #CA8A04;
+    --low: #64748B;
+    --good: #16A34A;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -31,10 +32,25 @@
   }
   .container { max-width: 1180px; margin: 0 auto; padding: 32px 24px; }
   header.hero {
-    background: linear-gradient(135deg, #0d1421 0%, #1a2440 100%);
+    background: linear-gradient(135deg, #0B2A49 0%, #133E6B 100%);
+    color: #FFFFFF;
     border-bottom: 1px solid var(--border);
     padding: 56px 0 48px;
   }
+  header.hero h1, header.hero .hero-meta, header.hero .hero-meta strong { color: #FFFFFF; }
+  header.hero .hero-meta { color: rgba(255,255,255,0.85); }
+  header.hero .hero-meta strong { color: #FFFFFF; }
+  header.hero h1 .accent { color: #7BC3F5; }
+  header.hero .badge { background: rgba(220,38,38,0.25); color: #FFFFFF; border-color: rgba(220,38,38,0.5); }
+  header.hero .score-circle::before { background: #0B2A49; }
+  header.hero .score-value { color: #FFFFFF !important; }
+  header.hero .score-label { color: rgba(255,255,255,0.7); }
+  pre { background: #0F2440; color: #D6E4F4; border-color: #0B2A49; }
+  code, .mono { background: rgba(11,42,73,0.08); color: #0B2A49; }
+  .file-tree { background: #F4F7FB; color: #5B6B82; }
+  .file-tree .folder { color: #0B2A49; }
+  .file-tree .file { color: #0B2A49; }
+  footer { color: #5B6B82; }
   .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
   .badge {
     display: inline-block;
