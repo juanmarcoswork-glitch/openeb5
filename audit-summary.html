@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Auditoría SEO · openeb5.com · Mayo 2026</title>
+<style>
+  :root {
+    --bg: #0b0f17;
+    --bg-card: #131a26;
+    --bg-card-2: #1a2333;
+    --border: #243044;
+    --text: #e6ecf5;
+    --text-dim: #9fb0c8;
+    --accent: #4ade80;
+    --accent-2: #38bdf8;
+    --critical: #ef4444;
+    --high: #f59e0b;
+    --medium: #eab308;
+    --low: #64748b;
+    --good: #22c55e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  .container { max-width: 1180px; margin: 0 auto; padding: 32px 24px; }
+  header.hero {
+    background: linear-gradient(135deg, #0d1421 0%, #1a2440 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 56px 0 48px;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--critical);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.15; margin-bottom: 12px; }
+  h1 .accent { color: var(--accent-2); }
+  .hero-meta { color: var(--text-dim); font-size: 14px; }
+  .hero-meta strong { color: var(--text); }
+  .score-circle {
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: conic-gradient(var(--critical) 0% 29%, #2a3548 29% 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .score-circle::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border-radius: 50%;
+    background: var(--bg-card);
+  }
+  .score-inner { position: relative; text-align: center; }
+  .score-value { font-size: 48px; font-weight: 800; color: var(--critical); line-height: 1; }
+  .score-label { font-size: 12px; color: var(--text-dim); letter-spacing: 1px; text-transform: uppercase; margin-top: 6px; }
+
+  nav.toc {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 32px 0;
+    display: flex; flex-wrap: wrap; gap: 8px 20px;
+    font-size: 13px;
+  }
+  nav.toc a { color: var(--text-dim); text-decoration: none; padding: 4px 8px; border-radius: 6px; transition: all .15s; }
+  nav.toc a:hover { color: var(--accent-2); background: rgba(56,189,248,.08); }
+
+  section { padding: 40px 0; border-top: 1px solid var(--border); }
+  section:first-of-type { border-top: none; }
+  h2 { font-size: 26px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+  h2 .num { display: inline-block; min-width: 36px; color: var(--accent-2); }
+  .section-sub { color: var(--text-dim); font-size: 14px; margin-bottom: 24px; }
+  h3 { font-size: 18px; font-weight: 600; margin: 20px 0 10px; color: var(--text); }
+
+  .grid { display: grid; gap: 16px; }
+  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .card-accent { border-left: 3px solid var(--accent-2); }
+  .card-critical { border-left: 3px solid var(--critical); }
+  .card-high { border-left: 3px solid var(--high); }
+  .card-good { border-left: 3px solid var(--good); }
+
+  .stat { display: flex; flex-direction: column; gap: 4px; }
+  .stat-value { font-size: 28px; font-weight: 700; line-height: 1.1; }
+  .stat-label { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+  .stat-delta { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--text-dim); font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; }
+  tr:hover td { background: rgba(56,189,248,.04); }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .table-wrap { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow-x: auto; }
+  .table-wrap table { min-width: 600px; }
+
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.3px; }
+  .tag-critical { background: rgba(239,68,68,.15); color: var(--critical); }
+  .tag-high { background: rgba(245,158,11,.15); color: var(--high); }
+  .tag-medium { background: rgba(234,179,8,.15); color: var(--medium); }
+  .tag-low { background: rgba(100,116,139,.2); color: var(--text-dim); }
+  .tag-good { background: rgba(34,197,94,.15); color: var(--good); }
+
+  .bar-wrap { background: #2a3548; border-radius: 4px; height: 6px; overflow: hidden; margin-top: 6px; }
+  .bar { height: 100%; border-radius: 4px; }
+
+  ul.findings { list-style: none; }
+  ul.findings li {
+    padding: 12px 0 12px 28px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  ul.findings li:last-child { border-bottom: none; }
+  ul.findings li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 18px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--critical);
+  }
+  ul.findings.wins li::before { background: var(--good); }
+  .find-title { font-weight: 600; }
+  .find-detail { color: var(--text-dim); font-size: 13px; margin-top: 4px; }
+
+  code, .mono {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    background: rgba(56,189,248,.08);
+    color: #93c5fd;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  pre {
+    background: #07101e;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #c5d3ec;
+  }
+
+  .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 24px; }
+  .phase {
+    padding: 18px 16px;
+    background: var(--bg-card);
+    border-top: 3px solid var(--border);
+    position: relative;
+  }
+  .phase:nth-child(1) { border-top-color: var(--critical); border-radius: 12px 0 0 12px; }
+  .phase:nth-child(2) { border-top-color: var(--high); }
+  .phase:nth-child(3) { border-top-color: var(--medium); }
+  .phase:nth-child(4) { border-top-color: var(--good); border-radius: 0 12px 12px 0; }
+  .phase + .phase { border-left: 1px solid var(--border); }
+  .phase-week { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+  .phase-title { font-size: 15px; font-weight: 600; margin: 4px 0 8px; }
+  .phase ul { list-style: none; }
+  .phase li { padding: 4px 0; font-size: 13px; color: var(--text-dim); }
+  .phase li::before { content: "→ "; color: var(--accent-2); }
+
+  .file-tree {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--text-dim);
+  }
+  .file-tree .folder { color: var(--accent-2); font-weight: 600; }
+  .file-tree .file { color: var(--text); }
+  .file-tree .comment { color: var(--low); }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    color: var(--text-dim);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  @media (max-width: 720px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .score-circle { margin: 0 auto; }
+    h1 { font-size: 28px; }
+    .timeline { grid-template-columns: 1fr; }
+    .phase, .phase:first-child, .phase:last-child { border-radius: 0; border-left: none; border-top: 3px solid var(--accent-2); }
+    .phase + .phase { border-top: 3px solid var(--accent-2); }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="badge">Auditoría SEO Completa</span>
+        <h1><span class="accent">openeb5.com</span> · Auditoría SEO</h1>
+        <p class="hero-meta">
+          <strong>Open EB5</strong> · USCIS-Approved EB-5 Regional Center · McAllen, Texas<br/>
+          Sector: <strong>YMYL</strong> (Inmigración + Inversión) · Stack: <strong>WordPress 6.9.4 + Yoast + Elementor + Slider Revolution</strong><br/>
+          Fecha: <strong>2026-05-11</strong> · Fuentes: WebFetch, curl, SEMrush MCP, análisis sintético
+        </p>
+      </div>
+      <div class="score-circle">
+        <div class="score-inner">
+          <div class="score-value">29</div>
+          <div class="score-label">/ 100 · Crítico</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<nav class="toc">
+  <a href="#summary">Resumen</a>
+  <a href="#scoring">Scoring</a>
+  <a href="#critical">Top 5 Críticos</a>
+  <a href="#wins">Quick Wins</a>
+  <a href="#competitive">Competencia</a>
+  <a href="#keywords">Keywords</a>
+  <a href="#inventory">Inventario</a>
+  <a href="#roadmap">Roadmap 90d</a>
+  <a href="#files">Archivos</a>
+  <a href="#ahrefs">Ahrefs</a>
+</nav>
+
+<section id="summary">
+  <h2><span class="num">01</span>Resumen Ejecutivo</h2>
+  <p class="section-sub">Open EB5 tiene un negocio sano (USCIS regional center, oficina física, equipo nombrado, proyectos reales en TX), pero es <strong>estructuralmente invisible</strong> para buscadores y motores de IA.</p>
+
+  <div class="grid grid-4" style="margin-top:20px">
+    <div class="card card-critical">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--critical)">2/100</div>
+        <div class="stat-label">Authority Score</div>
+        <div class="stat-delta">vs 35 industry leader · 17× gap</div>
+      </div>
+    </div>
+    <div class="card card-critical">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--critical)">20</div>
+        <div class="stat-label">Keywords orgánicas (US)</div>
+        <div class="stat-delta">vs 9,174 eb5investors.com · 458× gap</div>
+      </div>
+    </div>
+    <div class="card card-critical">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--critical)">0</div>
+        <div class="stat-label">Tráfico orgánico estimado</div>
+        <div class="stat-delta">Todas las keywords en posiciones 18-95</div>
+      </div>
+    </div>
+    <div class="card card-high">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--high)">23</div>
+        <div class="stat-label">Plugins WP activos</div>
+        <div class="stat-delta">Incluye crypto-widgets, WC, YITH ×2 sin uso</div>
+      </div>
+    </div>
+    <div class="card card-high">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--high)">72 / 148</div>
+        <div class="stat-label">CSS / JS en homepage</div>
+        <div class="stat-delta">Bloqueo masivo de render</div>
+      </div>
+    </div>
+    <div class="card card-critical">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--critical)">93</div>
+        <div class="stat-label">Referring domains</div>
+        <div class="stat-delta">~0-5 son editoriales reales; resto = directorios spam</div>
+      </div>
+    </div>
+    <div class="card card-high">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--high)">19 / 48</div>
+        <div class="stat-label">Posts EN / Páginas en sitemap</div>
+        <div class="stat-delta">Posts ES NO están en sitemap</div>
+      </div>
+    </div>
+    <div class="card card-critical">
+      <div class="stat">
+        <div class="stat-value" style="color:var(--critical)">17</div>
+        <div class="stat-label">Caracteres del &lt;title&gt; homepage</div>
+        <div class="stat-delta">"OpenEB5 - openeb5" · sin keywords, marca minúscula</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="scoring">
+  <h2><span class="num">02</span>Scoring por Categoría</h2>
+  <p class="section-sub">7 dimensiones ponderadas según el sistema de SEO Health Score. Total: <strong>29 / 100</strong>.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th class="num">Peso</th>
+          <th class="num">Score</th>
+          <th>Progreso</th>
+          <th class="num">Ponderado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Technical SEO</td><td class="num">22%</td><td class="num">30</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:30%;background:var(--critical)"></div></div></td>
+          <td class="num">6.6</td>
+        </tr>
+        <tr>
+          <td>Content Quality & E-E-A-T</td><td class="num">23%</td><td class="num">35</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:35%;background:var(--critical)"></div></div></td>
+          <td class="num">8.05</td>
+        </tr>
+        <tr>
+          <td>On-Page SEO</td><td class="num">20%</td><td class="num">25</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:25%;background:var(--critical)"></div></div></td>
+          <td class="num">5.00</td>
+        </tr>
+        <tr>
+          <td>Schema / Structured Data</td><td class="num">10%</td><td class="num">25</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:25%;background:var(--critical)"></div></div></td>
+          <td class="num">2.50</td>
+        </tr>
+        <tr>
+          <td>Performance (CWV)</td><td class="num">10%</td><td class="num">25</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:25%;background:var(--critical)"></div></div></td>
+          <td class="num">2.50</td>
+        </tr>
+        <tr>
+          <td>AI Search Readiness (GEO)</td><td class="num">10%</td><td class="num">28</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:28%;background:var(--critical)"></div></div></td>
+          <td class="num">2.80</td>
+        </tr>
+        <tr>
+          <td>Images</td><td class="num">5%</td><td class="num">30</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:30%;background:var(--critical)"></div></div></td>
+          <td class="num">1.50</td>
+        </tr>
+        <tr style="font-weight:700;background:rgba(56,189,248,.06)">
+          <td>TOTAL</td><td class="num">100%</td><td class="num">29</td>
+          <td><div class="bar-wrap"><div class="bar" style="width:29%;background:var(--critical)"></div></div></td>
+          <td class="num">29.0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="critical">
+  <h2><span class="num">03</span>Top 5 Hallazgos Críticos</h2>
+  <p class="section-sub">Issues que bloquean visibilidad orgánica y violan baseline YMYL.</p>
+
+  <ul class="findings">
+    <li>
+      <div class="find-title">Title de homepage es marca-only y en minúscula <span class="tag tag-critical">CRÍTICO</span></div>
+      <div class="find-detail"><code>&lt;title&gt;OpenEB5 - openeb5&lt;/title&gt;</code> — 17 caracteres, sin "EB-5 visa", "green card", "regional center", "Texas". Mayor fuga de CTR detectable.</div>
+    </li>
+    <li>
+      <div class="find-title">Caché de página efectivamente desactivado <span class="tag tag-critical">CRÍTICO</span></div>
+      <div class="find-detail"><code>Cache-Control: no-store, no-cache, must-revalidate</code> + <code>Expires: 1981</code> + cookie <code>PHPSESSID</code> en cada visita. Ningún CDN puede cachear. TTFB y LCP destruidos sitewide.</div>
+    </li>
+    <li>
+      <div class="find-title">Sin hreflang en sitio EN/ES + 18 páginas de país <span class="tag tag-critical">CRÍTICO</span></div>
+      <div class="find-detail">Posts ES (<code>/ES/2025/...</code>) rankean en SEMrush pero <strong>no están en el sitemap</strong>. Riesgo de auto-canibalización entre EN y ES.</div>
+    </li>
+    <li>
+      <div class="find-title">Baseline E-E-A-T YMYL ausente <span class="tag tag-critical">CRÍTICO</span></div>
+      <div class="find-detail">Cero menciones de USCIS.gov en pillar guide; TEA usado 4× sin definirlo; sin EB-5 Reform Act 2022; sin abogado de inmigración nombrado; sin disclaimers SEC Reg D; número de Regional Center invisible.</div>
+    </li>
+    <li>
+      <div class="find-title">Schema mínimo o roto en cada entidad significativa <span class="tag tag-critical">CRÍTICO</span></div>
+      <div class="find-detail">Organization en minúscula con <code>description: ""</code>, BreadcrumbList con 1 ítem (inválido para rich result), sin LocalBusiness, sin FAQPage, sin Article en blog posts. Logo en schema (674×45) discrepa con OG image (308×45).</div>
+    </li>
+    <li>
+      <div class="find-title">23 plugins activos con ítems abandonados / fuera de tema <span class="tag tag-high">ALTO</span></div>
+      <div class="find-detail"><code>massive-cryptocurrency-widgets</code> (irrelevante), WooCommerce + YITH×2 sin propósito e-commerce, doble plugin de newsletter, Slider Revolution. Carga: 72 stylesheets + 148 scripts en home.</div>
+    </li>
+    <li>
+      <div class="find-title">6 generators meta exponen versiones exactas <span class="tag tag-high">ALTO</span></div>
+      <div class="find-detail">WordPress 6.9.4, WooCommerce 10.4.3, Elementor 3.34.4, Slider Revolution 6.7.20, Redux 4.5.10, Site Kit 1.159.0 — vector medible para CVE-targeting.</div>
+    </li>
+    <li>
+      <div class="find-title">Sin headers HTTP de seguridad <span class="tag tag-high">ALTO</span></div>
+      <div class="find-detail">Sin HSTS, X-Content-Type-Options, X-Frame-Options, CSP, Referrer-Policy, Permissions-Policy. Para un sitio que solicita inversiones de $800K, falla expectativa baseline de confianza.</div>
+    </li>
+  </ul>
+</section>
+
+<section id="wins">
+  <h2><span class="num">04</span>Top Quick Wins (≤ 4h cada uno)</h2>
+  <p class="section-sub">Acciones de alto impacto con esfuerzo mínimo.</p>
+
+  <ul class="findings wins">
+    <li>
+      <div class="find-title">Corregir Organización en Yoast → cascada global <span class="tag tag-good">30 min · P0</span></div>
+      <div class="find-detail">Yoast → General → Site Representation → name = <code>Open EB5</code>, phone, address. Arregla schema, OG y títulos globalmente.</div>
+    </li>
+    <li>
+      <div class="find-title">Reescribir title + meta de homepage <span class="tag tag-good">30 min · P0</span></div>
+      <div class="find-detail"><code>USCIS-Approved EB-5 Regional Center | Open EB5 — Texas</code> + meta de 155 chars con propuesta de valor + CTA.</div>
+    </li>
+    <li>
+      <div class="find-title">Instalar WP Rocket + Cloudflare <span class="tag tag-good">2 h · P0</span></div>
+      <div class="find-detail">Mayor ganancia única de performance. Reduce TTFB ~1000ms → 100ms y LCP ~1.5s.</div>
+    </li>
+    <li>
+      <div class="find-title">Eliminar plugins inútiles <span class="tag tag-good">2 h · P0</span></div>
+      <div class="find-detail">WooCommerce, YITH Quick-View, YITH Wishlist, massive-cryptocurrency-widgets, meks-simple-flickr-widget, emage-hover-effects, uno de dos newsletter plugins.</div>
+    </li>
+    <li>
+      <div class="find-title">Publicar /llms.txt <span class="tag tag-good">30 min · P0</span></div>
+      <div class="find-detail">Plantilla lista en <code>reports/geo-ai-readiness.md</code>. Acelera adopción en ChatGPT/Perplexity/AI Overviews.</div>
+    </li>
+    <li>
+      <div class="find-title">Headers de seguridad en nginx <span class="tag tag-good">1 h · P0</span></div>
+      <div class="find-detail">HSTS, XCTO, XFO, Referrer-Policy, Permissions-Policy, CSP. Snippets nginx en <code>reports/technical-seo.md</code>.</div>
+    </li>
+    <li>
+      <div class="find-title">Reemplazar Organization → FinancialService JSON-LD <span class="tag tag-good">1 h · P0</span></div>
+      <div class="find-detail">Bloque listo en <code>reports/schema-markup.md</code>: address, phone, sameAs, areaServed, knowsLanguage, hasCredential (USCIS RC).</div>
+    </li>
+    <li>
+      <div class="find-title">Auditar /about-us/ — ranking accidental por "Dunkin Donuts Harlingen TX" <span class="tag tag-good">30 min · P0</span></div>
+      <div class="find-detail">Hay contenido off-topic. Encontrar y eliminar la referencia.</div>
+    </li>
+  </ul>
+</section>
+
+<section id="competitive">
+  <h2><span class="num">05</span>Posición Competitiva (US, SEMrush)</h2>
+  <p class="section-sub">Sin solapamiento orgánico con ningún competidor real del nicho EB-5.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Dominio</th>
+          <th class="num">Authority Score</th>
+          <th class="num">Keywords orgánicas</th>
+          <th class="num">Tráfico est.</th>
+          <th class="num">Backlinks</th>
+          <th class="num">Ref. domains</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:rgba(239,68,68,.05)">
+          <td><strong>openeb5.com</strong> <span class="tag tag-critical">tú</span></td>
+          <td class="num"><strong>2</strong></td>
+          <td class="num"><strong>20</strong></td>
+          <td class="num"><strong>0</strong></td>
+          <td class="num"><strong>154</strong></td>
+          <td class="num"><strong>93</strong></td>
+        </tr>
+        <tr>
+          <td>eb5investors.com</td><td class="num">35</td><td class="num">9,174</td><td class="num">6,333</td>
+          <td class="num">49,561</td><td class="num">2,090</td>
+        </tr>
+        <tr>
+          <td>iiusa.org</td><td class="num">34</td><td class="num">2,121</td><td class="num">5,486</td>
+          <td class="num">27,020</td><td class="num">3,333</td>
+        </tr>
+        <tr>
+          <td>eb5affiliatenetwork.com</td><td class="num">—</td><td class="num">2,862</td><td class="num">1,288</td>
+          <td class="num">—</td><td class="num">—</td>
+        </tr>
+        <tr>
+          <td>civitascapital.com</td><td class="num">—</td><td class="num">609</td><td class="num">2,755</td>
+          <td class="num">—</td><td class="num">—</td>
+        </tr>
+        <tr>
+          <td>eb5capital.com</td><td class="num">—</td><td class="num">462</td><td class="num">1,085</td>
+          <td class="num">—</td><td class="num">—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid grid-2" style="margin-top:20px">
+    <div class="card card-accent">
+      <h3>Calidad de Backlinks</h3>
+      <p style="color:var(--text-dim);font-size:14px">De 93 dominios referentes, <strong>~0-5 son enlaces editoriales auténticos</strong>. Top referrers son scrapers automáticos:</p>
+      <ul style="margin-top:10px;color:var(--text-dim);font-size:13px;list-style:none">
+        <li>→ factmags.com, websiterace.com, domainsc.com (analizadores de dominios)</li>
+        <li>→ Cluster en IPs Singapur (184.168.x, 118.139.x)</li>
+        <li>→ TLDs spam: .cv, .monster, .xyz, .space</li>
+      </ul>
+      <p style="margin-top:10px;font-size:13px"><strong>Anchor "open eb5" aparece solo 1 vez</strong> en todo el grafo de enlaces.</p>
+    </div>
+    <div class="card card-accent">
+      <h3>Las 20 keywords reales de openeb5.com</h3>
+      <ul style="color:var(--text-dim);font-size:13px;list-style:none">
+        <li>→ <strong>11 / 20</strong> son en español (la versión ES es el bright spot)</li>
+        <li>→ <strong>3 / 20</strong> son off-topic (dunkin donuts, brand competitor names)</li>
+        <li>→ <strong>1 / 20</strong> alcanza top 20: "midtown brownsville" pos 18</li>
+        <li>→ <strong>0 / 20</strong> con tráfico estimado mayor a cero</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="keywords">
+  <h2><span class="num">06</span>Keywords Target — Quick Wins</h2>
+  <p class="section-sub">Clusters de la competencia donde openeb5.com puede entrar primero.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Cluster de keyword</th>
+          <th class="num">Volumen US</th>
+          <th>Dificultad</th>
+          <th>Estrategia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>eb-5 visa</td><td class="num">18,100</td><td><span class="tag tag-high">Alta</span></td><td>Rewrite pillar guide</td></tr>
+        <tr><td>eb 5 visa requirements</td><td class="num">6,600</td><td><span class="tag tag-medium">Media-Alta</span></td><td>Nuevo comparativo</td></tr>
+        <tr><td>eb-5 regional center</td><td class="num">2,400</td><td><span class="tag tag-medium">Media</span></td><td>/eb-5/ + /current-projects/</td></tr>
+        <tr><td>eb-5 minimum investment</td><td class="num">1,900</td><td><span class="tag tag-medium">Media</span></td><td>Nueva página dedicada</td></tr>
+        <tr><td>eb5 vs e2 visa</td><td class="num">1,600</td><td><span class="tag tag-medium">Media</span></td><td>Comparativo</td></tr>
+        <tr><td>eb-5 source of funds</td><td class="num">1,300</td><td><span class="tag tag-medium">Media-Alta</span></td><td>YMYL deep dive</td></tr>
+        <tr><td>i-526e processing time</td><td class="num">1,000</td><td><span class="tag tag-medium">Media</span></td><td>Nuevo explainer</td></tr>
+        <tr><td>i-829 petition</td><td class="num">880</td><td><span class="tag tag-medium">Media</span></td><td>Nuevo explainer</td></tr>
+        <tr><td>eb-5 reform and integrity act</td><td class="num">720</td><td><span class="tag tag-low">Baja-Media</span></td><td>Explicación legal</td></tr>
+        <tr><td>eb-5 grandfathering</td><td class="num">480</td><td><span class="tag tag-low">Baja</span></td><td>✅ Ya tienes 1 post · expandir</td></tr>
+        <tr><td>eb-5 vietnam · eb-5 china retrogression</td><td class="num">480+1,900</td><td><span class="tag tag-medium">Media</span></td><td>Rewrite country pages</td></tr>
+        <tr><td>tea designation eb-5</td><td class="num">320</td><td><span class="tag tag-low">Baja</span></td><td>Explainer + mapa interactivo</td></tr>
+        <tr><td>eb-5 reserved visas</td><td class="num">260</td><td><span class="tag tag-low">Baja</span></td><td>Wide-open (creado por Reform Act 2022)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="inventory">
+  <h2><span class="num">07</span>Inventario del Sitio</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="stat-label">Posts blog (EN, sitemap)</div>
+      <div class="stat-value">19</div>
+      <div class="stat-delta">URL legacy <code>/YYYY/MM/DD/slug/</code></div>
+    </div>
+    <div class="card">
+      <div class="stat-label">Páginas (sitemap)</div>
+      <div class="stat-value">48</div>
+      <div class="stat-delta">Incluye 22 geo pages + duplicados</div>
+    </div>
+    <div class="card">
+      <div class="stat-label">Posts ES en sitemap</div>
+      <div class="stat-value" style="color:var(--critical)">0</div>
+      <div class="stat-delta">≥3 ES posts rankean pero no están listados</div>
+    </div>
+    <div class="card">
+      <div class="stat-label">Páginas de país</div>
+      <div class="stat-value">18</div>
+      <div class="stat-delta">Riesgo de programmatic thin content</div>
+    </div>
+    <div class="card">
+      <div class="stat-label">Páginas regionales</div>
+      <div class="stat-value">4</div>
+      <div class="stat-delta">america, asia, europe, oceania</div>
+    </div>
+    <div class="card">
+      <div class="stat-label">Páginas de proyecto</div>
+      <div class="stat-value">3</div>
+      <div class="stat-delta">Midtown Pharr, Midtown Brownsville, Parkside</div>
+    </div>
+    <div class="card card-high">
+      <div class="stat-label">Páginas orphan/debug en sitemap</div>
+      <div class="stat-value" style="color:var(--high)">5</div>
+      <div class="stat-delta">/elementor-7790/, /contact-us-2/, /welcome-…/, /confirmation/, /success/</div>
+    </div>
+    <div class="card card-high">
+      <div class="stat-label">Sitemaps vacíos referenciados</div>
+      <div class="stat-value" style="color:var(--high)">3</div>
+      <div class="stat-delta">portfolio, service, case-study (last-mod 2019)</div>
+    </div>
+    <div class="card card-high">
+      <div class="stat-label">Plugins WP detectados</div>
+      <div class="stat-value" style="color:var(--high)">23</div>
+      <div class="stat-delta">Recomendado: ≤ 15 después de cleanup</div>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <h2><span class="num">08</span>Roadmap 90 Días</h2>
+  <p class="section-sub">Plan estratégico de 4 fases. Acciones completas en <code>ACTION-PLAN.md</code>.</p>
+
+  <div class="timeline">
+    <div class="phase">
+      <div class="phase-week">Semanas 1-2</div>
+      <div class="phase-title">Fundación</div>
+      <ul>
+        <li>Fix Yoast Organization</li>
+        <li>Title + meta homepage</li>
+        <li>Strip generators</li>
+        <li>Headers de seguridad</li>
+        <li>WP Rocket + Cloudflare</li>
+        <li>FinancialService schema</li>
+        <li>/llms.txt</li>
+        <li>Eliminar plugins inútiles</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-week">Semanas 3-6</div>
+      <div class="phase-title">Contenido + Schema</div>
+      <ul>
+        <li>Rewrite pillar guide (3× word count)</li>
+        <li>FAQPage + HowTo + Article</li>
+        <li>Person schema para equipo</li>
+        <li>Bios de 8 staff + abogado nombrado</li>
+        <li>Reemplazar Slider Revolution</li>
+        <li>Migrar URLs blog → /blog/slug/</li>
+        <li>Rewrite top 5 country pages</li>
+        <li>Submit ES posts a sitemap</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-week">Semanas 7-12</div>
+      <div class="phase-title">Autoridad + IA</div>
+      <ul>
+        <li>Crunchbase, USCIS RC, IIUSA listings</li>
+        <li>Press release I-956F</li>
+        <li>4 guest posts (EB5Investors, EB5Insights)</li>
+        <li>Original research: "State of EB-5 LatAm 2026"</li>
+        <li>12 nuevos blog posts (keyword gap)</li>
+        <li>IndexNow habilitado</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-week">Continuo</div>
+      <div class="phase-title">Sostenido</div>
+      <ul>
+        <li>Refresh trimestral pillar</li>
+        <li>Link building mensual (2 enlaces editoriales)</li>
+        <li>E-E-A-T review trimestral</li>
+        <li>Schema audit trimestral</li>
+        <li>CWV monitoring vía CrUX</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:32px">Metas Esperadas</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Métrica</th>
+          <th class="num">Día 0</th>
+          <th class="num">Día 90</th>
+          <th class="num">Día 180</th>
+          <th class="num">Día 365</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Authority Score</td><td class="num">2</td><td class="num">8</td><td class="num">15</td><td class="num">22</td></tr>
+        <tr><td>Keywords orgánicas (US)</td><td class="num">20</td><td class="num">200</td><td class="num">600</td><td class="num">1,500</td></tr>
+        <tr><td>Tráfico orgánico mensual</td><td class="num">0</td><td class="num">300</td><td class="num">1,500</td><td class="num">5,000</td></tr>
+        <tr><td>Posición ranking promedio</td><td class="num">—</td><td class="num">40</td><td class="num">25</td><td class="num">15</td></tr>
+        <tr><td>Menciones AI / mes</td><td class="num">0</td><td class="num">5</td><td class="num">25</td><td class="num">80</td></tr>
+        <tr><td>Backlinks editoriales auténticos</td><td class="num">&lt;5</td><td class="num">25</td><td class="num">75</td><td class="num">200</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="files">
+  <h2><span class="num">09</span>Archivos Entregados</h2>
+  <p class="section-sub">Todo en <code>C:\Users\juanm\OneDrive\Desktop\Proyectos\openeb5-seo-audit\</code></p>
+
+  <div class="file-tree">
+<span class="folder">openeb5-seo-audit/</span>
+├── <span class="file">README.md</span>                       <span class="comment">— guía rápida</span>
+├── <span class="file">FULL-AUDIT-REPORT.md</span>           <span class="comment">— reporte ejecutivo + scoring</span>
+├── <span class="file">ACTION-PLAN.md</span>                 <span class="comment">— 47 acciones priorizadas P0–P3</span>
+├── <span class="file">audit-summary.html</span>             <span class="comment">— este HTML</span>
+├── <span class="folder">reports/</span>
+│   ├── <span class="file">technical-seo.md</span>           <span class="comment">— caching, headers, hreflang, plugins (289 líneas)</span>
+│   ├── <span class="file">content-eeat.md</span>            <span class="comment">— YMYL, pillar audit, gaps (211 líneas)</span>
+│   ├── <span class="file">schema-markup.md</span>           <span class="comment">— JSON-LD listo para pegar (452 líneas)</span>
+│   ├── <span class="file">performance-cwv.md</span>         <span class="comment">— CWV sintético + 23 plugins (135 líneas)</span>
+│   ├── <span class="file">geo-ai-readiness.md</span>        <span class="comment">— AI Overviews + plantilla llms.txt (237 líneas)</span>
+│   └── <span class="file">backlinks-competitive.md</span>   <span class="comment">— Backlinks, competidores, keywords (187 líneas)</span>
+└── <span class="folder">data/</span>
+    ├── <span class="file">homepage.html</span>              <span class="comment">— HTML crudo (198 KB)</span>
+    ├── <span class="file">homepage-ES.html</span>           <span class="comment">— HTML ES crudo (196 KB)</span>
+    ├── <span class="file">homepage_headers.txt</span>       <span class="comment">— HTTP response headers</span>
+    ├── <span class="file">robots.txt</span>
+    ├── <span class="file">sitemap_index.xml</span>
+    ├── <span class="file">post-sitemap.xml</span>
+    ├── <span class="file">page-sitemap.xml</span>
+    └── <span class="file">category-sitemap.xml</span>
+  </div>
+</section>
+
+<section id="ahrefs">
+  <h2><span class="num">10</span>Próximo Paso · Integración con Ahrefs</h2>
+  <p class="section-sub">Cuando adjuntes openeb5.com a Ahrefs, cruza estos datos con la auditoría actual.</p>
+
+  <div class="grid grid-2">
+    <div class="card card-accent">
+      <h3>Cross-validaciones</h3>
+      <ul style="color:var(--text-dim);font-size:14px;list-style:none">
+        <li>→ Ahrefs <strong>DR</strong> vs SEMrush AS 2</li>
+        <li>→ Backlinks overlap (los 93 ref domains)</li>
+        <li>→ Site Audit issues vs. esta auditoría</li>
+        <li>→ Toxicity scoring → confirmar "no disavow"</li>
+      </ul>
+    </div>
+    <div class="card card-accent">
+      <h3>Nuevos análisis</h3>
+      <ul style="color:var(--text-dim);font-size:14px;list-style:none">
+        <li>→ <strong>Content Gap</strong> con seeds:</li>
+        <li style="margin-left:20px">eb5investors.com</li>
+        <li style="margin-left:20px">iiusa.org</li>
+        <li style="margin-left:20px">civitascapital.com</li>
+        <li style="margin-left:20px">eb5capital.com</li>
+        <li>→ Top Pages 2.0 de competidores</li>
+        <li>→ Brand Radar: SOV "Open EB5" en LLMs</li>
+        <li>→ Keyword tracker: 15-25 targets</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-top:24px;color:var(--text-dim);font-size:14px">Comparte el acceso o pega los snapshots de Site Explorer + Site Audit y se refina el plan de 90 días con la data de Ahrefs.</p>
+</section>
+
+</div>
+
+<footer>
+  <div class="container">
+    Auditoría preparada por Claude (Anthropic) · 2026-05-11 · WebFetch + SEMrush MCP + análisis sintético<br/>
+    PageSpeed Insights API rate-limited sin key — métricas CWV son estimaciones. Configura un API key de Google y vuelve a correr con el skill <code>seo-google</code> para datos de campo.
+  </div>
+</footer>
+
+</body>
+</html>

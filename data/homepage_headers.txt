@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 11 May 2026 19:35:12 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Link: <https://openeb5.com/wp-json/>; rel="https://api.w.org/", <https://openeb5.com/wp-json/wp/v2/pages/5745>; rel="alternate"; title="JSON"; type="application/json", <https://openeb5.com/>; rel=shortlink
+Set-Cookie: PHPSESSID=96b989063d3ba97a776e5df4505abe7a; path=/; secure; HttpOnly
+
