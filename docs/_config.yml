@@ -1,0 +1,31 @@
+title: openeb5.com SEO Audit
+description: Auditoría técnica SEO y plan de acción — Open EB5 Regional Center, McAllen, TX
+theme: jekyll-theme-cayman
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Site author
+author:
+  name: SEO Audit Team
+  date: 2026-05-14
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - .gitignore
+  - README.md
+
+# Navigation
+nav_external_links:
+  - title: openeb5.com
+    url: https://openeb5.com
