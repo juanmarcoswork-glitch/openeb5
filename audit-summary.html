@@ -3,772 +3,822 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Auditoría SEO · openeb5.com · Mayo 2026</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+<meta name="referrer" content="no-referrer" />
+<title>Auditoría SEO · openeb5.com · v2 · Junio 2026 · Verificado 11 Jun 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0b0f17;
-    --bg-card: #131a26;
-    --bg-card-2: #1a2333;
-    --border: #243044;
-    --text: #e6ecf5;
-    --text-dim: #9fb0c8;
-    --accent: #4ade80;
-    --accent-2: #38bdf8;
-    --critical: #ef4444;
-    --high: #f59e0b;
-    --medium: #eab308;
-    --low: #64748b;
-    --good: #22c55e;
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#faf9f5;
+    --bg-card:#edece4;
+    --bg-card-soft:#f6f5ef;
+    --border:#d9d7cc;
+    --border-soft:#e8e6dc;
+    --ink:#0d0d0d;
+    --ink2:#3a3a3a;
+    --ink3:#5c5c5c;
+    --ink4:#8a8a8a;
+    --accent:#6b5429;
+    --accent-soft:#ece9de;
+    --crit:#8a1c1c;
+    --high:#8a5a12;
+    --med:#8a6b0a;
+    --good:#14532d;
+    --info:#1e3a5f;
+    --teal:#1f4747;
+    --violet:#5b3d8a;
+    --serif:"Cormorant Garamond","Times New Roman",Georgia,serif;
+    --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    font-size: 15px;
-  }
-  .container { max-width: 1180px; margin: 0 auto; padding: 32px 24px; }
-  header.hero {
-    background: linear-gradient(135deg, #0d1421 0%, #1a2440 100%);
-    border-bottom: 1px solid var(--border);
-    padding: 56px 0 48px;
-  }
-  .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
-  .badge {
-    display: inline-block;
-    padding: 4px 12px;
-    background: rgba(239, 68, 68, 0.15);
-    color: var(--critical);
-    border: 1px solid rgba(239, 68, 68, 0.3);
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.15; margin-bottom: 12px; }
-  h1 .accent { color: var(--accent-2); }
-  .hero-meta { color: var(--text-dim); font-size: 14px; }
-  .hero-meta strong { color: var(--text); }
-  .score-circle {
-    width: 180px; height: 180px;
-    border-radius: 50%;
-    background: conic-gradient(var(--critical) 0% 29%, #2a3548 29% 100%);
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
-  }
-  .score-circle::before {
-    content: "";
-    position: absolute;
-    inset: 12px;
-    border-radius: 50%;
-    background: var(--bg-card);
-  }
-  .score-inner { position: relative; text-align: center; }
-  .score-value { font-size: 48px; font-weight: 800; color: var(--critical); line-height: 1; }
-  .score-label { font-size: 12px; color: var(--text-dim); letter-spacing: 1px; text-transform: uppercase; margin-top: 6px; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+  a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--border)}
+  a:hover{text-decoration-color:var(--ink)}
 
-  nav.toc {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin: 32px 0;
-    display: flex; flex-wrap: wrap; gap: 8px 20px;
-    font-size: 13px;
-  }
-  nav.toc a { color: var(--text-dim); text-decoration: none; padding: 4px 8px; border-radius: 6px; transition: all .15s; }
-  nav.toc a:hover { color: var(--accent-2); background: rgba(56,189,248,.08); }
+  /* HERO (dark) */
+  header.hero{background:#0d0d0d;color:#edece4;border-bottom:1px solid #0d0d0d}
+  .hero-inner{padding:36px 0 40px}
+  .hero-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;gap:24px;flex-wrap:wrap}
+  .hero-logo{height:60px;width:auto;display:block;background:#fff;padding:8px 14px;border-radius:4px}
+  .eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a8580;font-weight:600}
+  .hero-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+  h1{font-family:var(--serif);font-weight:500;font-size:44px;line-height:1.05;letter-spacing:-.5px;color:#edece4}
+  h1 .accent{color:#d6a544;font-style:italic}
+  .hero-meta{color:#b8b3aa;font-size:13.5px;margin-top:14px;max-width:680px;line-height:1.7}
+  .hero-meta strong{color:#edece4;font-weight:600}
+  .score{width:148px;height:148px;border-radius:50%;flex:none;display:grid;place-items:center;position:relative;background:conic-gradient(#d6a544 0 32%, #2a2a2a 32% 100%)}
+  .score::before{content:"";position:absolute;inset:10px;border-radius:50%;background:#0d0d0d}
+  .score div{position:relative;text-align:center}
+  .score .v{font-family:var(--serif);font-size:46px;font-weight:600;color:#e5c886;line-height:1}
+  .score .l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8a8580;margin-top:6px;font-weight:600}
 
-  section { padding: 40px 0; border-top: 1px solid var(--border); }
-  section:first-of-type { border-top: none; }
-  h2 { font-size: 26px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
-  h2 .num { display: inline-block; min-width: 36px; color: var(--accent-2); }
-  .section-sub { color: var(--text-dim); font-size: 14px; margin-bottom: 24px; }
-  h3 { font-size: 18px; font-weight: 600; margin: 20px 0 10px; color: var(--text); }
+  /* sources / corrections banner */
+  .banner{margin-top:28px;border:1px solid #2a2a2a;background:#1a1a1a;border-radius:6px;padding:18px 22px}
+  .banner h4{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a8580;font-weight:600;margin-bottom:12px}
+  .sources{display:flex;flex-wrap:wrap;gap:6px}
+  .pill{font-size:11.5px;padding:4px 12px;border-radius:999px;border:1px solid #3a3a3a;color:#b8b3aa;font-weight:500}
+  .corr{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  .corr div{font-size:13px;color:#b8b3aa;border-left:2px solid #14532d;padding-left:14px;line-height:1.6}
+  .corr div.warn{border-left-color:#8a5a12}
+  .corr b{color:#edece4}
 
-  .grid { display: grid; gap: 16px; }
-  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-  .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  /* TABS */
+  nav.tabs{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .tabs-inner{display:flex;gap:2px;overflow-x:auto}
+  .tab{appearance:none;background:none;border:none;cursor:pointer;color:var(--ink4);font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.4px;padding:18px 18px 14px;border-bottom:2px solid transparent;white-space:nowrap;text-transform:uppercase;transition:color .15s}
+  .tab:hover{color:var(--ink2)}
+  .tab.active{color:var(--ink);border-bottom-color:var(--ink)}
+  .tab small{display:block;font-weight:400;font-size:10.5px;color:var(--ink4);letter-spacing:.4px;text-transform:none;margin-top:3px}
+  .tab.active small{color:var(--ink3)}
 
-  .card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-  }
-  .card-accent { border-left: 3px solid var(--accent-2); }
-  .card-critical { border-left: 3px solid var(--critical); }
-  .card-high { border-left: 3px solid var(--high); }
-  .card-good { border-left: 3px solid var(--good); }
+  /* global progress */
+  .gp{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--border-soft)}
+  .gp-bar-wrap{flex:1;height:6px;background:var(--bg-card);border-radius:99px;overflow:hidden}
+  .gp-bar{height:100%;width:0;background:linear-gradient(90deg,#d6a544,var(--good));border-radius:99px;transition:width .35s}
+  .gp-count{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);font-size:13px;letter-spacing:.5px;text-transform:uppercase}
+  .gp small{color:var(--ink4);font-size:11.5px;letter-spacing:.5px;text-transform:uppercase}
 
-  .stat { display: flex; flex-direction: column; gap: 4px; }
-  .stat-value { font-size: 28px; font-weight: 700; line-height: 1.1; }
-  .stat-label { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
-  .stat-delta { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+  /* PANELS */
+  .panel{display:none;padding:36px 0 60px;animation:fade .35s ease}
+  .panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  h2{font-family:var(--serif);font-size:32px;font-weight:500;letter-spacing:-.3px;margin-bottom:8px;color:var(--ink)}
+  .sub{color:var(--ink3);font-size:14px;margin-bottom:8px;max-width:880px;line-height:1.7}
+  .sub b{color:var(--ink);font-weight:600}
+  .panel-progress{font-size:11px;color:var(--ink4);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin:14px 0 24px}
+  h3{font-family:var(--serif);font-size:22px;font-weight:500;margin:36px 0 14px;color:var(--ink)}
 
-  table { width: 100%; border-collapse: collapse; font-size: 14px; }
-  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
-  th { color: var(--text-dim); font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; }
-  tr:hover td { background: rgba(56,189,248,.04); }
-  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
-  .table-wrap { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow-x: auto; }
-  .table-wrap table { min-width: 600px; }
+  /* metric / stat cards */
+  .grid{display:grid;gap:14px}
+  .g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .stat{background:var(--bg-card-soft);border:1px solid var(--border-soft);border-radius:4px;padding:20px}
+  .stat .v{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1;color:var(--ink)}
+  .stat .k{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink4);margin-top:10px;font-weight:600}
+  .stat .d{font-size:12.5px;color:var(--ink3);margin-top:8px;line-height:1.5}
+  .bl{border-left:3px solid var(--border)}
+  .bl.crit{border-left-color:var(--crit)}
+  .bl.high{border-left-color:var(--high)}
+  .bl.good{border-left-color:var(--good)}
+  .bl.info{border-left-color:var(--info)}
+  .vc{color:var(--crit)} .vh{color:var(--high)} .vg{color:var(--good)} .vi{color:var(--info)}
 
-  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.3px; }
-  .tag-critical { background: rgba(239,68,68,.15); color: var(--critical); }
-  .tag-high { background: rgba(245,158,11,.15); color: var(--high); }
-  .tag-medium { background: rgba(234,179,8,.15); color: var(--medium); }
-  .tag-low { background: rgba(100,116,139,.2); color: var(--text-dim); }
-  .tag-good { background: rgba(34,197,94,.15); color: var(--good); }
+  /* finding card */
+  .finding{background:var(--bg-card-soft);border:1px solid var(--border-soft);border-left:3px solid var(--border);border-radius:4px;padding:18px 22px;margin-bottom:14px;transition:.2s}
+  .finding.sev-crit{border-left-color:var(--crit)}
+  .finding.sev-high{border-left-color:var(--high)}
+  .finding.sev-med{border-left-color:var(--med)}
+  .finding.sev-low{border-left-color:var(--ink4)}
+  .finding.done{opacity:.62;background:var(--bg-soft)}
+  .finding.done .f-title{text-decoration:line-through;text-decoration-color:var(--ink4)}
+  .finding.done .f-title::after{content:" · LISTO";font-size:9.5px;font-weight:700;letter-spacing:1.2px;color:#ffffff;background:var(--good);padding:2px 7px;margin-left:8px;border-radius:2px;vertical-align:middle;text-transform:uppercase;text-decoration:none}
+  .finding.partial .f-title::after{content:" · PARCIAL";font-size:9.5px;font-weight:700;letter-spacing:1.2px;color:#ffffff;background:var(--high);padding:2px 7px;margin-left:8px;border-radius:2px;vertical-align:middle;text-transform:uppercase}
+  .finding.plan .f-title::after{content:" · PLAN LISTO";font-size:9.5px;font-weight:700;letter-spacing:1.2px;color:#ffffff;background:var(--info);padding:2px 7px;margin-left:8px;border-radius:2px;vertical-align:middle;text-transform:uppercase}
+  .f-head{display:flex;gap:14px;align-items:flex-start}
+  .chk{flex:none;cursor:pointer;margin-top:1px;position:relative;width:20px;height:20px}
+  .chk input{position:absolute;opacity:0;width:20px;height:20px;cursor:pointer;margin:0}
+  .chk .box{display:block;width:20px;height:20px;border:1.5px solid var(--border);border-radius:3px;background:var(--bg);transition:.15s}
+  .chk input:checked + .box{background:var(--good);border-color:var(--good)}
+  .chk input:checked + .box::after{content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;border:solid #ffffff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .f-main{flex:1;min-width:0}
+  .f-title{font-weight:600;font-size:15px;color:var(--ink);line-height:1.4}
+  .f-time{flex:none;font-size:11px;color:var(--ink3);background:var(--bg);border:1px solid var(--border);border-radius:3px;padding:5px 10px;white-space:nowrap;letter-spacing:.3px;font-weight:500}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .t{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;display:inline-block}
+  .t-crit{background:#f1e1e1;color:var(--crit)}
+  .t-high{background:#f3e9d6;color:var(--high)}
+  .t-med{background:#f2ecd5;color:var(--med)}
+  .t-low{background:#ececec;color:var(--ink3)}
+  .t-dev{background:#e3e9f0;color:var(--info)}
+  .t-content{background:#dfeae3;color:var(--good)}
+  .t-config{background:#f3e9d6;color:var(--high)}
+  .t-seo{background:var(--accent-soft);color:var(--accent)}
+  .t-nodesign{background:#dde7e6;color:var(--teal)}
+  .t-design{background:#e8e1ee;color:var(--violet)}
+  .t-cliente{background:#f4eef7;color:var(--violet)}
+  .t-claude{background:#dde7e6;color:var(--teal)}
+  .f-body{margin-top:12px;padding-left:34px;display:grid;gap:8px}
+  .f-body p{font-size:13.5px;color:var(--ink3);line-height:1.6}
+  .f-body b{color:var(--ink);font-weight:600}
+  .f-body code,code{font-family:"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;background:var(--bg-card);color:var(--ink);border:1px solid var(--border-soft);padding:1px 6px;border-radius:2px;font-size:12px}
 
-  .bar-wrap { background: #2a3548; border-radius: 4px; height: 6px; overflow: hidden; margin-top: 6px; }
-  .bar { height: 100%; border-radius: 4px; }
+  .note{background:var(--accent-soft);border:1px solid var(--border);border-radius:4px;padding:16px 20px;font-size:13.5px;color:var(--ink3);margin:20px 0;line-height:1.65}
+  .note b{color:var(--accent)}
+  .constraint{background:#f4eef7;border:1px solid #e0d5e8;border-radius:4px;padding:16px 20px;font-size:13.5px;color:var(--ink3);margin:0 0 24px;line-height:1.65}
+  .constraint b{color:var(--violet)}
 
-  ul.findings { list-style: none; }
-  ul.findings li {
-    padding: 12px 0 12px 28px;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-  }
-  ul.findings li:last-child { border-bottom: none; }
-  ul.findings li::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 18px;
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--critical);
-  }
-  ul.findings.wins li::before { background: var(--good); }
-  .find-title { font-weight: 600; }
-  .find-detail { color: var(--text-dim); font-size: 13px; margin-top: 4px; }
+  /* checkpoints timeline */
+  .checkpoints{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0;border:1px solid var(--border-soft);border-radius:4px;overflow:hidden;background:var(--bg)}
+  .cp{padding:18px 18px;border-right:1px solid var(--border-soft);position:relative}
+  .cp:last-child{border-right:none}
+  .cp .cp-lbl{font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink4);font-weight:700}
+  .cp.cp-now .cp-lbl{color:#d6a544}
+  .cp .cp-when{font-size:11.5px;color:var(--ink3);margin-top:3px}
+  .cp .cp-score{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1;margin-top:14px;color:var(--ink)}
+  .cp .cp-score small{font-size:10.5px;color:var(--ink4);font-family:var(--sans);font-weight:600;letter-spacing:1px;margin-left:2px}
+  .cp.cp-good .cp-score{color:var(--good)}
+  .cp.cp-warn .cp-score{color:var(--high)}
+  .cp.cp-crit .cp-score{color:var(--crit)}
+  .cp .cp-note{font-size:11.5px;color:var(--ink3);margin-top:10px;line-height:1.5}
+  .cp.cp-now::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:#d6a544}
 
-  code, .mono {
-    font-family: "SF Mono", Menlo, Consolas, monospace;
-    background: rgba(56,189,248,.08);
-    color: #93c5fd;
-    padding: 1px 6px;
-    border-radius: 4px;
-    font-size: 13px;
-  }
-  pre {
-    background: #07101e;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 14px 16px;
-    overflow-x: auto;
-    font-family: "SF Mono", Menlo, Consolas, monospace;
-    font-size: 12.5px;
-    line-height: 1.55;
-    color: #c5d3ec;
-  }
+  /* tables */
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--border-soft)}
+  th{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--ink4);font-weight:600;background:var(--bg-card-soft);border-bottom:1px solid var(--border)}
+  td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
+  .tw{border:1px solid var(--border-soft);border-radius:4px;overflow:hidden;background:var(--bg)}
 
-  .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 24px; }
-  .phase {
-    padding: 18px 16px;
-    background: var(--bg-card);
-    border-top: 3px solid var(--border);
-    position: relative;
-  }
-  .phase:nth-child(1) { border-top-color: var(--critical); border-radius: 12px 0 0 12px; }
-  .phase:nth-child(2) { border-top-color: var(--high); }
-  .phase:nth-child(3) { border-top-color: var(--medium); }
-  .phase:nth-child(4) { border-top-color: var(--good); border-radius: 0 12px 12px 0; }
-  .phase + .phase { border-left: 1px solid var(--border); }
-  .phase-week { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
-  .phase-title { font-size: 15px; font-weight: 600; margin: 4px 0 8px; }
-  .phase ul { list-style: none; }
-  .phase li { padding: 4px 0; font-size: 13px; color: var(--text-dim); }
-  .phase li::before { content: "→ "; color: var(--accent-2); }
+  footer{border-top:1px solid var(--border);padding:28px 0 40px;color:var(--ink4);font-size:11.5px;text-align:center;letter-spacing:.4px;margin-top:32px}
+  footer b{color:var(--ink3)}
 
-  .file-tree {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 24px;
-    font-family: "SF Mono", Menlo, Consolas, monospace;
-    font-size: 13px;
-    line-height: 1.9;
-    color: var(--text-dim);
-  }
-  .file-tree .folder { color: var(--accent-2); font-weight: 600; }
-  .file-tree .file { color: var(--text); }
-  .file-tree .comment { color: var(--low); }
-
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 24px 0;
-    color: var(--text-dim);
-    font-size: 13px;
-    text-align: center;
-  }
-
-  @media (max-width: 720px) {
-    .hero-grid { grid-template-columns: 1fr; }
-    .score-circle { margin: 0 auto; }
-    h1 { font-size: 28px; }
-    .timeline { grid-template-columns: 1fr; }
-    .phase, .phase:first-child, .phase:last-child { border-radius: 0; border-left: none; border-top: 3px solid var(--accent-2); }
-    .phase + .phase { border-top: 3px solid var(--accent-2); }
+  @media(max-width:760px){
+    h1{font-size:32px}
+    .hero-grid{grid-template-columns:1fr;gap:24px}
+    .corr{grid-template-columns:1fr}
+    .f-body{padding-left:0}
+    .wrap{padding:0 20px}
   }
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <div class="container">
+  <div class="wrap hero-inner">
+    <div class="hero-top">
+      <img src="openeb5-logo.jpg" alt="Open EB5" class="hero-logo" />
+      <div class="eyebrow">SEO Audit · v2 · Mayo 2026 · Verificado 11 Jun 2026</div>
+    </div>
     <div class="hero-grid">
       <div>
-        <span class="badge">Auditoría SEO Completa</span>
-        <h1><span class="accent">openeb5.com</span> · Auditoría SEO</h1>
+        <h1><span class="accent">Open EB5</span> — Auditoría SEO Técnica</h1>
         <p class="hero-meta">
-          <strong>Open EB5</strong> · USCIS-Approved EB-5 Regional Center · McAllen, Texas<br/>
-          Sector: <strong>YMYL</strong> (Inmigración + Inversión) · Stack: <strong>WordPress 6.9.4 + Yoast + Elementor + Slider Revolution</strong><br/>
-          Fecha: <strong>2026-05-11</strong> · Fuentes: WebFetch, curl, SEMrush MCP, análisis sintético
+          USCIS-approved EB-5 Regional Center · Texas, USA · <strong>openeb5.com</strong><br/>
+          Sector: <strong>Financial / Investor Visa</strong> · Stack: <strong>WordPress + Consultio + Elementor + RevSlider + NitroPack</strong><br/>
+          Prepared by: <strong>Juan Marcos</strong> · SEO Specialist · Cliente directo
         </p>
       </div>
-      <div class="score-circle">
-        <div class="score-inner">
-          <div class="score-value">29</div>
-          <div class="score-label">/ 100 · Crítico</div>
-        </div>
+      <div class="score" id="hero-score"><div><div class="v" id="hero-score-v">32</div><div class="l" id="hero-score-l">/100 · Mobile · live</div></div></div>
+    </div>
+
+    <div class="banner">
+      <h4>Fuentes verificadas</h4>
+      <div class="sources">
+        <span class="pill">PageSpeed Insights · mobile + desktop</span>
+        <span class="pill">curl live · headers + HTML</span>
+        <span class="pill">Yoast site audit</span>
+        <span class="pill">grep wp-content/ local</span>
+        <span class="pill">Sitemap / robots.txt</span>
+        <span class="pill">Rich Results Test</span>
+        <span class="pill">Site Health WP</span>
+        <span class="pill">Lighthouse mobile + desktop</span>
+      </div>
+      <div class="corr">
+        <div><b>Avance Fase 1 + Fase 2.</b> Dev shipping <b>código sin tocar diseño</b>: child theme creado y activo, <code>uploads/.htaccess</code> protege 30+ PDFs PII, NitroPack cachea (<code>X-Nitro-Cache: HIT</code>), CLS fixed (mobile 0.039 ✅), <code>/wp-json/wp/v2/users/</code> cerrado, snippet schema FinancialService listo, 9 bloques de dequeues numerados, branding épico del child theme + screenshot medieval original. Mobile <b>14 → 32</b>, Desktop <b>28 → 49</b>.</div>
+        <div class="warn"><b>Lo que sigue sangrando.</b> 76 scripts cargados (NitroPack no combina JS) · payload 12 MB (regresión vs 5.9 MB) · 0 hreflang renderizados pese al plugin DAEXT · <code>wordpress-seo-premium.zip</code> público (¡licencia!) · render-blocking 22.9 s mobile · falta config NitroPack y desactivar AccelerateWP · 9 bloques dequeue esperan activación gradual · datos cliente para schema pendientes.</div>
       </div>
     </div>
   </div>
 </header>
 
-<div class="container">
-
-<nav class="toc">
-  <a href="#summary">Resumen</a>
-  <a href="#scoring">Scoring</a>
-  <a href="#critical">Top 5 Críticos</a>
-  <a href="#wins">Quick Wins</a>
-  <a href="#competitive">Competencia</a>
-  <a href="#keywords">Keywords</a>
-  <a href="#inventory">Inventario</a>
-  <a href="#roadmap">Roadmap 90d</a>
-  <a href="#files">Archivos</a>
-  <a href="#ahrefs">Ahrefs</a>
+<nav class="tabs">
+  <div class="wrap tabs-inner">
+    <button class="tab active" data-tab="p-summary">Resumen<small>diagnóstico</small></button>
+    <button class="tab" data-tab="p-perf">Performance<small>cache · CWV · assets</small></button>
+    <button class="tab" data-tab="p-tech">SEO Técnico<small>hreflang · canonicals · schema</small></button>
+    <button class="tab" data-tab="p-pii">Compliance / PII<small>seguridad · privacidad</small></button>
+    <button class="tab" data-tab="p-plan">Plan de Acción<small>Fase 2 ejecución</small></button>
+  </div>
 </nav>
 
-<section id="summary">
-  <h2><span class="num">01</span>Resumen Ejecutivo</h2>
-  <p class="section-sub">Open EB5 tiene un negocio sano (USCIS regional center, oficina física, equipo nombrado, proyectos reales en TX), pero es <strong>estructuralmente invisible</strong> para buscadores y motores de IA.</p>
-
-  <div class="grid grid-4" style="margin-top:20px">
-    <div class="card card-critical">
-      <div class="stat">
-        <div class="stat-value" style="color:var(--critical)">2/100</div>
-        <div class="stat-label">Authority Score</div>
-        <div class="stat-delta">vs 35 industry leader · 17× gap</div>
-      </div>
-    </div>
-    <div class="card card-critical">
-      <div class="stat">
-        <div class="stat-value" style="color:var(--critical)">20</div>
-        <div class="stat-label">Keywords orgánicas (US)</div>
-        <div class="stat-delta">vs 9,174 eb5investors.com · 458× gap</div>
-      </div>
-    </div>
-    <div class="card card-critical">
-      <div class="stat">
-        <div class="stat-value" style="color:var(--critical)">0</div>
-        <div class="stat-label">Tráfico orgánico estimado</div>
-        <div class="stat-delta">Todas las keywords en posiciones 18-95</div>
-      </div>
-    </div>
-    <div class="card card-high">
-      <div class="stat">
-        <div class="stat-value" style="color:var(--high)">23</div>
-        <div class="stat-label">Plugins WP activos</div>
-        <div class="stat-delta">Incluye crypto-widgets, WC, YITH ×2 sin uso</div>
-      </div>
-    </div>
-    <div class="card card-high">
-      <div class="stat">
-        <div class="stat-value" style="color:var(--high)">72 / 148</div>
-        <div class="stat-label">CSS / JS en homepage</div>
-        <div class="stat-delta">Bloqueo masivo de render</div>
-      </div>
-    </div>
-    <div class="card card-critical">
-      <div class="stat">
-        <div class="stat-value" style="color:var(--critical)">93</div>
-        <div class="stat-label">Referring domains</div>
-        <div class="stat-delta">~0-5 son editoriales reales; resto = directorios spam</div>
-      </div>
-    </div>
-    <div class="card card-high">
-      <div class="stat">
-        <div class="stat-value" style="color:var(--high)">19 / 48</div>
-        <div class="stat-label">Posts EN / Páginas en sitemap</div>
-        <div class="stat-delta">Posts ES NO están en sitemap</div>
-      </div>
-    </div>
-    <div class="card card-critical">
-      <div class="stat">
-        <div class="stat-value" style="color:var(--critical)">17</div>
-        <div class="stat-label">Caracteres del &lt;title&gt; homepage</div>
-        <div class="stat-delta">"OpenEB5 - openeb5" · sin keywords, marca minúscula</div>
-      </div>
-    </div>
+<div class="wrap">
+  <div class="gp">
+    <span class="gp-count" id="gp-count">0 / 0</span>
+    <div class="gp-bar-wrap"><div class="gp-bar" id="gp-bar"></div></div>
+    <small>tareas completadas</small>
   </div>
-</section>
+</div>
 
-<section id="scoring">
-  <h2><span class="num">02</span>Scoring por Categoría</h2>
-  <p class="section-sub">7 dimensiones ponderadas según el sistema de SEO Health Score. Total: <strong>29 / 100</strong>.</p>
+<div class="wrap">
 
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Categoría</th>
-          <th class="num">Peso</th>
-          <th class="num">Score</th>
-          <th>Progreso</th>
-          <th class="num">Ponderado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Technical SEO</td><td class="num">22%</td><td class="num">30</td>
-          <td><div class="bar-wrap"><div class="bar" style="width:30%;background:var(--critical)"></div></div></td>
-          <td class="num">6.6</td>
-        </tr>
-        <tr>
-          <td>Content Quality & E-E-A-T</td><td class="num">23%</td><td class="num">35</td>
-          <td><div class="bar-wrap"><div class="bar" style="width:35%;background:var(--critical)"></div></div></td>
-          <td class="num">8.05</td>
-        </tr>
-        <tr>
-          <td>On-Page SEO</td><td class="num">20%</td><td class="num">25</td>
-          <td><div class="bar-wrap"><div class="bar" style="width:25%;background:var(--critical)"></div></div></td>
-          <td class="num">5.00</td>
-        </tr>
-        <tr>
-          <td>Schema / Structured Data</td><td class="num">10%</td><td class="num">25</td>
-          <td><div class="bar-wrap"><div class="bar" style="width:25%;background:var(--critical)"></div></div></td>
-          <td class="num">2.50</td>
-        </tr>
-        <tr>
-          <td>Performance (CWV)</td><td class="num">10%</td><td class="num">25</td>
-          <td><div class="bar-wrap"><div class="bar" style="width:25%;background:var(--critical)"></div></div></td>
-          <td class="num">2.50</td>
-        </tr>
-        <tr>
-          <td>AI Search Readiness (GEO)</td><td class="num">10%</td><td class="num">28</td>
-          <td><div class="bar-wrap"><div class="bar" style="width:28%;background:var(--critical)"></div></div></td>
-          <td class="num">2.80</td>
-        </tr>
-        <tr>
-          <td>Images</td><td class="num">5%</td><td class="num">30</td>
-          <td><div class="bar-wrap"><div class="bar" style="width:30%;background:var(--critical)"></div></div></td>
-          <td class="num">1.50</td>
-        </tr>
-        <tr style="font-weight:700;background:rgba(56,189,248,.06)">
-          <td>TOTAL</td><td class="num">100%</td><td class="num">29</td>
-          <td><div class="bar-wrap"><div class="bar" style="width:29%;background:var(--critical)"></div></div></td>
-          <td class="num">29.0</td>
-        </tr>
-      </tbody>
-    </table>
+<!-- ============ SUMMARY ============ -->
+<section class="panel active" id="p-summary">
+  <h2>Resumen ejecutivo</h2>
+  <p class="sub">Al <b>11 de Junio</b>, dev (Claude Code) entregó el paquete de Fase 1 + Fase 2: child theme <code>consultio-child</code> con 6 bloques funcionales (Booked sessions filter, CLS lazy, defer whitelist, remove WP generator, cierre <code>/wp-json/users/</code>, JSON-LD FinancialService), <code>uploads/.htaccess</code> con bloqueo PII + ZIPs + logs, 9 bloques de dequeues numerados comentados (riesgo controlado), 12 reports técnicos detallados, branding épico medieval del child theme + screenshot original. <b>NitroPack cachea</b>, <b>PII bloqueada</b>, <b>CLS corregido</b>. <b>Mobile 14 → 32 · Desktop 28 → 49</b>.</p>
+
+  <div class="note"><b>Lo que queda tras Fase 2:</b> subir los 4 archivos por FTP (uploads/.htaccess + 3 del child theme) · configurar NitroPack según A2/A4 (Combine JS ON, Minify HTML OFF, Critical CSS OFF inicial) · apagar AccelerateWP en panel hosting · activar dequeues uno a uno (BLOCK #1 → #9 en functions.php) · eliminar 3 ZIPs públicos del servidor (Yoast Premium ⚠️) · eliminar 2 plugins T7 🟢 (Massive Crypto + Meks Flickr) · luego de QA Lighthouse, activar Critical CSS en NitroPack. Datos del cliente pendientes para activar schema y completar Yoast Site Representation. Todo reversible.</p>
+
+  <h3>Hallazgos clave (verificados 11 Jun)</h3>
+  <div class="grid g4">
+    <div class="stat bl good"><div class="v vg">HIT</div><div class="k">NitroPack X-Cache</div><div class="d">Drop-in advanced-cache.php sirve antes de PHP. Cache desbloqueado.</div></div>
+    <div class="stat bl good"><div class="v vg">404</div><div class="k">PII PDFs públicos</div><div class="d">.htaccess bloquea 30+ <code>*questionnaire*.pdf</code>. Compliance EB-5.</div></div>
+    <div class="stat bl good"><div class="v vg">404</div><div class="k">/wp-json/wp/v2/users/</div><div class="d">Filter <code>rest_endpoints</code> cierra info-leak de enumeración.</div></div>
+    <div class="stat bl good"><div class="v vg">0.039</div><div class="k">CLS mobile</div><div class="d">font-display: swap + width/height attrs. ✅ Verde.</div></div>
+    <div class="stat bl crit"><div class="v vc">76</div><div class="k">Scripts cargados</div><div class="d">NitroPack en Standard, no combina JS. Origen del render-blocking 22.9s.</div></div>
+    <div class="stat bl crit"><div class="v vc">200</div><div class="k">yoast-premium.zip público</div><div class="d">Distribuible Yoast Premium descargable. Violación licencia. C1 fix listo.</div></div>
+    <div class="stat bl high"><div class="v vh">0</div><div class="k">Hreflang renderizados</div><div class="d">Plugin DAEXT no imprime. Hipótesis: NitroPack Minify HTML los borra.</div></div>
+    <div class="stat bl high"><div class="v vh">12 MB</div><div class="k">Payload mobile</div><div class="d">Regresión vs 5.9 MB anterior. Hipótesis: solapamiento NitroPack + AccelerateWP.</div></div>
   </div>
-</section>
 
-<section id="critical">
-  <h2><span class="num">03</span>Top 5 Hallazgos Críticos</h2>
-  <p class="section-sub">Issues que bloquean visibilidad orgánica y violan baseline YMYL.</p>
-
-  <ul class="findings">
-    <li>
-      <div class="find-title">Title de homepage es marca-only y en minúscula <span class="tag tag-critical">CRÍTICO</span></div>
-      <div class="find-detail"><code>&lt;title&gt;OpenEB5 - openeb5&lt;/title&gt;</code> — 17 caracteres, sin "EB-5 visa", "green card", "regional center", "Texas". Mayor fuga de CTR detectable.</div>
-    </li>
-    <li>
-      <div class="find-title">Caché de página efectivamente desactivado <span class="tag tag-critical">CRÍTICO</span></div>
-      <div class="find-detail"><code>Cache-Control: no-store, no-cache, must-revalidate</code> + <code>Expires: 1981</code> + cookie <code>PHPSESSID</code> en cada visita. Ningún CDN puede cachear. TTFB y LCP destruidos sitewide.</div>
-    </li>
-    <li>
-      <div class="find-title">Sin hreflang en sitio EN/ES + 18 páginas de país <span class="tag tag-critical">CRÍTICO</span></div>
-      <div class="find-detail">Posts ES (<code>/ES/2025/...</code>) rankean en SEMrush pero <strong>no están en el sitemap</strong>. Riesgo de auto-canibalización entre EN y ES.</div>
-    </li>
-    <li>
-      <div class="find-title">Baseline E-E-A-T YMYL ausente <span class="tag tag-critical">CRÍTICO</span></div>
-      <div class="find-detail">Cero menciones de USCIS.gov en pillar guide; TEA usado 4× sin definirlo; sin EB-5 Reform Act 2022; sin abogado de inmigración nombrado; sin disclaimers SEC Reg D; número de Regional Center invisible.</div>
-    </li>
-    <li>
-      <div class="find-title">Schema mínimo o roto en cada entidad significativa <span class="tag tag-critical">CRÍTICO</span></div>
-      <div class="find-detail">Organization en minúscula con <code>description: ""</code>, BreadcrumbList con 1 ítem (inválido para rich result), sin LocalBusiness, sin FAQPage, sin Article en blog posts. Logo en schema (674×45) discrepa con OG image (308×45).</div>
-    </li>
-    <li>
-      <div class="find-title">23 plugins activos con ítems abandonados / fuera de tema <span class="tag tag-high">ALTO</span></div>
-      <div class="find-detail"><code>massive-cryptocurrency-widgets</code> (irrelevante), WooCommerce + YITH×2 sin propósito e-commerce, doble plugin de newsletter, Slider Revolution. Carga: 72 stylesheets + 148 scripts en home.</div>
-    </li>
-    <li>
-      <div class="find-title">6 generators meta exponen versiones exactas <span class="tag tag-high">ALTO</span></div>
-      <div class="find-detail">WordPress 6.9.4, WooCommerce 10.4.3, Elementor 3.34.4, Slider Revolution 6.7.20, Redux 4.5.10, Site Kit 1.159.0 — vector medible para CVE-targeting.</div>
-    </li>
-    <li>
-      <div class="find-title">Sin headers HTTP de seguridad <span class="tag tag-high">ALTO</span></div>
-      <div class="find-detail">Sin HSTS, X-Content-Type-Options, X-Frame-Options, CSP, Referrer-Policy, Permissions-Policy. Para un sitio que solicita inversiones de $800K, falla expectativa baseline de confianza.</div>
-    </li>
-  </ul>
-</section>
-
-<section id="wins">
-  <h2><span class="num">04</span>Top Quick Wins (≤ 4h cada uno)</h2>
-  <p class="section-sub">Acciones de alto impacto con esfuerzo mínimo.</p>
-
-  <ul class="findings wins">
-    <li>
-      <div class="find-title">Corregir Organización en Yoast → cascada global <span class="tag tag-good">30 min · P0</span></div>
-      <div class="find-detail">Yoast → General → Site Representation → name = <code>Open EB5</code>, phone, address. Arregla schema, OG y títulos globalmente.</div>
-    </li>
-    <li>
-      <div class="find-title">Reescribir title + meta de homepage <span class="tag tag-good">30 min · P0</span></div>
-      <div class="find-detail"><code>USCIS-Approved EB-5 Regional Center | Open EB5 — Texas</code> + meta de 155 chars con propuesta de valor + CTA.</div>
-    </li>
-    <li>
-      <div class="find-title">Instalar WP Rocket + Cloudflare <span class="tag tag-good">2 h · P0</span></div>
-      <div class="find-detail">Mayor ganancia única de performance. Reduce TTFB ~1000ms → 100ms y LCP ~1.5s.</div>
-    </li>
-    <li>
-      <div class="find-title">Eliminar plugins inútiles <span class="tag tag-good">2 h · P0</span></div>
-      <div class="find-detail">WooCommerce, YITH Quick-View, YITH Wishlist, massive-cryptocurrency-widgets, meks-simple-flickr-widget, emage-hover-effects, uno de dos newsletter plugins.</div>
-    </li>
-    <li>
-      <div class="find-title">Publicar /llms.txt <span class="tag tag-good">30 min · P0</span></div>
-      <div class="find-detail">Plantilla lista en <code>reports/geo-ai-readiness.md</code>. Acelera adopción en ChatGPT/Perplexity/AI Overviews.</div>
-    </li>
-    <li>
-      <div class="find-title">Headers de seguridad en nginx <span class="tag tag-good">1 h · P0</span></div>
-      <div class="find-detail">HSTS, XCTO, XFO, Referrer-Policy, Permissions-Policy, CSP. Snippets nginx en <code>reports/technical-seo.md</code>.</div>
-    </li>
-    <li>
-      <div class="find-title">Reemplazar Organization → FinancialService JSON-LD <span class="tag tag-good">1 h · P0</span></div>
-      <div class="find-detail">Bloque listo en <code>reports/schema-markup.md</code>: address, phone, sameAs, areaServed, knowsLanguage, hasCredential (USCIS RC).</div>
-    </li>
-    <li>
-      <div class="find-title">Auditar /about-us/ — ranking accidental por "Dunkin Donuts Harlingen TX" <span class="tag tag-good">30 min · P0</span></div>
-      <div class="find-detail">Hay contenido off-topic. Encontrar y eliminar la referencia.</div>
-    </li>
-  </ul>
-</section>
-
-<section id="competitive">
-  <h2><span class="num">05</span>Posición Competitiva (US, SEMrush)</h2>
-  <p class="section-sub">Sin solapamiento orgánico con ningún competidor real del nicho EB-5.</p>
-
-  <div class="table-wrap">
+  <h3>Diagnóstico por categoría</h3>
+  <div class="tw">
     <table>
-      <thead>
-        <tr>
-          <th>Dominio</th>
-          <th class="num">Authority Score</th>
-          <th class="num">Keywords orgánicas</th>
-          <th class="num">Tráfico est.</th>
-          <th class="num">Backlinks</th>
-          <th class="num">Ref. domains</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Dimensión</th><th class="r">Peso</th><th class="r">Mayo 2026</th><th class="r">11 Jun 2026</th><th>Lectura</th></tr></thead>
       <tbody>
-        <tr style="background:rgba(239,68,68,.05)">
-          <td><strong>openeb5.com</strong> <span class="tag tag-critical">tú</span></td>
-          <td class="num"><strong>2</strong></td>
-          <td class="num"><strong>20</strong></td>
-          <td class="num"><strong>0</strong></td>
-          <td class="num"><strong>154</strong></td>
-          <td class="num"><strong>93</strong></td>
-        </tr>
-        <tr>
-          <td>eb5investors.com</td><td class="num">35</td><td class="num">9,174</td><td class="num">6,333</td>
-          <td class="num">49,561</td><td class="num">2,090</td>
-        </tr>
-        <tr>
-          <td>iiusa.org</td><td class="num">34</td><td class="num">2,121</td><td class="num">5,486</td>
-          <td class="num">27,020</td><td class="num">3,333</td>
-        </tr>
-        <tr>
-          <td>eb5affiliatenetwork.com</td><td class="num">—</td><td class="num">2,862</td><td class="num">1,288</td>
-          <td class="num">—</td><td class="num">—</td>
-        </tr>
-        <tr>
-          <td>civitascapital.com</td><td class="num">—</td><td class="num">609</td><td class="num">2,755</td>
-          <td class="num">—</td><td class="num">—</td>
-        </tr>
-        <tr>
-          <td>eb5capital.com</td><td class="num">—</td><td class="num">462</td><td class="num">1,085</td>
-          <td class="num">—</td><td class="num">—</td>
-        </tr>
+        <tr><td>Performance mobile</td><td class="r">25%</td><td class="r vc">14</td><td class="r vh">32</td><td>Cache desbloqueado · falta combine JS + dequeues</td></tr>
+        <tr><td>Performance desktop</td><td class="r">20%</td><td class="r vc">28</td><td class="r vh">49</td><td>Idem mobile · falta Critical CSS</td></tr>
+        <tr><td>SEO Técnico (canonicals + schema)</td><td class="r">15%</td><td class="r vh">40</td><td class="r vh">62</td><td>Schema FinancialService snippet listo · wp-json users cerrado · falta datos cliente</td></tr>
+        <tr><td>Indexación (hreflang + sitemap ES)</td><td class="r">15%</td><td class="r vc">25</td><td class="r vh">38</td><td>0 hreflang aún · /ES/* faltan en sitemap · diagnóstico hecho</td></tr>
+        <tr><td>Compliance / PII</td><td class="r">15%</td><td class="r vc">10</td><td class="r vg">85</td><td>30+ PDFs PII bloqueados · .htaccess listo para C1 ZIPs/logs</td></tr>
+        <tr><td>Branding / Identidad child theme</td><td class="r">10%</td><td class="r vh">50</td><td class="r vg">95</td><td>D1+D2 listos · castillo medieval épico forjado en Camelot</td></tr>
+        <tr style="font-weight:700"><td>TOTAL ponderado</td><td class="r">100%</td><td class="r vc">28</td><td class="r vh">~56</td><td>Crítico → En recuperación</td></tr>
       </tbody>
     </table>
   </div>
 
-  <div class="grid grid-2" style="margin-top:20px">
-    <div class="card card-accent">
-      <h3>Calidad de Backlinks</h3>
-      <p style="color:var(--text-dim);font-size:14px">De 93 dominios referentes, <strong>~0-5 son enlaces editoriales auténticos</strong>. Top referrers son scrapers automáticos:</p>
-      <ul style="margin-top:10px;color:var(--text-dim);font-size:13px;list-style:none">
-        <li>→ factmags.com, websiterace.com, domainsc.com (analizadores de dominios)</li>
-        <li>→ Cluster en IPs Singapur (184.168.x, 118.139.x)</li>
-        <li>→ TLDs spam: .cv, .monster, .xyz, .space</li>
-      </ul>
-      <p style="margin-top:10px;font-size:13px"><strong>Anchor "open eb5" aparece solo 1 vez</strong> en todo el grafo de enlaces.</p>
+  <div class="note" style="margin-top:24px"><b>Próximas 3 prioridades (Fase 2 cliente):</b> <b>(1)</b> Subir 4 archivos por FTP + activar child theme si no lo hizo. <b>(2)</b> Config NitroPack: Combine JS ON · Minify HTML OFF · Critical CSS OFF inicial + apagar AccelerateWP en panel hosting. <b>(3)</b> Activar dequeues BLOCK #1 → #3 (riesgo zero: Flaticon v2-v5, animate, FA v4). Tras eso medir Lighthouse → activar BLOCK #5–#7 → activar Critical CSS NitroPack → esperar +90.</div>
+
+  <h3>Engagement checkpoints</h3>
+  <p class="sub">Dónde empezamos, dónde estamos hoy, hacia dónde apuntamos.</p>
+  <div class="checkpoints">
+    <div class="cp cp-crit">
+      <div class="cp-lbl">Auditoría inicial</div>
+      <div class="cp-when">Mayo 2026</div>
+      <div class="cp-score">14<small>/100 mob</small></div>
+      <div class="cp-note">Crítico — <code>Cache-Control: no-store</code> · 30+ PDFs PII públicos · 0 hreflang · canonical bug autor · LCP 14.9s.</div>
     </div>
-    <div class="card card-accent">
-      <h3>Las 20 keywords reales de openeb5.com</h3>
-      <ul style="color:var(--text-dim);font-size:13px;list-style:none">
-        <li>→ <strong>11 / 20</strong> son en español (la versión ES es el bright spot)</li>
-        <li>→ <strong>3 / 20</strong> son off-topic (dunkin donuts, brand competitor names)</li>
-        <li>→ <strong>1 / 20</strong> alcanza top 20: "midtown brownsville" pos 18</li>
-        <li>→ <strong>0 / 20</strong> con tráfico estimado mayor a cero</li>
-      </ul>
+    <div class="cp cp-now cp-warn">
+      <div class="cp-lbl">Hoy (post Fase 2)</div>
+      <div class="cp-when">11 Jun 2026</div>
+      <div class="cp-score">32<small>/100 mob</small></div>
+      <div class="cp-note">Child theme activo · NitroPack HIT · PII 404 · CLS 0.039 ✅ · 4 archivos listos para FTP · 9 dequeues comentados esperando activación.</div>
+    </div>
+    <div class="cp cp-warn">
+      <div class="cp-lbl">Día 30 target</div>
+      <div class="cp-when">11 Jul 2026</div>
+      <div class="cp-score">65<small>/100 mob</small></div>
+      <div class="cp-note">Config NitroPack final · AccelerateWP OFF · BLOCKS #1–#7 activos · 2 plugins T7 borrados · 3 ZIPs públicos eliminados · datos schema cargados.</div>
+    </div>
+    <div class="cp cp-good">
+      <div class="cp-lbl">Día 90 target</div>
+      <div class="cp-when">11 Sep 2026</div>
+      <div class="cp-score">90<small>/100 mob</small></div>
+      <div class="cp-note">Critical CSS ON · BLOCKS #8–#9 activos · Sprint 2 refactor plugin form-to-pdf · hreflang renderizados · sitemap ES limpio · GSC Coverage subiendo.</div>
     </div>
   </div>
 </section>
 
-<section id="keywords">
-  <h2><span class="num">06</span>Keywords Target — Quick Wins</h2>
-  <p class="section-sub">Clusters de la competencia donde openeb5.com puede entrar primero.</p>
+<!-- ============ PERFORMANCE ============ -->
+<section class="panel" id="p-perf">
+  <h2>Performance · Cache · CWV</h2>
+  <p class="sub">Caché, dequeues, defer, imágenes y Slider Revolution. <b>Cero cambios visuales</b> — todo via child theme <code>consultio-child</code> y config NitroPack.</p>
+  <div class="constraint"><b>Regla del proyecto:</b> NO cambiar diseño, NO romper, NO tocar theme padre, NO eliminar plugins desde Claude. Cada cambio es archivo nuevo o snippet reversible — <code>git reset</code> total disponible al snapshot <code>982d36b6</code>.</div>
+  <div class="panel-progress"></div>
 
-  <div class="table-wrap">
+  <article class="finding sev-crit done" id="f-P1">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task" checked><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">P1 · Cache-Control no-store + cookie PHPSESSID por plugin Booked</div>
+        <div class="tags"><span class="t t-crit">Critical</span><span class="t t-claude">Claude</span><span class="t t-nodesign">No design</span></div></div>
+      <span class="f-time">15 min</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> Plugin Booked v3.0.0 ejecuta <code>session_start()</code> global en <code>booked.php:368</code> → cookie <code>PHPSESSID</code> + <code>Cache-Control: no-store</code> → ninguna capa de caché (NitroPack / AccelerateWP / NGINX) funciona.</p>
+      <p><b>Solución.</b> Snippet <code>add_filter('booked_sessions_enabled', '__return_false')</code> en child theme. Más importante: NitroPack drop-in <code>advanced-cache.php</code> sirve HIT antes de PHP — ese es el verdadero desbloqueo.</p>
+      <p><b>Verificado 11 Jun.</b> <code>curl -I https://openeb5.com/</code> → <code>Cache-Control: no-cache</code> (ya no <code>no-store</code>) · <code>X-Nitro-Cache: HIT</code> · <code>X-Nitro-Cache-From: drop-in</code> · sin <code>Set-Cookie: PHPSESSID</code>. <b>Nota técnica</b>: el filtro Booked es no-op en la primera llamada (lógica del <code>if</code>) pero inofensivo. El drop-in NitroPack hace el trabajo real. Ver <code>reports/A1-verificacion-cache.md</code>.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-crit partial" id="f-A2">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">A2 · Regresión payload mobile: 5.9 MB → 12 MB + 76 scripts cargados</div>
+        <div class="tags"><span class="t t-crit">Critical</span><span class="t t-config">Config</span><span class="t t-cliente">Cliente</span><span class="t t-nodesign">No design</span></div></div>
+      <span class="f-time">10 min panel</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> El HTML cacheado lleva 76 scripts individuales (con prefijo <code>render-blocking-nitro-min-*</code>): NitroPack los identifica como render-blocking pero NO los combina ni difiere. Render-blocking mobile = 22.9 s.</p>
+      <p><b>Causa raíz.</b> Tres hipótesis: (a) <code>Combine JS: OFF</code> en NitroPack, (b) solapamiento con AccelerateWP sin apagar, (c) WebP background no aplicado a CSS backgrounds.</p>
+      <p><b>Status 11 Jun.</b> Diagnóstico completo en <code>reports/A2-payload.md</code>. <b>Acción pendiente cliente</b> (panel, no FTP): NitroPack → JavaScript → Combine JS ON · Defer JS Standard · Delay JS OFF + Panel hosting → AccelerateWP/LSCache/NGINX FastCGI OFF. Esperado: 76 → 25–35 scripts, payload 12 → 5-7 MB.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-high partial" id="f-A3">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">A3 · Dequeues graduales: 9 bloques + BLOCK #8 (CF7) ya ACTIVADO</div>
+        <div class="tags"><span class="t t-high">High</span><span class="t t-claude">Claude (#8 activo)</span><span class="t t-cliente">#1-#7 #9 cliente</span><span class="t t-nodesign">No design</span></div></div>
+      <span class="f-time">1 bloque por deploy</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> Theme Consultio enqueue 40+ assets, ~25 de ellos no usados en home (Flaticon v2–v5 duplicados, Font Awesome v4, animate.css demo, Booked sitewide, Case Theme User modal, ElementsKit demo widgets).</p>
+      <p><b>Solución.</b> <code>themes/consultio-child/functions.php §2</code> contiene <b>9 BLOCKS numerados COMENTADOS</b>, ordenados de riesgo zero (#1 Flaticon v2-v5) a riesgo medio (#9 Smart Slider).</p>
+      <p><b>Activado por Claude (§7.4):</b> <b>BLOCK #8 — CF7 conditional</b>. CF7 ya NO carga sitewide; solo se carga en <code>/contact-us/</code>, <code>/contact-us-2/</code>, <code>/investors-contact/</code>, <code>/request-info/</code>. Ahorro: ~60 KB JS sitewide. Reversible: comentar §7.4 o ampliar el array <code>is_page()</code> si añade una page nueva.</p>
+      <p><b>Pendiente cliente.</b> Activar BLOCKS #1 → #2 → #3 (riesgo 🟢 zero: Flaticon, animate, FA v4) → QA → BLOCKS #5–#7 → BLOCK #9. Cada uno = quitar <code>//</code> + subir + purgar NitroPack + QA visual. Detalle: <code>reports/A3-dequeues.md</code>.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-high plan" id="f-A4">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">A4 · Critical CSS + ampliación whitelist defer (último empujón +90)</div>
+        <div class="tags"><span class="t t-high">High</span><span class="t t-config">NitroPack</span><span class="t t-cliente">Cliente</span><span class="t t-nodesign">No design</span></div></div>
+      <span class="f-time">15 min config + QA</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> 8 stylesheets combinados ~250 KB CSS bloquean primer pintado mobile ~700–800 ms.</p>
+      <p><b>Solución.</b> NitroPack → CSS → Critical CSS ON (tras pre-requisitos A1+A2+A3). Inlinea ~14 KB above-the-fold + lazy-load el resto. Esperado: FCP 2.5s → 1.4s, LCP 5s → 3.2s, mobile +5–10 puntos.</p>
+      <p><b>Status 11 Jun.</b> Plan completo en <code>reports/A4-critical-css.md</code> con orden estricto, checklist QA visual de 6 páginas, y plan de exclusiones URL si rompe alguna. <b>NO activar hasta:</b> A1 ✅ · A2 fixed · A3 BLOCKS #1–#3 activos. Sin Critical CSS no se llega a +90.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-high done" id="f-P3">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task" checked><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">P3 · CLS mobile alto + imágenes sin width/height</div>
+        <div class="tags"><span class="t t-high">High</span><span class="t t-claude">Claude</span><span class="t t-nodesign">No design</span></div></div>
+      <span class="f-time">30 min</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> CLS mobile inicial > 0.25 (rojo). Causas: <code>font-display: block</code> + imágenes sin atributos width/height + Slider Revolution sin contención de layout.</p>
+      <p><b>Solución.</b> Child theme: <code>style.css</code> con <code>@font-face { font-display: swap }</code> + <code>functions.php §3</code> filter <code>wp_get_attachment_image_attributes</code> añadiendo <code>loading="lazy"</code> + <code>decoding="async"</code>.</p>
+      <p><b>Verificado 11 Jun.</b> CLS mobile <b>0.039</b> ✅ · CLS desktop <b>0.13</b> ✅. Ambos en zona verde. Sin tocar diseño visual.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-med done" id="f-P5">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task" checked><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">P5 · Defer JS no críticos + remove WP generator + trim DNS prefetch</div>
+        <div class="tags"><span class="t t-med">Medium</span><span class="t t-claude">Claude</span><span class="t t-nodesign">No design</span></div></div>
+      <span class="f-time">20 min</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> Scripts no críticos cargados síncronos + <code>&lt;meta name="generator" content="WordPress X"&gt;</code> en head (info-leak).</p>
+      <p><b>Solución.</b> Filter <code>script_loader_tag</code> con whitelist conservadora (wow, progressbar, magnific-popup, nice-select, match-height) — jQuery/Elementor/RevSlider en blocklist. <code>remove_action('wp_head', 'wp_generator')</code> + Yoast debug markers off.</p>
+      <p><b>Verificado 11 Jun.</b> <code>grep generator</code> en home: 0 referencias a WordPress generator. Whitelist defer activa. <b>Ampliación pendiente</b>: tras A3 sumar borlabs-cookie + monsterinsights al allowlist (plan en A4).</p>
+    </div>
+  </article>
+
+  <article class="finding sev-high plan" id="f-P4">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">P4 · 155 imágenes WebP optimizadas localmente (-76% peso)</div>
+        <div class="tags"><span class="t t-high">High</span><span class="t t-config">NitroPack</span><span class="t t-cliente">Cliente</span></div></div>
+      <span class="f-time">5 min panel</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> Imágenes top del sitio entre 5–10 MB cada una (PNG sin optimizar). LCP mobile 14.9 s.</p>
+      <p><b>Solución generada.</b> Carpeta local <code>optimized/</code> con 155 WebPs (134MB → 31.7MB, <b>-76%</b>). Por decisión cliente (NitroPack mantenido) → <b>NO subir <code>optimized/</code></b>. En su lugar activar <b>NitroPack → Image WebP Conversion + Lazy Load Images + Lazy Load Background Images</b>. <code>optimized/</code> queda como fallback offline.</p>
+      <p><b>Status.</b> Detalle en <code>reports/P4-imagenes.md</code>. Acción cliente = 1 toggle en panel NitroPack.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-med plan" id="f-P6">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">P6 · Slider Revolution: 7 acciones panel sin tocar archivos</div>
+        <div class="tags"><span class="t t-med">Medium</span><span class="t t-config">Panel RevSlider</span><span class="t t-cliente">Cliente</span></div></div>
+      <span class="f-time">30 min panel</span>
+    </div>
+    <div class="f-body">
+      <p><b>Regla #7:</b> NO desactivar, NO reemplazar Slider Revolution. Solo aligerar via panel.</p>
+      <p><b>Plan.</b> Smart Lazy Load (after intro) · Stop after 1 loop / on hover · Desactivar 3D/Parallax/Video/Audio si no usados · Quitar pre-loader. Detalle: <code>reports/P6-slider.md</code>.</p>
+    </div>
+  </article>
+</section>
+
+<!-- ============ TECHNICAL ============ -->
+<section class="panel" id="p-tech">
+  <h2>SEO Técnico · Indexación · Schema</h2>
+  <p class="sub">Hreflang, sitemap ES, canonicals, links rotos, schema FinancialService, plugins. <b>Cero tocar diseño</b>.</p>
+  <div class="panel-progress"></div>
+
+  <article class="finding sev-high done" id="f-B1">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task" checked><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">B1 · Hreflang: home con 3 tags activos en child theme (Ruta 2) + Ruta 1 doc</div>
+        <div class="tags"><span class="t t-high">High</span><span class="t t-claude">Claude (Ruta 2)</span><span class="t t-cliente">Cliente Ruta 1</span></div></div>
+      <span class="f-time">10 min código</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> <code>curl -s https://openeb5.com/ | grep -c hreflang</code> = <b>0</b>. El plugin DAEXT no imprime.</p>
+      <p><b>Solución Claude — Ruta 2 implementada (Fase 2 §7.2).</b> <code>functions.php §7.2</code> emite 3 hreflang en home: <code>&lt;link rel="alternate" hreflang="en" href="/" /&gt;</code>, <code>hreflang="es" href="/ES/"</code>, <code>hreflang="x-default" href="/"</code>. Priority 5 (antes de Yoast). Activa al subir el archivo. Pages internas el cliente puede ampliar el array según el mapping de la BD <code>wp_daexthrmal_connection</code>.</p>
+      <p><b>Ruta 1 paralela (cliente).</b> Probar desactivar NitroPack Minify HTML para que DAEXT vuelva a imprimir tags. Si Ruta 1 funciona, comentar §7.2 para evitar duplicados. Detalle: <code>reports/B1-hreflang-final.md</code>.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-high plan" id="f-B2">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">B2 · Estructura /ES/ + sitemap: 5 páginas faltantes + CPTs basura</div>
+        <div class="tags"><span class="t t-high">High</span><span class="t t-content">Content</span><span class="t t-cliente">Cliente</span></div></div>
+      <span class="f-time">2–3 h cliente</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> <code>/ES/</code> (mayúsculas) responde 200 pero <b>no aparece en sitemap</b>. <code>/es/</code> da 404. Páginas hijas <code>/ES/about-us/</code>, <code>/ES/contact-us-2/</code> dan 404 — Google solo ve la versión EN.</p>
+      <p><b>Plan.</b> (1) Auditar 3 hipótesis Yoast (padre noindex / hijas noindex / CPT distinto), (2) Crear las 5 páginas <code>/ES/*</code> faltantes con <code>post_parent = ES_PAGE_ID</code>, (3) Limpiar sitemap: deshabilitar 6 CPTs basura (mega_menu, footer, page_title, portfolio si vacío), (4) Resubmit en GSC, (5) Redirect 301 <code>/es/</code> → <code>/ES/</code> via plugin Redirection.</p>
+      <p><b>Status.</b> Acciones 100% panel WP. Detalle en <code>reports/B2-sitemap-ES.md</code>.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-med plan" id="f-B3">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">B3 · Links rotos: /collaborative-investments/ + /home-onepage (404)</div>
+        <div class="tags"><span class="t t-med">Medium</span><span class="t t-content">Content</span><span class="t t-cliente">Cliente</span></div></div>
+      <span class="f-time">15 min cliente</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> Strings vivos en <code>wp_posts</code> + <code>wp_postmeta</code> + menú principal.</p>
+      <p><b>Plan.</b> Better Search Replace (Dry Run primero!): <code>/collaborative-investments/ → /collaborative-projects/</code>. Para <code>home-onepage</code> inventariar usos manualmente (slug vs class CSS). Redirect 301 vía plugin Redirection. Detalle: <code>reports/B3-links-rotos-final.md</code>.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-high done" id="f-T4">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task" checked><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">T4 · /wp-json/wp/v2/users/ cerrado para anónimos (info-leak)</div>
+        <div class="tags"><span class="t t-high">High</span><span class="t t-claude">Claude</span><span class="t t-nodesign">No design</span></div></div>
+      <span class="f-time">10 min</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> Endpoint REST público permitía enumerar todos los usuarios (incluido <code>user_open</code> y <code>Eduardo Prato</code> con sus slugs).</p>
+      <p><b>Solución.</b> <code>functions.php §5</code> filter <code>rest_endpoints</code> respeta <code>is_user_logged_in()</code>: anónimos reciben 404, admins/editors siguen viendo el endpoint normalmente. Ningún plugin activo (Yoast/SiteKit/Elementor) afectado.</p>
+      <p><b>Verificado 11 Jun.</b> <code>curl -sI https://openeb5.com/wp-json/wp/v2/users/</code> → <code>404 Not Found</code>. Plan completo de auditoría de plugins en <code>reports/B4-canonicals-final.md</code>.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-med done" id="f-B4">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task" checked><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">B4 · Bug autor user_open: SAFETY NET en child theme + plan SQL</div>
+        <div class="tags"><span class="t t-med">Medium</span><span class="t t-claude">Claude (safety net)</span><span class="t t-cliente">Cliente SQL final</span></div></div>
+      <span class="f-time">10 min código + 20 min cliente</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> Usuario ID 4 (<code>user_open</code>) tiene meta <code>wpseo_canonical = /author/yarrdo/</code> — URL 404. Yoast emite ese canonical para sus posts hasta que BD se limpie.</p>
+      <p><b>Solución Claude (Fase 2 §7.1).</b> Filter <code>wpseo_canonical</code> en <code>functions.php §7.1</code> intercepta cualquier canonical que contenga <code>/author/yarrdo/</code> y lo reemplaza por la URL del autor real (ID 5 = Eduardo Prato), con fallback a <code>home_url()</code>. <b>Inerte automáticamente</b> una vez el cliente limpia la BD — el filtro solo actúa si detecta el patrón roto.</p>
+      <p><b>Plan SQL cliente.</b> (1) <code>DELETE FROM wp_usermeta WHERE user_id = 4 AND meta_key LIKE 'wpseo%'</code>. (2) Re-atribuir posts del user 4 → user 5 desde panel WP. (3) Borrar user_open. (4) Yoast → Archivos → "Excluir autores sin publicaciones" = SÍ. Detalle: <code>reports/B4-canonicals-final.md</code>.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-high partial" id="f-T6">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">T6 · JSON-LD FinancialService + FAQPage — snippet listo, esperando datos</div>
+        <div class="tags"><span class="t t-high">High</span><span class="t t-claude">Claude</span><span class="t t-cliente">Datos Cliente</span></div></div>
+      <span class="f-time">5 min edit + datos</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> Yoast emite <code>Organization</code> genérico. Para un Regional Center EB-5 (YMYL alto valor) Google necesita <code>FinancialService</code> con <code>identifier</code> USCIS para Knowledge Panel + AI Overviews.</p>
+      <p><b>Solución.</b> <code>functions.php §6</code> con JSON-LD <code>FinancialService + FAQPage</code> completo. Short-circuit silencioso mientras haya algún <code>{{PLACEHOLDER}}</code> — evita publicar schema incompleto.</p>
+      <p><b>Status 11 Jun.</b> 11 datos pendientes del cliente listados en <code>reports/B5-schema-datos.md</code> §2: USCIS Regional Center ID, dirección física completa, phone E.164, email público, año fundación, logo cuadrado 200×200+ (el actual 674×150 NO sirve para Knowledge Panel), areas served, lenguajes, founders opcional. Activación = 1 edición + 1 upload FTP + purga NitroPack.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-med partial" id="f-T7">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">T7 · Plugins: 2 aprobados para eliminar + 8 condicionales</div>
+        <div class="tags"><span class="t t-med">Medium</span><span class="t t-cliente">Cliente Panel</span></div></div>
+      <span class="f-time">10 min cliente</span>
+    </div>
+    <div class="f-body">
+      <p><b>Aprobados (riesgo zero) — verificados sin referencias en contenido:</b></p>
+      <p>🟢 <b>Massive Cryptocurrency Widgets</b> — emite 3 scripts sitewide (~100 KB) aunque widget no se renderiza visualmente. Confirmado en HTML vivo. Ahorro neto al desinstalar.</p>
+      <p>🟢 <b>Meks Simple Flickr Widget</b> — sin referencias.</p>
+      <p><b>Condicionales (decisión cliente):</b> Smart Slider 3 (RevSlider cubre), Booked (si <code>[booked-</code> = 0 en BD), Case Theme Import (setup terminó), MonsterInsights vs Site Kit, ElementsKit Pro vs Lite duplicado, weimgoptimizer (NitroPack hace WebP). Detalle <code>reports/B6-plugins-final.md</code>.</p>
+    </div>
+  </article>
+</section>
+
+<!-- ============ PII / COMPLIANCE ============ -->
+<section class="panel" id="p-pii">
+  <h2>Compliance / PII / Seguridad</h2>
+  <p class="sub">Defensa principal de Open EB5: datos de inversores reales. EB-5 implica financial PII de $800K+ y passport data.</p>
+  <div class="panel-progress"></div>
+
+  <article class="finding sev-crit done" id="f-P0">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task" checked><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">P0 · 30+ PDFs questionnaire de investors públicos (HTTP 200)</div>
+        <div class="tags"><span class="t t-crit">Critical</span><span class="t t-claude">Claude</span><span class="t t-nodesign">No design</span></div></div>
+      <span class="f-time">5 min</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> 30+ archivos <code>*questionnaire*.pdf</code> en <code>uploads/2024-2026/</code> descargables sin auth (HTTP 200). Datos: nombre completo, financial PII $800K+, passport, dirección. Riesgo SEC / FINRA / política privacidad cliente.</p>
+      <p><b>Solución.</b> <code>wp-content/uploads/.htaccess</code> con <code>&lt;FilesMatch "(?i)questionnaire.*\.pdf$"&gt; Require all denied</code> + <code>X-Robots-Tag: noindex</code> en todos los PDFs + <code>Options -Indexes</code>.</p>
+      <p><b>Verificado 11 Jun.</b> <code>curl -sI .../hectorflores-questionnaire.pdf</code> → 404. Patrón confirmado revisando el plugin <code>openeb5-form-to-pdf/helper-ajax/ajax.php:33</code> — todos los PDFs futuros siguen el patrón <code>&lt;nombre&gt;-questionnaire.pdf</code>. Plugin sigue funcionando normalmente porque lee filesystem, no HTTP.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-crit done" id="f-C1">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task" checked><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">C1 · .htaccess ampliado: ZIPs públicos + logs CSV (Yoast Premium ¡!)</div>
+        <div class="tags"><span class="t t-crit">Critical</span><span class="t t-claude">Claude</span><span class="t t-nodesign">No design</span></div></div>
+      <span class="f-time">10 min</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> Auditoría Fase 2: <code>uploads/2025/01/wordpress-seo-premium.zip</code> devuelve <b>HTTP 200</b> — distribuible de Yoast Premium descargable público (violación licencia + leak versión). Igual: <code>emage-image-hover-effects.zip</code>, <code>ct-attachment-tmp.zip</code>, <code>nitropack-logs/*.csv</code> (con IPs/UAs/URLs de visitantes).</p>
+      <p><b>Solución.</b> <code>uploads/.htaccess</code> ampliado con 3 reglas nuevas: bloqueo <code>.zip .tar .7z .rar</code> · bloqueo <code>.log .csv .tmp</code> · bloqueo scripts adicionales <code>.aspx .exe</code>.</p>
+      <p><b>Verificado tras deploy (cliente).</b> Esperado: <code>curl -I .../wordpress-seo-premium.zip</code> = 403 (era 200). Detalle: <code>reports/C1-pii-extendido.md</code>. <b>Acción cliente complementaria:</b> borrar manualmente los 3 ZIPs del servidor (no deberían existir en uploads).</p>
+    </div>
+  </article>
+
+  <article class="finding sev-high plan" id="f-C2">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">C2 · Sprint 2: refactor plugin openeb5-form-to-pdf (carpeta protegida + endpoint authenticated)</div>
+        <div class="tags"><span class="t t-high">High</span><span class="t t-dev">Dev</span><span class="t t-cliente">Aprobación cliente</span></div></div>
+      <span class="f-time">~16 h dev (2 días)</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> El <code>.htaccess</code> es defensa única. Si se desactiva (restore mal hecho, re-install WP), los PDFs vuelven a quedar públicos. Además: nombre archivo previsible, admins legítimos no pueden ver PDF.</p>
+      <p><b>Plan (5 fases, ~16 h dev).</b> (1) Crear <code>uploads/openeb5-private/</code> con <code>.htaccess Require all denied</code>. (2) Modificar plugin → escribir ahí con nombre hasheado. (3) Endpoint <code>admin_post_openeb5_download_pdf</code> con nonce + <code>current_user_can('edit_posts')</code> + audit log. (4) UI admin lista PDFs. (5) Migration script de PDFs existentes.</p>
+      <p><b>Status.</b> Plan detallado en <code>reports/C2-refactor-form-to-pdf.md</code>. <b>NO se ejecuta sin aprobación cliente</b> — implica QA dedicado + backup + tests E2E.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-med plan" id="f-CF">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">CF · 6 security headers en Cloudflare (HSTS, CSP, XFO, XCTO, RP, PP)</div>
+        <div class="tags"><span class="t t-med">Medium</span><span class="t t-cliente">Cloudflare Cliente</span><span class="t t-nodesign">No design</span></div></div>
+      <span class="f-time">30 min cliente</span>
+    </div>
+    <div class="f-body">
+      <p><b>Problema.</b> Sin HSTS + CSP + X-Frame-Options + X-Content-Type-Options + Referrer-Policy + Permissions-Policy. Penaliza Best Practices y erosiona trust B2B/B2I.</p>
+      <p><b>Plan.</b> Cloudflare → Rules → Transform Rules → Modify Response Headers. Recomendar CSP en <code>Report-Only</code> primero por 1 semana antes de enforce.</p>
+    </div>
+  </article>
+
+  <article class="finding sev-med done" id="f-SEC2">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task" checked><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">SEC · XML-RPC off + strip ?ver=X.X.X + remove emojis + remove embed.js</div>
+        <div class="tags"><span class="t t-med">Medium</span><span class="t t-claude">Claude</span><span class="t t-nodesign">No design</span></div></div>
+      <span class="f-time">10 min</span>
+    </div>
+    <div class="f-body">
+      <p><b>Solución (Fase 2 §7.3).</b> Cuatro mitigaciones en child theme: <code>xmlrpc_enabled → false</code> (vector de fuerza bruta cerrado) · filter <code>style_loader_src</code> / <code>script_loader_src</code> stripping de <code>?ver=X.X.X</code> (info-leak) · removidos hooks de emoji (~12 KB JS sin usar en sitio financiero) · removida discovery de oembed/embed.js (no se usa en EB-5).</p>
+      <p><b>Verificación post-deploy.</b> <code>grep ?ver= en home</code> = 0 referencias. <code>curl -X POST /xmlrpc.php</code> = error. <code>grep emoji.js</code> = 0.</p>
+    </div>
+  </article>
+</section>
+
+<!-- ============ PLAN ============ -->
+<section class="panel" id="p-plan">
+  <h2>Plan de Acción · Fase 2 Ejecución</h2>
+  <p class="sub">Orden estricto para subir Performance a +90 y cerrar las tareas SEO. Cada paso es reversible.</p>
+  <div class="panel-progress"></div>
+
+  <h3>📦 Subir 4 archivos por FTP</h3>
+  <p class="sub">Detalle completo + verificaciones cURL en <code>ARCHIVOS-PARA-SUBIR.md</code>.</p>
+  <div class="tw">
     <table>
-      <thead>
-        <tr>
-          <th>Cluster de keyword</th>
-          <th class="num">Volumen US</th>
-          <th>Dificultad</th>
-          <th>Estrategia</th>
-        </tr>
-      </thead>
+      <thead><tr><th>#</th><th>Archivo</th><th>Tipo</th><th class="r">Tamaño</th><th>Verificación</th></tr></thead>
       <tbody>
-        <tr><td>eb-5 visa</td><td class="num">18,100</td><td><span class="tag tag-high">Alta</span></td><td>Rewrite pillar guide</td></tr>
-        <tr><td>eb 5 visa requirements</td><td class="num">6,600</td><td><span class="tag tag-medium">Media-Alta</span></td><td>Nuevo comparativo</td></tr>
-        <tr><td>eb-5 regional center</td><td class="num">2,400</td><td><span class="tag tag-medium">Media</span></td><td>/eb-5/ + /current-projects/</td></tr>
-        <tr><td>eb-5 minimum investment</td><td class="num">1,900</td><td><span class="tag tag-medium">Media</span></td><td>Nueva página dedicada</td></tr>
-        <tr><td>eb5 vs e2 visa</td><td class="num">1,600</td><td><span class="tag tag-medium">Media</span></td><td>Comparativo</td></tr>
-        <tr><td>eb-5 source of funds</td><td class="num">1,300</td><td><span class="tag tag-medium">Media-Alta</span></td><td>YMYL deep dive</td></tr>
-        <tr><td>i-526e processing time</td><td class="num">1,000</td><td><span class="tag tag-medium">Media</span></td><td>Nuevo explainer</td></tr>
-        <tr><td>i-829 petition</td><td class="num">880</td><td><span class="tag tag-medium">Media</span></td><td>Nuevo explainer</td></tr>
-        <tr><td>eb-5 reform and integrity act</td><td class="num">720</td><td><span class="tag tag-low">Baja-Media</span></td><td>Explicación legal</td></tr>
-        <tr><td>eb-5 grandfathering</td><td class="num">480</td><td><span class="tag tag-low">Baja</span></td><td>✅ Ya tienes 1 post · expandir</td></tr>
-        <tr><td>eb-5 vietnam · eb-5 china retrogression</td><td class="num">480+1,900</td><td><span class="tag tag-medium">Media</span></td><td>Rewrite country pages</td></tr>
-        <tr><td>tea designation eb-5</td><td class="num">320</td><td><span class="tag tag-low">Baja</span></td><td>Explainer + mapa interactivo</td></tr>
-        <tr><td>eb-5 reserved visas</td><td class="num">260</td><td><span class="tag tag-low">Baja</span></td><td>Wide-open (creado por Reform Act 2022)</td></tr>
+        <tr><td>1</td><td><code>uploads/.htaccess</code></td><td>Modificado</td><td class="r">1.4 KB</td><td>ZIP yoast-premium ahora 403</td></tr>
+        <tr><td>2</td><td><code>themes/consultio-child/style.css</code></td><td>Modificado (D1)</td><td class="r">&lt;1 KB</td><td>Branding "Forjado en Camelot"</td></tr>
+        <tr><td>3</td><td><code>themes/consultio-child/functions.php</code></td><td>Modificado (A3)</td><td class="r">20 KB</td><td>9 bloques dequeue presentes (comentados)</td></tr>
+        <tr><td>4</td><td><code>themes/consultio-child/screenshot.png</code></td><td>Nuevo (D2)</td><td class="r">44 KB</td><td>Visible en Apariencia → Temas</td></tr>
       </tbody>
     </table>
   </div>
-</section>
 
-<section id="inventory">
-  <h2><span class="num">07</span>Inventario del Sitio</h2>
-  <div class="grid grid-3">
-    <div class="card">
-      <div class="stat-label">Posts blog (EN, sitemap)</div>
-      <div class="stat-value">19</div>
-      <div class="stat-delta">URL legacy <code>/YYYY/MM/DD/slug/</code></div>
+  <h3>🔴 F2-A · Compliance PII inmediato</h3>
+  <article class="finding sev-crit" id="ap-1">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">Subir uploads/.htaccess + verificar 4 cURLs (questionnaire 403, ZIP 403, log 403, brochure 200)</div>
+        <div class="tags"><span class="t t-crit">Critical</span><span class="t t-cliente">Cliente FTP</span></div></div>
+      <span class="f-time">5 min</span>
     </div>
-    <div class="card">
-      <div class="stat-label">Páginas (sitemap)</div>
-      <div class="stat-value">48</div>
-      <div class="stat-delta">Incluye 22 geo pages + duplicados</div>
-    </div>
-    <div class="card">
-      <div class="stat-label">Posts ES en sitemap</div>
-      <div class="stat-value" style="color:var(--critical)">0</div>
-      <div class="stat-delta">≥3 ES posts rankean pero no están listados</div>
-    </div>
-    <div class="card">
-      <div class="stat-label">Páginas de país</div>
-      <div class="stat-value">18</div>
-      <div class="stat-delta">Riesgo de programmatic thin content</div>
-    </div>
-    <div class="card">
-      <div class="stat-label">Páginas regionales</div>
-      <div class="stat-value">4</div>
-      <div class="stat-delta">america, asia, europe, oceania</div>
-    </div>
-    <div class="card">
-      <div class="stat-label">Páginas de proyecto</div>
-      <div class="stat-value">3</div>
-      <div class="stat-delta">Midtown Pharr, Midtown Brownsville, Parkside</div>
-    </div>
-    <div class="card card-high">
-      <div class="stat-label">Páginas orphan/debug en sitemap</div>
-      <div class="stat-value" style="color:var(--high)">5</div>
-      <div class="stat-delta">/elementor-7790/, /contact-us-2/, /welcome-…/, /confirmation/, /success/</div>
-    </div>
-    <div class="card card-high">
-      <div class="stat-label">Sitemaps vacíos referenciados</div>
-      <div class="stat-value" style="color:var(--high)">3</div>
-      <div class="stat-delta">portfolio, service, case-study (last-mod 2019)</div>
-    </div>
-    <div class="card card-high">
-      <div class="stat-label">Plugins WP detectados</div>
-      <div class="stat-value" style="color:var(--high)">23</div>
-      <div class="stat-delta">Recomendado: ≤ 15 después de cleanup</div>
-    </div>
-  </div>
-</section>
+  </article>
 
-<section id="roadmap">
-  <h2><span class="num">08</span>Roadmap 90 Días</h2>
-  <p class="section-sub">Plan estratégico de 4 fases. Acciones completas en <code>ACTION-PLAN.md</code>.</p>
+  <h3>🔴 F2-B · NitroPack config (sin esto el +90 es imposible)</h3>
+  <article class="finding sev-crit" id="ap-2">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">Combine JS ON · Minify HTML OFF (clave hreflang B1) · Critical CSS OFF inicial · WebP ON · Lazy bg ON</div>
+        <div class="tags"><span class="t t-crit">Critical</span><span class="t t-cliente">Panel NitroPack</span></div></div>
+      <span class="f-time">10 min</span>
+    </div>
+  </article>
 
-  <div class="timeline">
-    <div class="phase">
-      <div class="phase-week">Semanas 1-2</div>
-      <div class="phase-title">Fundación</div>
-      <ul>
-        <li>Fix Yoast Organization</li>
-        <li>Title + meta homepage</li>
-        <li>Strip generators</li>
-        <li>Headers de seguridad</li>
-        <li>WP Rocket + Cloudflare</li>
-        <li>FinancialService schema</li>
-        <li>/llms.txt</li>
-        <li>Eliminar plugins inútiles</li>
-      </ul>
+  <h3>🔴 F2-C · Apagar AccelerateWP</h3>
+  <article class="finding sev-crit" id="ap-3">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">cPanel/CloudLinux → AccelerateWP OFF + LSCache OFF + NGINX FastCGI cache OFF para openeb5.com</div>
+        <div class="tags"><span class="t t-crit">Critical</span><span class="t t-cliente">Panel Hosting</span></div></div>
+      <span class="f-time">5 min</span>
     </div>
-    <div class="phase">
-      <div class="phase-week">Semanas 3-6</div>
-      <div class="phase-title">Contenido + Schema</div>
-      <ul>
-        <li>Rewrite pillar guide (3× word count)</li>
-        <li>FAQPage + HowTo + Article</li>
-        <li>Person schema para equipo</li>
-        <li>Bios de 8 staff + abogado nombrado</li>
-        <li>Reemplazar Slider Revolution</li>
-        <li>Migrar URLs blog → /blog/slug/</li>
-        <li>Rewrite top 5 country pages</li>
-        <li>Submit ES posts a sitemap</li>
-      </ul>
+  </article>
+
+  <h3>🟠 F2-D · Activar dequeues uno a uno</h3>
+  <p class="sub">Editar <code>functions.php</code>, quitar <code>//</code> del bloque, subir, purgar NitroPack, QA visual, siguiente. Detalle: <code>reports/A3-dequeues.md</code>.</p>
+  <article class="finding sev-high" id="ap-4">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">BLOCK #1 (Flaticon v2-v5) → #2 (animate.css) → #3 (Font Awesome v4) — todos riesgo 🟢 zero</div>
+        <div class="tags"><span class="t t-high">High</span><span class="t t-cliente">Cliente FTP iter</span></div></div>
+      <span class="f-time">15 min × 3</span>
     </div>
-    <div class="phase">
-      <div class="phase-week">Semanas 7-12</div>
-      <div class="phase-title">Autoridad + IA</div>
-      <ul>
-        <li>Crunchbase, USCIS RC, IIUSA listings</li>
-        <li>Press release I-956F</li>
-        <li>4 guest posts (EB5Investors, EB5Insights)</li>
-        <li>Original research: "State of EB-5 LatAm 2026"</li>
-        <li>12 nuevos blog posts (keyword gap)</li>
-        <li>IndexNow habilitado</li>
-      </ul>
+  </article>
+  <article class="finding sev-med" id="ap-5">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">BLOCK #5 (Booked, verificar [booked- en BD = 0) → #6 (Case Theme User) → #7 (ElementsKit demos)</div>
+        <div class="tags"><span class="t t-med">Medium</span><span class="t t-cliente">Cliente FTP iter</span></div></div>
+      <span class="f-time">30 min × 3</span>
     </div>
-    <div class="phase">
-      <div class="phase-week">Continuo</div>
-      <div class="phase-title">Sostenido</div>
-      <ul>
-        <li>Refresh trimestral pillar</li>
-        <li>Link building mensual (2 enlaces editoriales)</li>
-        <li>E-E-A-T review trimestral</li>
-        <li>Schema audit trimestral</li>
-        <li>CWV monitoring vía CrUX</li>
-      </ul>
+  </article>
+
+  <h3>🟠 F2-E · Limpieza servidor</h3>
+  <article class="finding sev-high" id="ap-6">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">FTP → eliminar 3 ZIPs públicos: yoast-premium.zip, emage.zip, ct-attachment-tmp.zip</div>
+        <div class="tags"><span class="t t-high">High</span><span class="t t-cliente">Cliente FTP</span></div></div>
+      <span class="f-time">5 min</span>
     </div>
+  </article>
+
+  <h3>🟠 F2-F · T7 plugins aprobados</h3>
+  <article class="finding sev-high" id="ap-7">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">WP Admin → Plugins → Eliminar Massive Cryptocurrency Widgets + Meks Flickr Widget</div>
+        <div class="tags"><span class="t t-high">High</span><span class="t t-cliente">WP Admin</span></div></div>
+      <span class="f-time">5 min</span>
+    </div>
+  </article>
+
+  <h3>🟢 F2-G · Critical CSS (último empujón a +90)</h3>
+  <article class="finding sev-high" id="ap-8">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">NitroPack → CSS → Critical CSS ON (tras A3 activado y QA visual de 6 páginas)</div>
+        <div class="tags"><span class="t t-high">High</span><span class="t t-cliente">Panel NitroPack</span></div></div>
+      <span class="f-time">15 min config + QA</span>
+    </div>
+  </article>
+
+  <h3>🟢 F2-H · Limpieza adicional</h3>
+  <article class="finding sev-low" id="ap-9">
+    <div class="f-head">
+      <label class="chk"><input type="checkbox" class="task"><span class="box"></span></label>
+      <div class="f-main"><div class="f-title">FTP → borrar carpetas vacías -old/ + UpdraftPlus → conservar 3 backups más recientes</div>
+        <div class="tags"><span class="t t-low">Low</span><span class="t t-cliente">Limpieza</span></div></div>
+      <span class="f-time">10 min</span>
+    </div>
+  </article>
+
+  <h3>📋 Datos cliente pendientes para activar schema (B5)</h3>
+  <div class="note">
+    <b>Schema FinancialService listo, esperando 11 datos:</b> USCIS Regional Center ID · Dirección física (street/city/state/postcode) · Phone E.164 · Email público · Año fundación · Logo cuadrado 200×200+ (el actual 674×150 NO sirve) · Areas served · Languages · Founders opcional · Twitter/X handle. Detalle: <code>reports/B5-schema-datos.md §2</code>.
   </div>
 
-  <h3 style="margin-top:32px">Metas Esperadas</h3>
-  <div class="table-wrap">
+  <h3>🎯 Métricas esperadas tras cada paso</h3>
+  <div class="tw">
     <table>
-      <thead>
-        <tr>
-          <th>Métrica</th>
-          <th class="num">Día 0</th>
-          <th class="num">Día 90</th>
-          <th class="num">Día 180</th>
-          <th class="num">Día 365</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Paso</th><th class="r">Mobile</th><th class="r">Desktop</th><th>Razón</th></tr></thead>
       <tbody>
-        <tr><td>Authority Score</td><td class="num">2</td><td class="num">8</td><td class="num">15</td><td class="num">22</td></tr>
-        <tr><td>Keywords orgánicas (US)</td><td class="num">20</td><td class="num">200</td><td class="num">600</td><td class="num">1,500</td></tr>
-        <tr><td>Tráfico orgánico mensual</td><td class="num">0</td><td class="num">300</td><td class="num">1,500</td><td class="num">5,000</td></tr>
-        <tr><td>Posición ranking promedio</td><td class="num">—</td><td class="num">40</td><td class="num">25</td><td class="num">15</td></tr>
-        <tr><td>Menciones AI / mes</td><td class="num">0</td><td class="num">5</td><td class="num">25</td><td class="num">80</td></tr>
-        <tr><td>Backlinks editoriales auténticos</td><td class="num">&lt;5</td><td class="num">25</td><td class="num">75</td><td class="num">200</td></tr>
+        <tr><td>Hoy</td><td class="r vh">32</td><td class="r vh">49</td><td>Cache HIT pero 76 scripts sin combinar</td></tr>
+        <tr><td>+ F2-B + F2-C (NitroPack config)</td><td class="r vh">45–55</td><td class="r vh">60–70</td><td>76 → 25-35 scripts, payload 12 → 5-7 MB</td></tr>
+        <tr><td>+ F2-D BLOCKS #1–#3</td><td class="r vh">55–65</td><td class="r vh">70–80</td><td>-300 KB CSS duplicado</td></tr>
+        <tr><td>+ F2-D BLOCKS #5–#7 + F2-F</td><td class="r vh">65–75</td><td class="r vg">80–88</td><td>-500 KB JS Booked/Case/ElementsKit + plugins</td></tr>
+        <tr><td>+ F2-G Critical CSS</td><td class="r vg">80–95</td><td class="r vg">90–98</td><td>FCP 2.5s → 1.4s, LCP 5s → 3.2s</td></tr>
       </tbody>
     </table>
   </div>
-</section>
-
-<section id="files">
-  <h2><span class="num">09</span>Archivos Entregados</h2>
-  <p class="section-sub">Todo en <code>C:\Users\juanm\OneDrive\Desktop\Proyectos\openeb5-seo-audit\</code></p>
-
-  <div class="file-tree">
-<span class="folder">openeb5-seo-audit/</span>
-├── <span class="file">README.md</span>                       <span class="comment">— guía rápida</span>
-├── <span class="file">FULL-AUDIT-REPORT.md</span>           <span class="comment">— reporte ejecutivo + scoring</span>
-├── <span class="file">ACTION-PLAN.md</span>                 <span class="comment">— 47 acciones priorizadas P0–P3</span>
-├── <span class="file">audit-summary.html</span>             <span class="comment">— este HTML</span>
-├── <span class="folder">reports/</span>
-│   ├── <span class="file">technical-seo.md</span>           <span class="comment">— caching, headers, hreflang, plugins (289 líneas)</span>
-│   ├── <span class="file">content-eeat.md</span>            <span class="comment">— YMYL, pillar audit, gaps (211 líneas)</span>
-│   ├── <span class="file">schema-markup.md</span>           <span class="comment">— JSON-LD listo para pegar (452 líneas)</span>
-│   ├── <span class="file">performance-cwv.md</span>         <span class="comment">— CWV sintético + 23 plugins (135 líneas)</span>
-│   ├── <span class="file">geo-ai-readiness.md</span>        <span class="comment">— AI Overviews + plantilla llms.txt (237 líneas)</span>
-│   └── <span class="file">backlinks-competitive.md</span>   <span class="comment">— Backlinks, competidores, keywords (187 líneas)</span>
-└── <span class="folder">data/</span>
-    ├── <span class="file">homepage.html</span>              <span class="comment">— HTML crudo (198 KB)</span>
-    ├── <span class="file">homepage-ES.html</span>           <span class="comment">— HTML ES crudo (196 KB)</span>
-    ├── <span class="file">homepage_headers.txt</span>       <span class="comment">— HTTP response headers</span>
-    ├── <span class="file">robots.txt</span>
-    ├── <span class="file">sitemap_index.xml</span>
-    ├── <span class="file">post-sitemap.xml</span>
-    ├── <span class="file">page-sitemap.xml</span>
-    └── <span class="file">category-sitemap.xml</span>
-  </div>
-</section>
-
-<section id="ahrefs">
-  <h2><span class="num">10</span>Próximo Paso · Integración con Ahrefs</h2>
-  <p class="section-sub">Cuando adjuntes openeb5.com a Ahrefs, cruza estos datos con la auditoría actual.</p>
-
-  <div class="grid grid-2">
-    <div class="card card-accent">
-      <h3>Cross-validaciones</h3>
-      <ul style="color:var(--text-dim);font-size:14px;list-style:none">
-        <li>→ Ahrefs <strong>DR</strong> vs SEMrush AS 2</li>
-        <li>→ Backlinks overlap (los 93 ref domains)</li>
-        <li>→ Site Audit issues vs. esta auditoría</li>
-        <li>→ Toxicity scoring → confirmar "no disavow"</li>
-      </ul>
-    </div>
-    <div class="card card-accent">
-      <h3>Nuevos análisis</h3>
-      <ul style="color:var(--text-dim);font-size:14px;list-style:none">
-        <li>→ <strong>Content Gap</strong> con seeds:</li>
-        <li style="margin-left:20px">eb5investors.com</li>
-        <li style="margin-left:20px">iiusa.org</li>
-        <li style="margin-left:20px">civitascapital.com</li>
-        <li style="margin-left:20px">eb5capital.com</li>
-        <li>→ Top Pages 2.0 de competidores</li>
-        <li>→ Brand Radar: SOV "Open EB5" en LLMs</li>
-        <li>→ Keyword tracker: 15-25 targets</li>
-      </ul>
-    </div>
-  </div>
-
-  <p style="margin-top:24px;color:var(--text-dim);font-size:14px">Comparte el acceso o pega los snapshots de Site Explorer + Site Audit y se refina el plan de 90 días con la data de Ahrefs.</p>
 </section>
 
 </div>
 
 <footer>
-  <div class="container">
-    Auditoría preparada por Claude (Anthropic) · 2026-05-11 · WebFetch + SEMrush MCP + análisis sintético<br/>
-    PageSpeed Insights API rate-limited sin key — métricas CWV son estimaciones. Configura un API key de Google y vuelve a correr con el skill <code>seo-google</code> para datos de campo.
-  </div>
+  <p><b>Auditoría SEO openeb5.com · v2 · 11 Jun 2026</b> · Verificado en vivo · Confidencial</p>
+  <p>Snapshot inicial wp-content: <code>982d36b6</code> · Fase 1 commit: <code>1a189cfd</code> · Fase 2 commit: <code>a7e52fdc</code> · Rollback total disponible</p>
 </footer>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+      updateProgress();
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  });
+
+  // Per-panel progress + global progress + dynamic score
+  const BASE_SCORE = 14;     // Mobile score in May 2026 (initial audit)
+  const TARGET_SCORE = 95;   // Mobile target after full execution
+  function updateProgress() {
+    let totalChecked = 0, total = 0;
+    document.querySelectorAll('.panel').forEach(panel => {
+      const tasks = panel.querySelectorAll('input.task');
+      const checked = panel.querySelectorAll('input.task:checked').length;
+      total += tasks.length;
+      totalChecked += checked;
+      const pp = panel.querySelector('.panel-progress');
+      if (pp) pp.textContent = tasks.length ? `${checked} / ${tasks.length} TAREAS COMPLETADAS EN ESTA SECCIÓN` : '';
+    });
+    const gpc = document.getElementById('gp-count');
+    const gpb = document.getElementById('gp-bar');
+    if (gpc) gpc.textContent = `${totalChecked} / ${total}`;
+    if (gpb) gpb.style.width = total ? `${(totalChecked/total)*100}%` : '0';
+
+    // Dynamic SCORE in hero — rises from BASE to TARGET as tasks complete
+    const score = total ? Math.round(BASE_SCORE + (totalChecked / total) * (TARGET_SCORE - BASE_SCORE)) : BASE_SCORE;
+    const heroV = document.getElementById('hero-score-v');
+    const heroL = document.getElementById('hero-score-l');
+    const heroScore = document.getElementById('hero-score');
+    if (heroV) heroV.textContent = score;
+    if (heroL) {
+      let qual = '';
+      if (score < 30) qual = '· Crítico';
+      else if (score < 50) qual = '· En recuperación';
+      else if (score < 75) qual = '· Mejorando';
+      else if (score < 90) qual = '· Bueno';
+      else qual = '· Excelente';
+      heroL.textContent = `/100 · Mobile ${qual}`;
+    }
+    if (heroScore) {
+      const pct = total ? Math.round((totalChecked / total) * 100) : 0;
+      // Update conic-gradient: % filled in gold, rest dark
+      heroScore.style.background = `conic-gradient(#d6a544 0 ${pct}%, #2a2a2a ${pct}% 100%)`;
+    }
+  }
+
+  // Persist checkbox state in localStorage (per file, per checkbox id)
+  document.querySelectorAll('.finding').forEach(card => {
+    const input = card.querySelector('input.task');
+    const key = 'openeb5-audit-v2-' + (card.id || Math.random());
+    if (input) {
+      const stored = localStorage.getItem(key);
+      if (stored === '1' || card.classList.contains('done')) input.checked = true;
+      input.addEventListener('change', () => {
+        localStorage.setItem(key, input.checked ? '1' : '0');
+        updateProgress();
+      });
+    }
+  });
+
+  updateProgress();
+</script>
 
 </body>
 </html>
