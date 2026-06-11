@@ -1,5 +1,7 @@
 ---
 permalink: /
+layout: null
+sitemap: false
 ---
 <!DOCTYPE html>
 <html lang="es">
@@ -47,18 +49,18 @@ permalink: /
     --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
+  html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
   html{scroll-behavior:smooth}
   body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
   .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
   a{color:var(--brand);text-decoration:underline;text-decoration-color:var(--border)}
   a:hover{text-decoration-color:var(--brand)}
 
-  /* HERO — navy dark */
-  header.hero{background:linear-gradient(135deg,#0a2444 0%,#0b2a49 35%,#15406b 100%);color:#eef3f9;border-bottom:3px solid var(--accent)}
-  .hero-inner{padding:40px 0 44px}
-  .hero-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;gap:24px;flex-wrap:wrap}
-  .hero-logo-wrap{background:#ffffff;padding:14px 22px;border-radius:8px;box-shadow:0 6px 22px rgba(0,0,0,0.18);display:inline-flex;align-items:center}
-  .hero-logo{height:64px;width:auto;display:block}
+  /* HERO — navy dark, full width */
+  header.hero{background:linear-gradient(135deg,#0a2444 0%,#0b2a49 35%,#15406b 100%);color:#eef3f9;border-bottom:3px solid var(--accent);width:100%;margin:0;padding:0}
+  .hero-inner{padding:44px 0 52px;width:100%}
+  .hero-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:36px;gap:24px;flex-wrap:wrap}
+  .hero-logo{height:48px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,.25))}
   .eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#b6c4d6;font-weight:700}
   .hero-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
   h1{font-family:var(--serif);font-weight:500;font-size:46px;line-height:1.05;letter-spacing:-.5px;color:#ffffff}
@@ -214,9 +216,7 @@ permalink: /
 <header class="hero">
   <div class="wrap hero-inner">
     <div class="hero-top">
-      <div class="hero-logo-wrap">
-        <img src="openeb5-logo.jpg" alt="Open EB5" class="hero-logo" />
-      </div>
+      <img src="openeb5-logo-white.png" alt="Open EB5" class="hero-logo" />
       <div class="eyebrow">SEO Audit · v2 · Mayo 2026 · Verificado 11 Jun 2026</div>
     </div>
     <div class="hero-grid">
