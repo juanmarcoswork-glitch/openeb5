@@ -1,0 +1,339 @@
+---
+permalink: /hero-preview/
+layout: null
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Hero Preview — openeb5.com — Camino B (sin Slider Revolution)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand:#0b2a49;
+    --brand-dark:#071a30;
+    --gold:#c69749;
+    --gold-bright:#e3b770;
+    --green:#16a34a;
+    --red:#dc2626;
+    --orange:#ea580c;
+    --ink:#0b2a49;
+    --ink2:#3a3a3a;
+    --ink3:#5b6b82;
+    --ink4:#8a98ac;
+    --bg-soft:#f4f7fb;
+    --border:#e1e8f0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
+  body{font-family:"Inter",system-ui,sans-serif;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;background:#fff}
+
+  /* === NUEVO HERO (Camino B) === */
+  /*
+    Estructura:
+    - Section full-width 100vh hasta ~720px max
+    - Background: WebP responsive (img loading=eager fetchpriority=high)
+    - Overlay: gradiente navy semi-transparente para legibilidad
+    - Content centrado: H1 + sub + CTA
+    Pesos: ~0 JS, 1 img (24-163 KB según viewport), ~3 KB CSS embebido inline
+  */
+  .new-hero{
+    position:relative;
+    min-height:560px;
+    height:80vh;
+    max-height:720px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .new-hero picture,
+  .new-hero picture img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;
+    z-index:-2;
+  }
+  .new-hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(105deg,
+      rgba(7,26,48,0.78) 0%,
+      rgba(7,26,48,0.55) 45%,
+      rgba(7,26,48,0.30) 100%
+    );
+    z-index:-1;
+  }
+  .new-hero-inner{
+    width:100%;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+    color:#fff;
+  }
+  .new-hero .eyebrow{
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gold-bright);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  .new-hero h1{
+    font-family:"Cormorant Garamond","Times New Roman",serif;
+    font-weight:600;
+    font-size:clamp(34px,5.2vw,62px);
+    line-height:1.05;
+    letter-spacing:-1px;
+    margin-bottom:18px;
+    max-width:760px;
+    color:#fff;
+  }
+  .new-hero h1 .accent{color:var(--gold-bright);font-style:italic}
+  .new-hero .sub{
+    font-size:clamp(15px,1.4vw,18px);
+    color:#dde6f1;
+    max-width:580px;
+    margin-bottom:32px;
+    line-height:1.6;
+  }
+  .new-hero .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .new-hero .cta{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 28px;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    text-decoration:none;
+    border-radius:4px;
+    transition:transform .15s, box-shadow .15s;
+  }
+  .new-hero .cta-primary{
+    background:var(--gold);color:#0b2a49;
+    box-shadow:0 6px 18px rgba(198,151,73,0.35);
+  }
+  .new-hero .cta-primary:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(198,151,73,0.5)}
+  .new-hero .cta-secondary{
+    background:transparent;color:#fff;
+    border:1.5px solid rgba(255,255,255,0.5);
+  }
+  .new-hero .cta-secondary:hover{background:rgba(255,255,255,0.1);border-color:#fff}
+
+  /* === Banner inferior con la valoración === */
+  .verdict{
+    background:#0b2a49;
+    color:#dde6f1;
+    padding:42px 0 48px;
+  }
+  .verdict-inner{max-width:1180px;margin:0 auto;padding:0 32px}
+  .verdict h2{
+    font-family:"Cormorant Garamond",serif;
+    font-weight:500;
+    font-size:34px;
+    color:#fff;
+    margin-bottom:8px;
+  }
+  .verdict-sub{color:#a8b8cf;font-size:14px;margin-bottom:28px;max-width:780px}
+  .compare{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  @media(max-width:760px){.compare{grid-template-columns:1fr}}
+  .col{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:8px;
+    padding:22px 24px;
+  }
+  .col.current{border-left:4px solid var(--red)}
+  .col.proposed{border-left:4px solid var(--green)}
+  .col-h{
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#a8b8cf;
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .col-title{font-size:22px;font-weight:600;color:#fff;margin-bottom:18px;line-height:1.25}
+  .metric{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:13.5px}
+  .metric:last-child{border-bottom:none}
+  .metric .k{color:#a8b8cf}
+  .metric .v{font-weight:700;color:#fff;font-variant-numeric:tabular-nums}
+  .metric .v.bad{color:#fda19a}
+  .metric .v.good{color:#86efac}
+  .badge{
+    display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.4px;
+    text-transform:uppercase;padding:3px 9px;border-radius:3px;margin-bottom:10px;
+  }
+  .badge.bad{background:rgba(220,38,38,0.18);color:#fda19a;border:1px solid rgba(220,38,38,0.4)}
+  .badge.good{background:rgba(22,163,74,0.18);color:#86efac;border:1px solid rgba(22,163,74,0.4)}
+
+  /* === Notas técnicas === */
+  .notes{
+    background:#fff;
+    padding:48px 0 80px;
+  }
+  .notes-inner{max-width:1180px;margin:0 auto;padding:0 32px}
+  .notes h2{
+    font-family:"Cormorant Garamond",serif;
+    font-weight:500;
+    font-size:32px;
+    color:var(--brand);
+    margin-bottom:18px;
+  }
+  .notes h3{
+    font-family:"Cormorant Garamond",serif;
+    font-weight:500;
+    font-size:22px;
+    color:var(--brand);
+    margin:28px 0 12px;
+  }
+  .notes p, .notes li{color:var(--ink3);font-size:14px;line-height:1.7;margin-bottom:10px}
+  .notes b{color:var(--brand)}
+  .notes code{font-family:"JetBrains Mono",Menlo,Consolas,monospace;background:var(--bg-soft);color:var(--brand);padding:2px 7px;border-radius:3px;font-size:12.5px;border:1px solid var(--border)}
+  .notes ul{margin-left:20px;margin-bottom:18px}
+  .notes ul li{margin-bottom:8px}
+  .actions{
+    display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;
+    padding:24px;background:var(--bg-soft);border-radius:8px;border:1px solid var(--border);
+  }
+  .actions .a-label{font-weight:700;color:var(--brand);font-size:13px;text-transform:uppercase;letter-spacing:1px;margin-right:8px;align-self:center}
+  .pill-link{
+    display:inline-flex;align-items:center;
+    padding:10px 18px;font-size:13px;font-weight:600;letter-spacing:.3px;
+    border-radius:999px;text-decoration:none;
+    transition:transform .15s;
+  }
+  .pill-link.approve{background:var(--green);color:#fff}
+  .pill-link.adjust{background:var(--gold);color:var(--brand)}
+  .pill-link.reject{background:#fff;color:var(--ink2);border:1.5px solid var(--border)}
+  .pill-link:hover{transform:translateY(-1px)}
+
+  .meta-note{
+    margin-top:20px;padding:14px 18px;border-left:3px solid var(--gold);
+    background:#fcf8ee;color:var(--ink2);font-size:13px;line-height:1.6;
+  }
+  .meta-note b{color:var(--brand)}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     EL HERO PROPUESTO — pixel-faithful a como se montaría en
+     Elementor. Mismo color de fondo, misma imagen, mismo overlay,
+     mismo tono de tipografía.
+     ============================================================ -->
+
+<section class="new-hero">
+  <picture>
+    <source media="(max-width:640px)"  srcset="openeb5-slide-08-640.webp" type="image/webp">
+    <source media="(max-width:1024px)" srcset="openeb5-slide-08-1024.webp" type="image/webp">
+    <source srcset="openeb5-slide-08-1920.webp" type="image/webp">
+    <img src="openeb5-slide-08-1920.webp"
+         alt="Open EB5 — USCIS-Approved EB-5 Regional Center in Texas"
+         loading="eager"
+         fetchpriority="high"
+         decoding="async"
+         width="1920" height="1013" />
+  </picture>
+  <div class="new-hero-inner">
+    <div class="eyebrow">USCIS-Approved Regional Center · Texas</div>
+    <h1>Invest in the U.S.<br/>and obtain your <span class="accent">Green Card</span></h1>
+    <p class="sub">Open EB5 is a USCIS-approved EB-5 Regional Center based in Texas. We help foreign investors qualify for U.S. permanent residency through job-creating real estate projects.</p>
+    <div class="cta-row">
+      <a class="cta cta-primary" href="https://openeb5.com/contact-us/">Schedule a free consultation</a>
+      <a class="cta cta-secondary" href="https://openeb5.com/the-complete-guide-to-eb-5-investment/">Read the EB-5 guide</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VEREDICTO — Comparativa de peso medida en vivo
+     ============================================================ -->
+
+<section class="verdict">
+  <div class="verdict-inner">
+    <h2>El intercambio en una sola pantalla</h2>
+    <p class="verdict-sub">Datos reales medidos en el HTML vivo y en el filesystem (openeb5.com, 12 Jun 2026). El "actual" es lo que el visitante recibe hoy. El "propuesto" es lo que sirve la sección de arriba.</p>
+    <div class="compare">
+      <div class="col current">
+        <div class="badge bad">Actual (Slider Revolution)</div>
+        <div class="col-title">Slider con 1 sola slide estática + 516 KB de motor JS</div>
+        <div class="metric"><span class="k">JS de RevSlider (sr7.js + tptools.js)</span><span class="v bad">~516 KB</span></div>
+        <div class="metric"><span class="k">Imagen del slide (JPG sin WebP)</span><span class="v bad">304 KB</span></div>
+        <div class="metric"><span class="k">CSS embebido del slider</span><span class="v bad">~30 KB</span></div>
+        <div class="metric"><span class="k">Slider engine parse + init time</span><span class="v bad">+200-400 ms TBT</span></div>
+        <div class="metric"><span class="k">Total bytes a transferir</span><span class="v bad">~850 KB</span></div>
+        <div class="metric"><span class="k">Slides reales que rota</span><span class="v bad">1 (estática)</span></div>
+      </div>
+      <div class="col proposed">
+        <div class="badge good">Propuesto (HTML + CSS + img WebP)</div>
+        <div class="col-title">Hero estático full-width con responsive WebP</div>
+        <div class="metric"><span class="k">JS añadido</span><span class="v good">0 KB</span></div>
+        <div class="metric"><span class="k">Imagen WebP responsive (mobile)</span><span class="v good">24 KB</span></div>
+        <div class="metric"><span class="k">Imagen WebP responsive (desktop)</span><span class="v good">163 KB</span></div>
+        <div class="metric"><span class="k">CSS embebido del hero</span><span class="v good">~3 KB</span></div>
+        <div class="metric"><span class="k">Parse + init</span><span class="v good">0 ms</span></div>
+        <div class="metric"><span class="k">Total bytes mobile</span><span class="v good">~27 KB</span></div>
+        <div class="metric"><span class="k">Total bytes desktop</span><span class="v good">~166 KB</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NOTAS TÉCNICAS — Qué cambia, qué se mantiene
+     ============================================================ -->
+
+<section class="notes">
+  <div class="notes-inner">
+    <h2>Lo que cambia y lo que NO cambia</h2>
+    <p>Este mockup está en la misma URL que el audit, así puedes abrirlo en otra pestaña y compararlo con <a href="https://openeb5.com/" target="_blank">el home actual</a> abierto al lado.</p>
+
+    <h3>Lo que NO cambia</h3>
+    <ul>
+      <li><b>La identidad visual:</b> mismo color de fondo navy, mismo gold para el CTA, misma tipografía serif para el H1 (la del theme).</li>
+      <li><b>El mensaje principal:</b> "Invest in the U.S. and obtain your Green Card" + "USCIS-Approved Regional Center in Texas" + Schedule a free consultation. Tomado del title y meta description vigentes.</li>
+      <li><b>La imagen del fondo:</b> es <code>OpenEB5-Slide-08.jpg</code> servida en WebP. La misma foto que el cliente ya eligió para el slider.</li>
+      <li><b>Slider Revolution sigue instalado.</b> Solo lo quitamos del home. Si en el futuro hay una landing con carrusel real, RevSlider está ahí para usarlo.</li>
+    </ul>
+
+    <h3>Lo que sí cambia (técnico, no visible)</h3>
+    <ul>
+      <li><b>Cero JavaScript del slider en el home:</b> los 516 KB de <code>sr7.js</code> + <code>tptools.js</code> ya no se cargan. El dequeue del child theme (§9 nuevo, a añadir) lo gobierna con <code>is_front_page()</code>.</li>
+      <li><b>Imagen como WebP responsive:</b> 3 tamaños (640w/1024w/1920w) servidos por <code>&lt;picture&gt;</code>. Mobile ahorra el 92% del peso (304 KB → 24 KB).</li>
+      <li><b>LCP image priority:</b> el <code>&lt;img&gt;</code> lleva <code>fetchpriority="high"</code> y <code>loading="eager"</code> → el browser arranca la descarga antes de procesar el resto del HTML.</li>
+      <li><b>Altura responsive 80vh con cap 720px:</b> evita layout shift en distintas pantallas.</li>
+    </ul>
+
+    <h3>Diferencias visuales pequeñas a aprobar/ajustar</h3>
+    <ul>
+      <li>El H1 está en tipografía <b>Cormorant Garamond serif</b> (la misma que usa el audit). Si el slider actual del cliente usa una sans específica del theme, ajustamos a esa.</li>
+      <li>El overlay sobre la imagen es un <b>gradiente diagonal</b> navy 78% → 30%, lo que da legibilidad al texto. Si el slider actual no tiene overlay, podemos suavizarlo (50% → 20%) o quitarlo.</li>
+      <li>El botón <b>"Schedule a free consultation"</b> tiene un color gold del logo del cliente. Si prefieren el azul corporativo, lo cambiamos.</li>
+      <li>El <b>botón secundario "Read the EB-5 guide"</b> apunta al pillar guide. Si no lo quieren en el hero, lo quitamos.</li>
+    </ul>
+
+    <div class="meta-note">
+      <b>Importante:</b> esta página es un <i>preview</i> visual. Cuando apruebes, el hero se monta dentro de Elementor en la home (page-id-5745) usando los mismos widgets nativos (Heading + Text + Button), no este HTML/CSS suelto. El resultado en producción se verá idéntico a lo de arriba pero respetando los componentes del theme y editables desde el panel.
+    </div>
+
+    <div class="actions">
+      <span class="a-label">¿Tu decisión?</span>
+      <span class="pill-link approve">A · Lo apruebo tal cual</span>
+      <span class="pill-link adjust">B · Apruebo con ajustes (los listo abajo)</span>
+      <span class="pill-link reject">C · Volver al camino A (mantener RevSlider)</span>
+    </div>
+    <p style="margin-top:12px;font-size:12px;color:var(--ink4)">Las opciones son visuales — me respondes por chat con tu elección + los ajustes si vas por B.</p>
+  </div>
+</section>
+
+</body>
+</html>
