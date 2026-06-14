@@ -1,0 +1,249 @@
+---
+permalink: /theme-preview/about/
+layout: null
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>About — Open EB5 Theme Preview</title>
+<meta name="description" content="About Open EB5 — leadership, USCIS compliance, immigration counsel. E-E-A-T preview.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/theme-preview/assets/css/tokens.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/theme-preview/assets/css/base.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/theme-preview/assets/css/components.css' | relative_url }}">
+
+<style>
+  .page-hero{background:var(--c-navy-800);color:#fff;padding:120px 0 80px;position:relative;isolation:isolate}
+  .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%, rgba(61,207,134,0.16), transparent 50%);z-index:-1}
+  .page-hero h1{font-family:var(--ff-display);font-size:clamp(36px,4.8vw,56px);color:#fff;max-width:780px;line-height:1.05;letter-spacing:-.02em;margin-bottom:20px}
+  .page-hero p{color:var(--c-text-on-dark-mute);font-size:18px;max-width:680px;line-height:1.65}
+
+  .leader-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .leader-card{background:#fff;border:1px solid var(--c-border-soft);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s, box-shadow .25s}
+  .leader-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .leader-card__photo{height:260px;background:linear-gradient(135deg,var(--c-navy-700),var(--c-navy-900));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--ff-display);font-size:56px;font-weight:600;opacity:.92}
+  .leader-card__body{padding:24px 24px 28px}
+  .leader-card__name{font-family:var(--ff-display);font-size:22px;color:var(--c-text-strong);font-weight:600;margin-bottom:4px}
+  .leader-card__role{color:var(--c-green-600);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+  .leader-card__bio{font-size:14px;color:var(--c-text);line-height:1.7}
+  .leader-card__creds{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .leader-card__cred{font-size:11px;font-weight:600;color:var(--c-navy-800);background:var(--c-paper);padding:4px 10px;border-radius:var(--r-pill);letter-spacing:.04em}
+  @media(max-width:900px){.leader-grid{grid-template-columns:1fr}}
+
+  .compliance-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:48px}
+  .compliance-card{background:var(--c-paper);border-radius:var(--r-lg);padding:32px;border-left:4px solid var(--c-green-500)}
+  .compliance-card h3{font-size:18px;color:var(--c-text-strong);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+  .compliance-card h3 svg{color:var(--c-green-500);flex-shrink:0}
+  .compliance-card p{font-size:14px;color:var(--c-text);line-height:1.7}
+  @media(max-width:760px){.compliance-grid{grid-template-columns:1fr}}
+
+  .legal-counsel{background:var(--c-navy-800);color:#fff;padding:48px;border-radius:var(--r-lg);display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;margin-top:48px}
+  .legal-counsel__icon{width:96px;height:96px;background:rgba(61,207,134,0.16);border:1px solid rgba(61,207,134,0.36);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--c-green-500);flex-shrink:0}
+  .legal-counsel h3{color:#fff;font-family:var(--ff-display);font-size:24px;margin-bottom:8px}
+  .legal-counsel p{color:var(--c-text-on-dark-mute);font-size:15px;line-height:1.7;margin-bottom:8px}
+  .legal-counsel small{color:rgba(255,255,255,0.5);font-size:12px;display:block}
+  @media(max-width:760px){.legal-counsel{grid-template-columns:1fr;padding:32px;text-align:center}.legal-counsel__icon{margin:0 auto}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"AboutPage",
+  "name":"About Open EB5",
+  "mainEntity":{
+    "@type":"Organization",
+    "name":"Open EB5 Regional Center",
+    "foundingDate":"2019",
+    "description":"USCIS-approved EB-5 Regional Center based in Texas.",
+    "knowsAbout":["EB-5 Immigrant Investor Program","I-526E Petition","I-829 Petition","Targeted Employment Area","Regional Center compliance","SEC Reg D 506(c) offerings"]
+  }
+}
+</script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="preview-note">
+  <b>Static mockup</b> · About page · <a href="{{ '/theme-preview/' | relative_url }}">← Back to Home preview</a>
+</div>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar__inner">
+      <div class="top-bar__contacts">
+        <a class="top-bar__item" href="mailto:open@openeb5.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="top-bar__item__label">open@openeb5.com</span></a>
+        <a class="top-bar__item" href="tel:19567335390"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><span class="top-bar__item__label">1 - 855 - OPENEB5</span></a>
+      </div>
+      <div class="top-bar__lang"><a href="#" aria-current="true">EN</a><span>·</span><a href="#">ES</a></div>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="{{ '/theme-preview/' | relative_url }}"><img class="site-header__logo" src="https://openeb5.com/wp-content/uploads/2024/11/OpenEB5-Logos-high.png" alt="Open EB5" width="180" height="44"></a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="site-nav__list" role="list">
+          <li><a class="site-nav__link" href="{{ '/theme-preview/' | relative_url }}">Home</a></li>
+          <li><a class="site-nav__link" href="#" aria-current="page">About</a></li>
+          <li><a class="site-nav__link" href="{{ '/theme-preview/' | relative_url }}#projects">Projects</a></li>
+          <li><a class="site-nav__link" href="{{ '/theme-preview/' | relative_url }}#process">EB-5 Process</a></li>
+          <li><a class="site-nav__link" href="{{ '/theme-preview/blog/' | relative_url }}">Blog</a></li>
+          <li><a class="site-nav__link" href="{{ '/theme-preview/' | relative_url }}#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__cta">
+        <a class="btn btn--primary" href="{{ '/theme-preview/' | relative_url }}#contact">Schedule a Consultation</a>
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="nav-toggle__bar" aria-hidden="true"></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow" style="color:var(--c-green-500)">About Open EB5</div>
+    <h1>Built for investors. Backed by USCIS. Anchored in Texas.</h1>
+    <p>Open EB5 is a USCIS-approved EB-5 Regional Center. We bridge foreign investors and U.S. permanent residency through compliant, job-creating real estate projects — with end-to-end transparency.</p>
+  </div>
+</section>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="{{ '/theme-preview/' | relative_url }}">Home</a></li>
+      <li><span aria-current="page">About</span></li>
+    </ol>
+  </div>
+</nav>
+
+<!-- LEADERSHIP -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Leadership</div>
+      <h2>Real people, real credentials.</h2>
+      <p class="lead">Our team brings decades of combined experience in EB-5 immigration law, real estate finance, and Regional Center compliance.</p>
+    </div>
+    <div class="leader-grid">
+      <article class="leader-card">
+        <div class="leader-card__photo" aria-hidden="true">HF</div>
+        <div class="leader-card__body">
+          <div class="leader-card__name">Héctor Flores</div>
+          <div class="leader-card__role">Managing Principal</div>
+          <p class="leader-card__bio">15+ years structuring EB-5 Regional Center offerings. Led the USCIS designation and project sponsorship for Open EB5's Texas pipeline.</p>
+          <div class="leader-card__creds">
+            <span class="leader-card__cred">EB-5 Reform Act Specialist</span>
+            <span class="leader-card__cred">IIUSA Member</span>
+          </div>
+        </div>
+      </article>
+      <article class="leader-card">
+        <div class="leader-card__photo" aria-hidden="true">JS</div>
+        <div class="leader-card__body">
+          <div class="leader-card__name">[Director of Investor Relations]</div>
+          <div class="leader-card__role">Investor Relations</div>
+          <p class="leader-card__bio">Direct point of contact for Open EB5 investors. Coordinates investor onboarding, project documentation, and quarterly reporting in English and Spanish.</p>
+          <div class="leader-card__creds">
+            <span class="leader-card__cred">EN / ES Native</span>
+            <span class="leader-card__cred">Compliance Certified</span>
+          </div>
+        </div>
+      </article>
+      <article class="leader-card">
+        <div class="leader-card__photo" aria-hidden="true">AT</div>
+        <div class="leader-card__body">
+          <div class="leader-card__name">[Compliance Counsel]</div>
+          <div class="leader-card__role">Compliance + SEC</div>
+          <p class="leader-card__bio">Oversees SEC Regulation D 506(c) compliance, anti-money-laundering protocols (BSA/OFAC), and Regional Center reporting obligations to USCIS.</p>
+          <div class="leader-card__creds">
+            <span class="leader-card__cred">SEC Reg D</span>
+            <span class="leader-card__cred">AML/KYC</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="form-disclaimer" style="margin-top:32px">Placeholder names where confirmation pending. Bios will be updated with real photos and individual professional summaries before the theme goes live.</p>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="section section--paper">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Trust + Compliance</div>
+      <h2>Verification you can check, not just claim.</h2>
+      <p class="lead">Open EB5 operates under federal designation and ongoing oversight. We publish the verifiers our investors actually need.</p>
+    </div>
+    <div class="compliance-grid">
+      <div class="compliance-card">
+        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> USCIS Designation</h3>
+        <p>Open EB5 is a USCIS-designated EB-5 Regional Center under the EB-5 Reform and Integrity Act of 2022. Designation ID is publicly verifiable through the official USCIS Regional Center search.</p>
+      </div>
+      <div class="compliance-card">
+        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 12h6"/><path d="M9 16h6"/><path d="M9 8h6"/></svg> SEC Compliance</h3>
+        <p>All offerings are structured under SEC Regulation D 506(c). Each project ships with a Private Placement Memorandum (PPM) and subscription agreements reviewed by securities counsel.</p>
+      </div>
+      <div class="compliance-card">
+        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> AML / KYC Protocols</h3>
+        <p>Source-of-funds verification follows BSA standards. OFAC and politically-exposed-person screening on every investor. We do not accept any investor whose funds cannot be sourced.</p>
+      </div>
+      <div class="compliance-card">
+        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-6 0v4"/><rect x="5" y="9" width="14" height="11" rx="2"/></svg> Investor Privacy</h3>
+        <p>Investor data is stored encrypted at rest, transmitted over TLS, and never sold. PII-bearing documents (passport, financial records) are kept in access-controlled folders with audit logs.</p>
+      </div>
+    </div>
+
+    <div class="legal-counsel">
+      <div class="legal-counsel__icon" aria-hidden="true"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H7a4 4 0 0 0-4 4v6h12v-6a4 4 0 0 0-4-4z"/><path d="M16 11h-2v8h6v-5a3 3 0 0 0-3-3z"/><circle cx="10" cy="7" r="3"/></svg></div>
+      <div>
+        <h3>Independent Immigration Counsel</h3>
+        <p>Every Open EB5 investor retains independent U.S. immigration counsel — separate from Open EB5 — for the I-526E and I-829 filings. We refer to several established firms, but the attorney-client relationship is yours alone.</p>
+        <small>This separation is required by the U.S. Bar and protects you in any potential conflict of interest.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="final-cta" id="contact">
+  <div class="container">
+    <div style="max-width:720px">
+      <div class="eyebrow" style="color:var(--c-green-500)">Get Started</div>
+      <h2 style="color:#fff;font-family:var(--ff-display);font-size:clamp(28px,4vw,42px)">Speak directly with the team.</h2>
+      <p style="color:var(--c-text-on-dark-mute);margin-top:16px;font-size:17px;line-height:1.65">No filters, no junior reps. Your first call is with a principal of Open EB5.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:32px">
+        <a class="btn btn--primary btn--lg" href="{{ '/theme-preview/' | relative_url }}#contact">Schedule a Consultation</a>
+        <a class="btn btn--outline-light btn--lg" href="tel:19567335390">Call 1 - 855 - OPENEB5</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__bottom" style="border:0;padding:0">
+      <div>© 2026 Open EB5 Regional Center · All rights reserved</div>
+      <div style="display:flex;gap:16px">
+        <a href="#">Privacy</a><a href="#">Terms</a>
+        <a href="#" style="color:#fff">English</a><a href="#">Español</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ '/theme-preview/assets/js/nav.js' | relative_url }}" defer></script>
+</body>
+</html>

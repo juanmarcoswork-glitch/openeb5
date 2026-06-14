@@ -1,0 +1,148 @@
+/* ============================================================
+   OpenEB5 Theme · Design Tokens
+   Extraído del CSS de producción del sitio actual (Consultio).
+   Refs: PALETA.md, TIPOGRAFIA.md
+   ============================================================ */
+
+:root {
+  /* ── COLORES ────────────────────────────────────────────────
+     Paleta canónica. NO inventar tonos; usar solo estos.
+  */
+
+  /* Navy — fondo header / hero / footer */
+  --c-navy-900: #071a30;   /* deep, overlays */
+  --c-navy-800: #0b2a49;   /* PRIMARY navy del topbar/header (20× en CSS prod) */
+  --c-navy-700: #0d294a;   /* navy header main */
+  --c-navy-600: #14365c;   /* hover/elev variants */
+
+  /* Verde marca — el color identitario de Open EB5 */
+  --c-green-700: #039146;  /* verde dark (text on white) */
+  --c-green-600: #2eb673;  /* verde medio */
+  --c-green-500: #3dcf86;  /* PRIMARY verde marca (20× en CSS prod, logo EB5) */
+  --c-green-400: #56c477;  /* hover lighten */
+  --c-green-200: #c4f2d4;  /* pale (badges, bg subtle) */
+  --c-green-icon: #44ba74; /* verde íconos topbar */
+
+  /* Dorado/Ámbar — CTAs primarios y acentos premium */
+  --c-gold-700: #b07f33;   /* hover dorado oscuro */
+  --c-gold-600: #c69749;   /* PRIMARY gold (CTA "Schedule") */
+  --c-gold-500: #e3b770;   /* gold light (acento title) */
+
+  /* Neutros */
+  --c-white: #ffffff;
+  --c-paper: #f7f8fa;      /* fondo claro de páginas */
+  --c-paper-2: #eef1f5;    /* cards */
+  --c-border-soft: #e3e8ef;
+  --c-text-strong: #0b2a49;
+  --c-text: #334155;
+  --c-text-mute: #64748b;
+  --c-text-on-dark: #ffffff;
+  --c-text-on-dark-mute: #dde6f1;
+
+  /* Funcionales */
+  --c-success: #16a34a;
+  --c-warning: #b45309;
+  --c-error: #b91c1c;
+
+  /* Overlays */
+  --overlay-hero: linear-gradient(105deg, rgba(7,26,48,0.86) 0%, rgba(11,42,73,0.62) 48%, rgba(11,42,73,0.32) 100%);
+  --overlay-card: linear-gradient(180deg, rgba(7,26,48,0) 0%, rgba(7,26,48,0.85) 100%);
+
+
+  /* ── TIPOGRAFÍA ────────────────────────────────────────────
+     2 familias autoalojadas con font-display: swap.
+     - Inter: body + h2/h3/h4/h5/nav/buttons
+     - Playfair Display: h1 + accent italic
+  */
+  --ff-body: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --ff-display: 'Playfair Display', Georgia, "Times New Roman", serif;
+  --ff-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Escala tipográfica — type scale 1.25 (major third) */
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 16px;
+  --fs-md: 18px;
+  --fs-lg: 20px;
+  --fs-xl: 24px;
+  --fs-2xl: 30px;
+  --fs-3xl: 38px;
+  --fs-4xl: 48px;
+  --fs-5xl: 60px;
+  --fs-hero: clamp(38px, 5.6vw, 68px);
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.65;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+
+  /* ── ESPACIADO ─────────────────────────────────────────────
+     Escala 4px base.
+  */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-7: 32px;
+  --sp-8: 40px;
+  --sp-9: 48px;
+  --sp-10: 56px;
+  --sp-12: 72px;
+  --sp-14: 96px;
+  --sp-16: 120px;
+  --sp-20: 160px;
+
+  /* Section padding vertical (mobile-first) */
+  --section-py-sm: 60px;
+  --section-py-md: 90px;
+  --section-py-lg: 120px;
+
+
+  /* ── LAYOUT ────────────────────────────────────────────────
+  */
+  --container-max: 1240px;
+  --container-narrow: 880px;
+  --container-px: 24px;
+  --container-px-lg: 32px;
+
+
+  /* ── RADIOS + SOMBRAS ──────────────────────────────────────
+  */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 20px;
+  --r-pill: 999px;
+
+  --shadow-xs: 0 1px 2px rgba(11,42,73,0.06);
+  --shadow-sm: 0 4px 12px rgba(11,42,73,0.06);
+  --shadow-md: 0 12px 28px rgba(11,42,73,0.10);
+  --shadow-lg: 0 24px 56px rgba(11,42,73,0.16);
+  --shadow-gold: 0 8px 24px rgba(198,151,73,0.35);
+  --shadow-green: 0 6px 18px rgba(61,207,134,0.28);
+
+
+  /* ── TIMINGS / MOTION ──────────────────────────────────────
+  */
+  --t-fast: .15s;
+  --t-base: .25s;
+  --t-slow: .45s;
+  --easing: cubic-bezier(.4, 0, .2, 1);
+
+
+  /* ── Z-INDEX ───────────────────────────────────────────────
+  */
+  --z-base: 1;
+  --z-dropdown: 10;
+  --z-sticky: 100;
+  --z-modal: 1000;
+  --z-overlay: 2000;
+}
