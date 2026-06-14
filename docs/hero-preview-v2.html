@@ -96,8 +96,11 @@ sitemap: false
   .openeb5-hero--v2 .openeb5-hero__eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#e3b770;font-weight:600;margin-bottom:22px}
   .openeb5-hero--v2 .openeb5-hero__eyebrow::before{content:"";display:inline-block;width:8px;height:8px;background:#3dcf86;border-radius:50%;box-shadow:0 0 0 4px rgba(61,207,134,0.18)}
   .openeb5-hero--v2 .openeb5-hero__title{font-weight:600;font-size:clamp(38px,5.6vw,68px);line-height:1.06;letter-spacing:-1px;margin:0 0 22px;max-width:820px;color:#fff}
-  .openeb5-hero--v2 .openeb5-hero__accent{color:#e3b770;font-style:italic;font-weight:600}
-  .openeb5-hero--v2 .openeb5-hero__sub{font-size:clamp(16px,1.4vw,19px);color:#dde6f1;max-width:600px;margin:0 0 38px;line-height:1.65}
+  .openeb5-hero--v2 .openeb5-hero__accent{color:#3dcf86;font-style:italic;font-weight:600}
+  .openeb5-hero--v2 .openeb5-hero__sub{font-size:clamp(16px,1.4vw,19px);color:#dde6f1;max-width:600px;margin:0 0 28px;line-height:1.65}
+  .openeb5-hero--v2 .openeb5-hero__props{list-style:none;margin:0 0 36px;padding:0;display:flex;flex-wrap:wrap;gap:14px 28px;max-width:760px}
+  .openeb5-hero--v2 .openeb5-hero__prop{display:inline-flex;align-items:center;gap:10px;color:#e8eef7;font-size:14px;font-weight:500;line-height:1.3;letter-spacing:.2px}
+  .openeb5-hero--v2 .openeb5-hero__prop-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(61,207,134,0.14);color:#3dcf86;flex-shrink:0;border:1px solid rgba(61,207,134,0.32)}
   .openeb5-hero--v2 .openeb5-hero__cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
   .openeb5-hero--v2 .openeb5-hero__cta{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:transform .15s,box-shadow .15s,background-color .15s,border-color .15s,color .15s;line-height:1}
   .openeb5-hero--v2 .openeb5-hero__cta--primary{background:#c69749;color:#0b2a49;box-shadow:0 6px 18px rgba(198,151,73,0.35)}
@@ -120,8 +123,11 @@ sitemap: false
     .ct-header-top .container,.ct-header .container{flex-direction:column;gap:8px;align-items:flex-start}
     .openeb5-topbar-phone{margin-left:0;padding-left:0;border-left:0}
     .ct-main-menu{flex-wrap:wrap;gap:14px}
-    .openeb5-hero--v2{padding:100px 0 80px;min-height:560px}
+    .openeb5-hero--v2{padding:100px 0 80px;min-height:600px}
     .openeb5-hero--v2 .openeb5-hero__title{font-size:34px}
+    .openeb5-hero--v2 .openeb5-hero__props{flex-direction:column;gap:12px;margin-bottom:28px}
+    .openeb5-hero--v2 .openeb5-hero__prop{font-size:13px}
+    .openeb5-hero--v2 .openeb5-hero__prop-icon{width:30px;height:30px}
   }
 </style>
 </head>
@@ -206,6 +212,20 @@ sitemap: false
           <div class="openeb5-hero__eyebrow">USCIS-Approved Regional Center · Texas</div>
           <h1 class="openeb5-hero__title">Invest in the U.S.<br>and obtain your <span class="openeb5-hero__accent">Green Card</span></h1>
           <p class="openeb5-hero__sub">Open EB5 is a USCIS-approved EB-5 Regional Center based in Texas. We help foreign investors qualify for U.S. permanent residency through job-creating real estate projects.</p>
+          <ul class="openeb5-hero__props">
+            <li class="openeb5-hero__prop">
+              <span class="openeb5-hero__prop-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <span class="openeb5-hero__prop-text">USCIS-Approved Regional Center</span>
+            </li>
+            <li class="openeb5-hero__prop">
+              <span class="openeb5-hero__prop-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <span class="openeb5-hero__prop-text">Real Estate-Based Projects in Texas</span>
+            </li>
+            <li class="openeb5-hero__prop">
+              <span class="openeb5-hero__prop-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></span>
+              <span class="openeb5-hero__prop-text">End-to-End Investor Support</span>
+            </li>
+          </ul>
           <div class="openeb5-hero__cta-row">
             <a class="openeb5-hero__cta openeb5-hero__cta--primary" href="#">Schedule a Free Consultation</a>
             <a class="openeb5-hero__cta openeb5-hero__cta--phone" href="tel:19567335390"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><span>1 - 855 - OPENEB5</span></a>
@@ -217,12 +237,14 @@ sitemap: false
 
   <!-- Notas -->
   <div class="notes">
-    <h3>Cambios respecto a v1 (producción actual)</h3>
+    <h3>Cambios respecto a v1 (producción actual) — actualizado 2026-06-14 tras feedback</h3>
     <ul>
       <li><b>Top bar:</b> añadido <code>&lt;li&gt;</code> de teléfono junto al email, separado por línea vertical sutil. Ícono verde marca <code>#44ba74</code>. Hover a blanco/verde. Inyectado server-side via <code>ob_start</code> en <code>template_redirect</code> (cero CLS, cero JS, compatible con NitroPack).</li>
       <li><b>Hero padding superior:</b> v1 usa <code>min-height: 560px; height: 80vh</code> sin padding-top — pegado al menú. v2 usa <code>min-height: 680px; padding: 140px 0 110px</code> (respira). En mobile: <code>padding: 100px 0 80px</code>.</li>
       <li><b>Tipografía:</b> title pasa de <code>clamp(34px, 5.2vw, 62px)</code> a <code>clamp(38px, 5.6vw, 68px)</code>. Sub pasa de <code>15-18px</code> a <code>16-19px</code>. Eyebrow de <code>12px</code> a <code>13px</code>.</li>
       <li><b>Eyebrow con bullet verde marca:</b> punto <code>#3dcf86</code> con halo translúcido antes del texto, anclando el hero a la identidad visual del header (donde el verde es el color del menú activo).</li>
+      <li><b>Acento "Green Card" → verde marca</b> (cambiado tras feedback). El highlight del title ya no es dorado <code>#e3b770</code> sino verde marca <code>#3dcf86</code>. El dorado se reserva para el CTA primario "Schedule a Free Consultation" (jerarquía visual: verde = identidad, dorado = acción).</li>
+      <li><b>Prop values row (nuevo tras feedback):</b> 3 props con icono SVG inline + texto, en círculo translúcido verde marca. Editable vía atributos <code>prop1_text</code> / <code>prop2_text</code> / <code>prop3_text</code> del shortcode. Defaults: <i>USCIS-Approved Regional Center</i>, <i>Real Estate-Based Projects in Texas</i>, <i>End-to-End Investor Support</i>. En mobile pasa a column layout.</li>
       <li><b>CTA #2 → llamada directa:</b> sustituye "Read the EB-5 guide" por "1 - 855 - OPENEB5" con icono teléfono SVG inline. Borde verde marca, hover llena con verde y texto navy. <code>href="tel:19567335390"</code>.</li>
       <li><b>Overlay más rico:</b> gradiente pasa de <code>(7,26,48,.78 → .30)</code> a <code>(7,26,48,.86 → 11,42,73,.32)</code> con stop intermedio — más profundidad sin ocultar la imagen.</li>
     </ul>
