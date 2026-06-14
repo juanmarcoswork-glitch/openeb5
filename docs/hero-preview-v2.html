@@ -65,8 +65,15 @@ sitemap: false
   .openeb5-topbar-phone{margin-left:18px;padding-left:18px;border-left:1px solid rgba(255,255,255,0.15)}
   .openeb5-topbar-phone a:hover{color:#3dcf86 !important}
 
-  /* Header main */
-  .ct-header{background:rgba(11,42,73,0.92);padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+  /* Header main — simula el comportamiento del theme padre Consultio con
+     ct-header-layout25: header transparente con margin-bottom: -130px para
+     que el primer hero quede DEBAJO en overlay. */
+  .ct-header-wrap--layout25{position:relative;z-index:10;margin-bottom:-130px;background:transparent}
+  .ct-header-wrap--layout25 .ct-header{background:rgba(11,42,73,0.66);padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);min-height:130px;display:flex;align-items:center}
+  .ct-header-wrap--layout25 .ct-header .container{width:100%}
+  /* Versión v1 (sin overlay, como mostraba el preview original) — referencia */
+  .ct-header-wrap--flow{position:relative;background:transparent}
+  .ct-header-wrap--flow .ct-header{background:rgba(11,42,73,0.92);padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
   .ct-header .container{max-width:1200px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:30px}
   .ct-header-branding{font-size:24px;font-weight:800;letter-spacing:-.4px;color:#fff;display:flex;align-items:center;gap:9px}
   .ct-header-branding b{color:#3dcf86}
@@ -88,8 +95,10 @@ sitemap: false
   .openeb5-hero--v1 .openeb5-hero__cta--primary{background:#c69749;color:#0b2a49;box-shadow:0 6px 18px rgba(198,151,73,0.35)}
   .openeb5-hero--v1 .openeb5-hero__cta--secondary{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.5)}
 
-  /* === Hero (v2 — refined) === */
-  .openeb5-hero--v2{position:relative;min-height:680px;display:flex;align-items:center;overflow:hidden;isolation:isolate;width:100%;margin:0;padding:140px 0 110px;color:#fff}
+  /* === Hero (v2 — refined) ===
+     padding-top: 240px compensa el header layout25 con margin-bottom: -130px
+     del theme padre (top bar 40 + main header 130 + holgura 70). */
+  .openeb5-hero--v2{position:relative;min-height:720px;display:flex;align-items:center;overflow:hidden;isolation:isolate;width:100%;margin:0;padding:240px 0 120px;color:#fff}
   .openeb5-hero--v2::after{content:"";position:absolute;inset:0;background:url('https://openeb5.com/wp-content/uploads/2024/12/OpenEB5-Slide-08-1920.webp') center/cover no-repeat;z-index:-2}
   .openeb5-hero--v2::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(7,26,48,0.86) 0%,rgba(11,42,73,0.62) 48%,rgba(11,42,73,0.32) 100%);z-index:-1}
   .openeb5-hero--v2 .openeb5-hero__inner{width:100%;max-width:1200px;margin:0 auto;padding:0 32px}
@@ -123,7 +132,9 @@ sitemap: false
     .ct-header-top .container,.ct-header .container{flex-direction:column;gap:8px;align-items:flex-start}
     .openeb5-topbar-phone{margin-left:0;padding-left:0;border-left:0}
     .ct-main-menu{flex-wrap:wrap;gap:14px}
-    .openeb5-hero--v2{padding:100px 0 80px;min-height:600px}
+    .ct-header-wrap--layout25{margin-bottom:-80px}
+    .ct-header-wrap--layout25 .ct-header{min-height:auto}
+    .openeb5-hero--v2{padding:130px 0 80px;min-height:600px}
     .openeb5-hero--v2 .openeb5-hero__title{font-size:34px}
     .openeb5-hero--v2 .openeb5-hero__props{flex-direction:column;gap:12px;margin-bottom:28px}
     .openeb5-hero--v2 .openeb5-hero__prop{font-size:13px}
@@ -147,24 +158,27 @@ sitemap: false
       <span class="browser__url"><i class="fas fa-lock"></i>openeb5.com  <span class="browser__tag browser__tag--v1">v1 · current production</span></span>
     </div>
     <div class="site">
-      <!-- Top bar v1 (solo email) -->
-      <div class="ct-header-top">
-        <div class="container">
-          <ul class="ct-header-holder">
-            <li><a href="mailto:open@openeb5.com"><i class="fas fa-envelope"></i>open@openeb5.com</a></li>
-          </ul>
+      <!-- Header con layout25 overlay (margin-bottom: -130px del theme padre) — simula producción -->
+      <div class="ct-header-wrap--layout25">
+        <!-- Top bar v1 (solo email) -->
+        <div class="ct-header-top">
+          <div class="container">
+            <ul class="ct-header-holder">
+              <li><a href="mailto:open@openeb5.com"><i class="fas fa-envelope"></i>open@openeb5.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Header main -->
+        <div class="ct-header">
+          <div class="container">
+            <div class="ct-header-branding">Open<b>EB5</b></div>
+            <ul class="ct-main-menu">
+              <li class="active"><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Projects</a></li><li><a href="#">EB-5</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <!-- Header main -->
-      <div class="ct-header">
-        <div class="container">
-          <div class="ct-header-branding">Open<b>EB5</b></div>
-          <ul class="ct-main-menu">
-            <li class="active"><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Projects</a></li><li><a href="#">EB-5</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Hero v1 -->
+      <!-- Hero v1 (problemático: solo min-height 560 + height 80vh, sin padding-top → contenido pegado al menú) -->
       <section class="openeb5-hero--v1">
         <div class="openeb5-hero__inner">
           <div class="openeb5-hero__eyebrow">USCIS-Approved Regional Center · Texas</div>
@@ -188,25 +202,28 @@ sitemap: false
       <span class="browser__url"><i class="fas fa-lock"></i>openeb5.com  <span class="browser__tag browser__tag--v2">v2 · proposed</span></span>
     </div>
     <div class="site">
-      <!-- Top bar v2 (email + tel CTA) -->
-      <div class="ct-header-top">
-        <div class="container">
-          <ul class="ct-header-holder">
-            <li><a href="mailto:open@openeb5.com"><i class="fas fa-envelope"></i>open@openeb5.com</a></li>
-            <li class="openeb5-topbar-phone"><a href="tel:19567335390"><i class="fas fa-phone-alt"></i>1 - 855 - OPENEB5</a></li>
-          </ul>
+      <!-- Header con layout25 overlay (margin-bottom: -130px del theme padre) — simula producción -->
+      <div class="ct-header-wrap--layout25">
+        <!-- Top bar v2 (email + tel CTA) -->
+        <div class="ct-header-top">
+          <div class="container">
+            <ul class="ct-header-holder">
+              <li><a href="mailto:open@openeb5.com"><i class="fas fa-envelope"></i>open@openeb5.com</a></li>
+              <li class="openeb5-topbar-phone"><a href="tel:19567335390"><i class="fas fa-phone-alt"></i>1 - 855 - OPENEB5</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Header main -->
+        <div class="ct-header">
+          <div class="container">
+            <div class="ct-header-branding">Open<b>EB5</b></div>
+            <ul class="ct-main-menu">
+              <li class="active"><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Projects</a></li><li><a href="#">EB-5</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <!-- Header main -->
-      <div class="ct-header">
-        <div class="container">
-          <div class="ct-header-branding">Open<b>EB5</b></div>
-          <ul class="ct-main-menu">
-            <li class="active"><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Projects</a></li><li><a href="#">EB-5</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Hero v2 refinado -->
+      <!-- Hero v2 refinado (con padding-top 240px compensando el overlay) -->
       <section class="openeb5-hero--v2">
         <div class="openeb5-hero__inner">
           <div class="openeb5-hero__eyebrow">USCIS-Approved Regional Center · Texas</div>
@@ -240,7 +257,7 @@ sitemap: false
     <h3>Cambios respecto a v1 (producción actual) — actualizado 2026-06-14 tras feedback</h3>
     <ul>
       <li><b>Top bar:</b> añadido <code>&lt;li&gt;</code> de teléfono junto al email, separado por línea vertical sutil. Ícono verde marca <code>#44ba74</code>. Hover a blanco/verde. Inyectado server-side via <code>ob_start</code> en <code>template_redirect</code> (cero CLS, cero JS, compatible con NitroPack).</li>
-      <li><b>Hero padding superior:</b> v1 usa <code>min-height: 560px; height: 80vh</code> sin padding-top — pegado al menú. v2 usa <code>min-height: 680px; padding: 140px 0 110px</code> (respira). En mobile: <code>padding: 100px 0 80px</code>.</li>
+      <li><b>Hero padding superior (root cause encontrada):</b> el theme padre <code>Consultio</code> aplica <code>#ct-header-wrap.ct-header-layout25 { margin-bottom: -130px }</code> (línea 8244 de <code>themes/consultio/assets/css/theme.css</code>) para hacer overlay transparente sobre el primer hero — comportamiento intencional del theme. v1 con <code>padding-top: 0</code> + <code>min-height: 560px</code> dejaba el contenido del hero <i>completamente bajo el menú</i>. v2 usa <code>padding: 240px 0 120px; min-height: 720px</code> compensando: 40px top bar + 130px main header + 70px holgura visual = 240px. Mobile: <code>padding: 130px 0 80px</code> (el header colapsa).</li>
       <li><b>Tipografía:</b> title pasa de <code>clamp(34px, 5.2vw, 62px)</code> a <code>clamp(38px, 5.6vw, 68px)</code>. Sub pasa de <code>15-18px</code> a <code>16-19px</code>. Eyebrow de <code>12px</code> a <code>13px</code>.</li>
       <li><b>Eyebrow con bullet verde marca:</b> punto <code>#3dcf86</code> con halo translúcido antes del texto, anclando el hero a la identidad visual del header (donde el verde es el color del menú activo).</li>
       <li><b>Acento "Green Card" → verde marca</b> (cambiado tras feedback). El highlight del title ya no es dorado <code>#e3b770</code> sino verde marca <code>#3dcf86</code>. El dorado se reserva para el CTA primario "Schedule a Free Consultation" (jerarquía visual: verde = identidad, dorado = acción).</li>
