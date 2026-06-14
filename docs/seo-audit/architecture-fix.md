@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Plan de arquitectura y limpieza
-permalink: /architecture-fix/
+permalink: /seo-audit/architecture-fix/
 nav_order: 5
 ---
 

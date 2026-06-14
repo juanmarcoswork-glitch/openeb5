@@ -2,7 +2,7 @@
 layout: page
 title: Statement of Work
 description: Alcance, fases, tareas, tiempos y entregables del proyecto SEO de openeb5.com
-permalink: /sow/
+permalink: /seo-audit/sow/
 nav_order: 3
 ---
 

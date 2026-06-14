@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Auditoría SEO completa
-permalink: /audit/
+permalink: /seo-audit/audit/
 nav_order: 2
 ---
 

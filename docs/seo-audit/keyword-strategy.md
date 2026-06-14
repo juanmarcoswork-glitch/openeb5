@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Estrategia de keywords Q3 2026
-permalink: /keyword-strategy/
+permalink: /seo-audit/keyword-strategy/
 nav_order: 6
 ---
 

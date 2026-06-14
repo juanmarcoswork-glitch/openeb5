@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Plan técnico — Próximos 5 días
-permalink: /technical-fixes-5days/
+permalink: /seo-audit/technical-fixes-5days/
 nav_order: 7
 ---
 

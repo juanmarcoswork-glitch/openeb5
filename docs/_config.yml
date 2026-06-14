@@ -21,7 +21,8 @@ plugins:
   - jekyll-seo-tag
 
 # URL base — necesario para GitHub Pages bajo subpath
-baseurl: "/openeb5-seo-audit"
+# Repo renombrado de 'openeb5-seo-audit' a 'openeb5' (2026-06-14)
+baseurl: "/openeb5"
 url: "https://juanmarcoswork-glitch.github.io"
 
 # Default layout para todas las páginas markdown
@@ -41,19 +42,19 @@ exclude:
   - .gitignore
   - README.md
 
-# Navegación principal
+# Navegación principal — todas las URLs ahora bajo /seo-audit/ (subdir del repo)
 nav:
   - title: Dashboard
-    url: /
+    url: /seo-audit/
   - title: Auditoría
-    url: /audit/
+    url: /seo-audit/audit/
   - title: SOW
-    url: /sow/
+    url: /seo-audit/sow/
   - title: Timeline
-    url: /timeline/
+    url: /seo-audit/timeline/
   - title: Arquitectura
-    url: /architecture-fix/
+    url: /seo-audit/architecture-fix/
   - title: Keywords
-    url: /keyword-strategy/
+    url: /seo-audit/keyword-strategy/
   - title: Plan 5 días
-    url: /technical-fixes-5days/
+    url: /seo-audit/technical-fixes-5days/

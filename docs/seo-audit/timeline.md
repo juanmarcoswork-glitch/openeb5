@@ -2,7 +2,7 @@
 layout: page
 title: Timeline y fechas de entrega
 description: Calendario maestro de 4 meses (14-may → 13-sep 2026) con milestones y checkpoints
-permalink: /timeline/
+permalink: /seo-audit/timeline/
 nav_order: 4
 ---
 
