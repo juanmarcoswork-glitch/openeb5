@@ -107,8 +107,11 @@
 
 
   /* ── LAYOUT ────────────────────────────────────────────────
+     Container max 1420px — definido junto al cliente (2026-06-22)
+     para aprovechar viewport amplio de desktop modernos sin
+     comprometer legibilidad. Mobile sigue con padding 24px.
   */
-  --container-max: 1240px;
+  --container-max: 1420px;
   --container-narrow: 880px;
   --container-px: 24px;
   --container-px-lg: 32px;

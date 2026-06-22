@@ -325,59 +325,120 @@
 }
 
 /* ============================================================
-   TRUST BAR (USCIS-Approved + cifras)
+   LOGO MARQUEE (Trust / Authority brands & media)
+   Reemplaza al antiguo .trust-bar — cifras movidas a otras secciones.
+   CSS-only marquee con duplicación del set para loop seamless.
    ============================================================ */
 
-.trust-bar {
+.logo-marquee {
   background: var(--c-paper);
   border-top: 1px solid var(--c-border-soft);
   border-bottom: 1px solid var(--c-border-soft);
   padding: var(--sp-8) 0;
+  overflow: hidden;
 }
 
-.trust-bar__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--sp-6);
-  align-items: center;
+.logo-marquee__heading {
+  text-align: center;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-text-mute);
+  margin: 0 0 var(--sp-6);
 }
 
-.trust-item {
+.logo-marquee__viewport {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
+.logo-marquee__track {
   display: flex;
   align-items: center;
-  gap: var(--sp-4);
+  gap: 64px;
+  width: max-content;
+  animation: logo-marquee-scroll 60s linear infinite;
+  will-change: transform;
 }
 
-.trust-item__icon {
+.logo-marquee:hover .logo-marquee__track,
+.logo-marquee__track:focus-within {
+  animation-play-state: paused;
+}
+
+@keyframes logo-marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee__track {
+    animation: none;
+    transform: translateX(0);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px 56px;
+    padding: 0 var(--container-px);
+  }
+  .logo-marquee__viewport { mask-image: none; -webkit-mask-image: none; }
+}
+
+/* ─── Wordmarks individuales (text-based, grayscale)
+       Reemplazar por <img src="/wp-content/uploads/brands/..."> en producción
+       para usar logos oficiales SVG/PNG. */
+
+.logo-mark {
   flex-shrink: 0;
-  width: 48px; height: 48px;
-  display: inline-flex;
-  align-items: center; justify-content: center;
-  border-radius: var(--r-md);
-  background: var(--c-green-200);
-  color: var(--c-green-700);
-}
-
-.trust-item__num {
-  font-family: var(--ff-display);
-  font-size: var(--fs-2xl);
-  font-weight: var(--fw-bold);
-  color: var(--c-navy-800);
-  line-height: 1;
-}
-
-.trust-item__label {
-  font-size: var(--fs-sm);
   color: var(--c-text-mute);
-  margin-top: 2px;
-  letter-spacing: 0.02em;
+  opacity: 0.72;
+  transition: opacity var(--t-base) var(--easing), color var(--t-base) var(--easing), transform var(--t-base) var(--easing);
+  white-space: nowrap;
+  line-height: 1;
+  user-select: none;
 }
 
-@media (max-width: 900px) {
-  .trust-bar__grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-7); }
+.logo-mark:hover {
+  opacity: 1;
+  color: var(--c-navy-800);
+  transform: translateY(-1px);
 }
-@media (max-width: 480px) {
-  .trust-bar__grid { grid-template-columns: 1fr; }
+
+.logo-mark span {
+  display: inline-block;
+  font-size: 22px;
+}
+
+/* Approximated brand wordmarks */
+.logo-mark--bloomberg span   { font-family: var(--ff-body); font-weight: 800; letter-spacing: -0.02em; font-size: 24px; }
+.logo-mark--cnn span         { font-family: var(--ff-body); font-weight: 900; letter-spacing: -0.02em; font-size: 28px; }
+.logo-mark--forbes span      { font-family: var(--ff-display); font-weight: 700; font-style: italic; letter-spacing: -0.01em; font-size: 26px; }
+.logo-mark--forbes i         { font-style: italic; }
+.logo-mark--reforma span     { font-family: var(--ff-display); font-weight: 700; letter-spacing: 0.06em; font-size: 22px; }
+.logo-mark--adn40 span       { font-family: var(--ff-body); font-weight: 700; letter-spacing: 0.02em; font-size: 24px; }
+.logo-mark--adn40 b          { font-weight: 900; color: var(--c-green-700); margin-left: 1px; }
+.logo-mark--dunkin span      { font-family: var(--ff-body); font-weight: 900; letter-spacing: -0.01em; font-size: 22px; }
+.logo-mark--olive span       { font-family: var(--ff-display); font-style: italic; font-weight: 600; font-size: 24px; }
+.logo-mark--sleep span       { font-family: var(--ff-body); font-weight: 600; letter-spacing: -0.005em; font-size: 22px; }
+.logo-mark--sprint span      { font-family: var(--ff-body); font-weight: 700; letter-spacing: -0.01em; font-size: 24px; text-transform: lowercase; }
+.logo-mark--verizon span     { font-family: var(--ff-body); font-weight: 700; letter-spacing: -0.02em; font-size: 24px; }
+.logo-mark--verizon sup      { color: var(--c-error); font-size: 0.6em; margin-left: 1px; }
+.logo-mark--longhorn span    { font-family: var(--ff-display); font-weight: 700; letter-spacing: 0.12em; font-size: 22px; }
+.logo-mark--take5 span       { font-family: var(--ff-body); font-weight: 800; letter-spacing: 0.04em; font-size: 22px; }
+.logo-mark--take5 b          { font-weight: 900; margin-left: 1px; font-size: 1.2em; }
+.logo-mark--anytime span     { font-family: var(--ff-body); font-weight: 800; letter-spacing: 0.05em; font-size: 18px; }
+.logo-mark--mcalisters span  { font-family: var(--ff-display); font-style: italic; font-weight: 600; font-size: 22px; }
+.logo-mark--blackbear span   { font-family: var(--ff-display); font-weight: 700; letter-spacing: 0.02em; font-size: 22px; }
+
+@media (max-width: 768px) {
+  .logo-marquee { padding: var(--sp-7) 0; }
+  .logo-marquee__heading { padding: 0 var(--container-px); font-size: 11px; }
+  .logo-marquee__track { gap: 44px; animation-duration: 45s; }
+  .logo-mark span { font-size: 18px; }
+  .logo-mark--cnn span, .logo-mark--bloomberg span, .logo-mark--sprint span, .logo-mark--verizon span { font-size: 20px; }
+  .logo-mark--anytime span, .logo-mark--longhorn span { font-size: 15px; }
 }
 
 /* ============================================================

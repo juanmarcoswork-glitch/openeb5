@@ -168,38 +168,59 @@ sitemap: false
   </div>
 </section>
 
-<!-- ── 2. TRUST BAR ── -->
-<section class="trust-bar" aria-label="Trust indicators">
+<!-- ── 2. TRUST CAROUSEL — Brands & media mentions ──
+     Logos derivados de bios de team members:
+       Emilio Guzmán → Bloomberg, ADN40, CNN, Forbes, Reforma
+       Ricardo Rubiano → Dunkin', Olive Garden, Sleep Number, Sprint,
+                          Verizon, LongHorn, Take 5, Anytime Fitness,
+                          McAlister's Deli, Black Bear Diner
+     Marquee CSS-only (sin JS), pausa en hover, accessible.
+
+     NOTA AL CLIENTE: estos wordmarks son text-based para el preview.
+     En producción deben reemplazarse por SVG/PNG oficiales de cada marca
+     (subir a /wp-content/uploads/brands/ con naming kebab-case).
+-->
+<section class="logo-marquee" aria-labelledby="logo-marquee-title">
   <div class="container">
-    <div class="trust-bar__grid">
-      <div class="trust-item">
-        <span class="trust-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
-        <div>
-          <div class="trust-item__num">USCIS</div>
-          <div class="trust-item__label">Approved Regional Center</div>
-        </div>
-      </div>
-      <div class="trust-item">
-        <span class="trust-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-        <div>
-          <div class="trust-item__num">8+</div>
-          <div class="trust-item__label">Countries Served</div>
-        </div>
-      </div>
-      <div class="trust-item">
-        <span class="trust-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></span>
-        <div>
-          <div class="trust-item__num">$800K</div>
-          <div class="trust-item__label">Minimum TEA Investment</div>
-        </div>
-      </div>
-      <div class="trust-item">
-        <span class="trust-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
-        <div>
-          <div class="trust-item__num">100%</div>
-          <div class="trust-item__label">Dedicated Investor Support</div>
-        </div>
-      </div>
+    <p class="logo-marquee__heading" id="logo-marquee-title">
+      Trusted by leaders our team has worked with &middot; featured in
+    </p>
+  </div>
+  <div class="logo-marquee__viewport" aria-hidden="false" role="region" aria-label="Brand and media affiliations carousel">
+    <div class="logo-marquee__track">
+      <!-- Set 1 -->
+      <div class="logo-mark logo-mark--bloomberg"><span>Bloomberg</span></div>
+      <div class="logo-mark logo-mark--cnn"><span>CNN</span></div>
+      <div class="logo-mark logo-mark--forbes"><span><i>Forbes</i></span></div>
+      <div class="logo-mark logo-mark--reforma"><span>REFORMA</span></div>
+      <div class="logo-mark logo-mark--adn40"><span>ADN<b>40</b></span></div>
+      <div class="logo-mark logo-mark--dunkin"><span>DUNKIN'</span></div>
+      <div class="logo-mark logo-mark--olive"><span>Olive&nbsp;Garden</span></div>
+      <div class="logo-mark logo-mark--sleep"><span>Sleep Number</span></div>
+      <div class="logo-mark logo-mark--sprint"><span>Sprint</span></div>
+      <div class="logo-mark logo-mark--verizon"><span>verizon<sup>&#10003;</sup></span></div>
+      <div class="logo-mark logo-mark--longhorn"><span>LONGHORN</span></div>
+      <div class="logo-mark logo-mark--take5"><span>TAKE<b>5</b></span></div>
+      <div class="logo-mark logo-mark--anytime"><span>ANYTIME&nbsp;FITNESS</span></div>
+      <div class="logo-mark logo-mark--mcalisters"><span>McAlister's&nbsp;Deli</span></div>
+      <div class="logo-mark logo-mark--blackbear"><span>Black&nbsp;Bear&nbsp;Diner</span></div>
+
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="logo-mark logo-mark--bloomberg" aria-hidden="true"><span>Bloomberg</span></div>
+      <div class="logo-mark logo-mark--cnn" aria-hidden="true"><span>CNN</span></div>
+      <div class="logo-mark logo-mark--forbes" aria-hidden="true"><span><i>Forbes</i></span></div>
+      <div class="logo-mark logo-mark--reforma" aria-hidden="true"><span>REFORMA</span></div>
+      <div class="logo-mark logo-mark--adn40" aria-hidden="true"><span>ADN<b>40</b></span></div>
+      <div class="logo-mark logo-mark--dunkin" aria-hidden="true"><span>DUNKIN'</span></div>
+      <div class="logo-mark logo-mark--olive" aria-hidden="true"><span>Olive&nbsp;Garden</span></div>
+      <div class="logo-mark logo-mark--sleep" aria-hidden="true"><span>Sleep Number</span></div>
+      <div class="logo-mark logo-mark--sprint" aria-hidden="true"><span>Sprint</span></div>
+      <div class="logo-mark logo-mark--verizon" aria-hidden="true"><span>verizon<sup>&#10003;</sup></span></div>
+      <div class="logo-mark logo-mark--longhorn" aria-hidden="true"><span>LONGHORN</span></div>
+      <div class="logo-mark logo-mark--take5" aria-hidden="true"><span>TAKE<b>5</b></span></div>
+      <div class="logo-mark logo-mark--anytime" aria-hidden="true"><span>ANYTIME&nbsp;FITNESS</span></div>
+      <div class="logo-mark logo-mark--mcalisters" aria-hidden="true"><span>McAlister's&nbsp;Deli</span></div>
+      <div class="logo-mark logo-mark--blackbear" aria-hidden="true"><span>Black&nbsp;Bear&nbsp;Diner</span></div>
     </div>
   </div>
 </section>
