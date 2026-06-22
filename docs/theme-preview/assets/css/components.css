@@ -386,59 +386,37 @@
   .logo-marquee__viewport { mask-image: none; -webkit-mask-image: none; }
 }
 
-/* ─── Wordmarks individuales (text-based, grayscale)
-       Reemplazar por <img src="/wp-content/uploads/brands/..."> en producción
-       para usar logos oficiales SVG/PNG. */
+/* ─── Logos via <img> a /assets/brands/*.svg
+       Los SVG en assets/brands/ son placeholders monochrome con
+       wordmark. Reemplazables por logos oficiales (SVG full color
+       preferido o PNG transparente) manteniendo el mismo filename. */
 
-.logo-mark {
+img.logo-mark {
   flex-shrink: 0;
-  color: var(--c-text-mute);
-  opacity: 0.72;
-  transition: opacity var(--t-base) var(--easing), color var(--t-base) var(--easing), transform var(--t-base) var(--easing);
-  white-space: nowrap;
-  line-height: 1;
+  height: 36px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  color: var(--c-text-mute);   /* hereda al currentColor de los SVG placeholder */
+  opacity: 0.6;
+  filter: grayscale(1) contrast(0.95);
+  transition: opacity var(--t-base) var(--easing),
+              filter var(--t-base) var(--easing),
+              transform var(--t-base) var(--easing);
   user-select: none;
 }
 
-.logo-mark:hover {
+img.logo-mark:hover {
   opacity: 1;
-  color: var(--c-navy-800);
+  filter: grayscale(0) contrast(1);
   transform: translateY(-1px);
 }
-
-.logo-mark span {
-  display: inline-block;
-  font-size: 22px;
-}
-
-/* Approximated brand wordmarks */
-.logo-mark--bloomberg span   { font-family: var(--ff-body); font-weight: 800; letter-spacing: -0.02em; font-size: 24px; }
-.logo-mark--cnn span         { font-family: var(--ff-body); font-weight: 900; letter-spacing: -0.02em; font-size: 28px; }
-.logo-mark--forbes span      { font-family: var(--ff-display); font-weight: 700; font-style: italic; letter-spacing: -0.01em; font-size: 26px; }
-.logo-mark--forbes i         { font-style: italic; }
-.logo-mark--reforma span     { font-family: var(--ff-display); font-weight: 700; letter-spacing: 0.06em; font-size: 22px; }
-.logo-mark--adn40 span       { font-family: var(--ff-body); font-weight: 700; letter-spacing: 0.02em; font-size: 24px; }
-.logo-mark--adn40 b          { font-weight: 900; color: var(--c-green-700); margin-left: 1px; }
-.logo-mark--dunkin span      { font-family: var(--ff-body); font-weight: 900; letter-spacing: -0.01em; font-size: 22px; }
-.logo-mark--olive span       { font-family: var(--ff-display); font-style: italic; font-weight: 600; font-size: 24px; }
-.logo-mark--sleep span       { font-family: var(--ff-body); font-weight: 600; letter-spacing: -0.005em; font-size: 22px; }
-.logo-mark--sprint span      { font-family: var(--ff-body); font-weight: 700; letter-spacing: -0.01em; font-size: 24px; text-transform: lowercase; }
-.logo-mark--verizon span     { font-family: var(--ff-body); font-weight: 700; letter-spacing: -0.02em; font-size: 24px; }
-.logo-mark--verizon sup      { color: var(--c-error); font-size: 0.6em; margin-left: 1px; }
-.logo-mark--longhorn span    { font-family: var(--ff-display); font-weight: 700; letter-spacing: 0.12em; font-size: 22px; }
-.logo-mark--take5 span       { font-family: var(--ff-body); font-weight: 800; letter-spacing: 0.04em; font-size: 22px; }
-.logo-mark--take5 b          { font-weight: 900; margin-left: 1px; font-size: 1.2em; }
-.logo-mark--anytime span     { font-family: var(--ff-body); font-weight: 800; letter-spacing: 0.05em; font-size: 18px; }
-.logo-mark--mcalisters span  { font-family: var(--ff-display); font-style: italic; font-weight: 600; font-size: 22px; }
-.logo-mark--blackbear span   { font-family: var(--ff-display); font-weight: 700; letter-spacing: 0.02em; font-size: 22px; }
 
 @media (max-width: 768px) {
   .logo-marquee { padding: var(--sp-7) 0; }
   .logo-marquee__heading { padding: 0 var(--container-px); font-size: 11px; }
   .logo-marquee__track { gap: 44px; animation-duration: 45s; }
-  .logo-mark span { font-size: 18px; }
-  .logo-mark--cnn span, .logo-mark--bloomberg span, .logo-mark--sprint span, .logo-mark--verizon span { font-size: 20px; }
-  .logo-mark--anytime span, .logo-mark--longhorn span { font-size: 15px; }
+  img.logo-mark { height: 28px; max-width: 140px; }
 }
 
 /* ============================================================
