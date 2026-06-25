@@ -331,7 +331,7 @@
    ============================================================ */
 
 .logo-marquee {
-  background: var(--c-paper);
+  background: #fff;
   border-top: 1px solid var(--c-border-soft);
   border-bottom: 1px solid var(--c-border-soft);
   padding: var(--sp-8) 0;
@@ -393,13 +393,15 @@
 
 img.logo-mark {
   flex-shrink: 0;
-  height: 36px;
+  height: 52px;
   width: auto;
-  max-width: 180px;
+  max-width: 200px;
   object-fit: contain;
-  color: var(--c-text-mute);   /* hereda al currentColor de los SVG placeholder */
-  opacity: 0.6;
+  opacity: 0.55;
   filter: grayscale(1) contrast(0.95);
+  /* multiply funde los blancos de los JPG/PNG con el fondo blanco
+     del marquee — los SVG con fondos transparentes no se afectan. */
+  mix-blend-mode: multiply;
   transition: opacity var(--t-base) var(--easing),
               filter var(--t-base) var(--easing),
               transform var(--t-base) var(--easing);
@@ -416,7 +418,7 @@ img.logo-mark:hover {
   .logo-marquee { padding: var(--sp-7) 0; }
   .logo-marquee__heading { padding: 0 var(--container-px); font-size: 11px; }
   .logo-marquee__track { gap: 44px; animation-duration: 45s; }
-  img.logo-mark { height: 28px; max-width: 140px; }
+  img.logo-mark { height: 38px; max-width: 150px; }
 }
 
 /* ============================================================

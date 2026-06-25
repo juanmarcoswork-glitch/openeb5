@@ -4,38 +4,47 @@ Esta carpeta contiene los logos que aparecen en el carrusel de autoridad del hom
 
 Los logos representan **marcas con las que han trabajado los miembros del team de Open EB5** y **medios donde el team ha sido mencionado** — son señales de autoridad y credibilidad para los visitantes.
 
-## 📋 Estado actual
+## ✅ Estado actual (2026-06-25)
 
-Cada archivo `.svg` en esta carpeta es un **placeholder gris con el wordmark** de cada marca. Esto asegura que el carrusel se vea bien aunque los logos oficiales no estén subidos todavía.
+**Logos oficiales del cliente subidos.** Los placeholders SVG monochrome fueron reemplazados por los archivos originales que el cliente entregó. El carrusel ya muestra los logos reales.
 
-Cuando subas el logo oficial con el **mismo nombre de archivo**, automáticamente reemplaza el placeholder. No hay que tocar HTML ni CSS.
-
-## 📁 Archivos esperados (15 totales)
+## 📁 Archivos actuales (15 totales)
 
 ### Medios (de bio de Emilio Guzmán)
 
-| Archivo | Marca |
-|---|---|
-| `bloomberg.svg` | Bloomberg |
-| `cnn.svg` | CNN |
-| `forbes.svg` | Forbes |
-| `reforma.svg` | Reforma |
-| `adn40.svg` | ADN40 |
+| Archivo | Marca | Formato origen |
+|---|---|---|
+| `bloomberg.jpg` | Bloomberg | JPG color |
+| `cnn.svg` | CNN | SVG vector (rojo oficial) |
+| `forbes.jpeg` | Forbes | JPEG |
+| `reforma.png` | Reforma | PNG |
+| `adn40.png` | ADN40 | PNG |
 
 ### Brands (de bio de Ricardo Rubiano)
 
-| Archivo | Marca |
-|---|---|
-| `dunkin.svg` | Dunkin' |
-| `olive-garden.svg` | Olive Garden |
-| `sleep-number.svg` | Sleep Number |
-| `sprint.svg` | Sprint |
-| `verizon.svg` | Verizon |
-| `longhorn.svg` | LongHorn Steakhouse |
-| `take-5.svg` | Take 5 Oil Change |
-| `anytime-fitness.svg` | Anytime Fitness |
-| `mcalisters.svg` | McAlister's Deli |
-| `black-bear-diner.svg` | Black Bear Diner |
+| Archivo | Marca | Formato origen |
+|---|---|---|
+| `dunkin.png` | Dunkin' | PNG |
+| `olive-garden.png` | Olive Garden | PNG |
+| `sleep-number.png` | Sleep Number | PNG |
+| `sprint.svg` | Sprint | SVG vector |
+| `verizon.png` | Verizon | PNG |
+| `longhorn.png` | LongHorn Steakhouse | PNG |
+| `take-5.png` | Take 5 Oil Change | PNG |
+| `anytime-fitness.png` | Anytime Fitness | PNG |
+| `mcalisters.png` | McAlister's Deli | PNG |
+| `black-bear-diner.png` | Black Bear Diner | PNG |
+
+### Cómo se ven en el carrusel
+
+El CSS aplica `filter: grayscale(1) opacity: 0.55 + mix-blend-mode: multiply` por default → logos en B/N tenues sobre fondo blanco. En **hover** quita el filter → vuelven a su color original con `opacity: 1`. Efecto premium "muted strip → live brand".
+
+Para logos con **fondo blanco/JPG** (Bloomberg, Forbes, etc.), el `mix-blend-mode: multiply` funde el blanco con el fondo del marquee → sin bordes visibles.
+
+### Si querés reemplazar un logo
+
+1. Reemplazar el archivo en esta carpeta manteniendo el filename
+2. Si cambiás de extensión (ej PNG → SVG), actualizar también [`../../index.html`](../../index.html) en la sección `<section class="logo-marquee">` para apuntar al nuevo path
 
 ## 🎨 Specs de los archivos
 
