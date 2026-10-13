@@ -7,6 +7,45 @@
 
 ---
 
+> ## ⚠️ Estado al 7 de septiembre de 2026
+>
+> Este documento es el **alcance original de agosto** y se mantiene sin
+> cambios como referencia contractual. Lo que ocurrió después está en
+> [`RE-AUDIT-2026-09.md`](RE-AUDIT-2026-09.md).
+>
+> **Resumen del cierre de la Fase 1:**
+>
+> | | |
+> |---|---|
+> | Score | 58 → **68/100** en vivo · **84** proyectado con `v1.0.9.5` desplegado |
+> | Tareas cerradas y verificadas en vivo | 4 de 12 |
+> | Tareas resueltas en el paquete, pendientes de subir | 8 de 12 |
+> | Defectos nuevos detectados en septiembre | 3 |
+>
+> **Cerrado en vivo:** `lang="es"` en el 100% del sitio español (estaba
+> al 0%), 19 de los 27 enlaces rotos, el sitemap ES ya se genera con 61
+> URLs, el bloque de AI crawlers volvió a `robots.txt`, las 13 entradas
+> del blog ES tienen meta description, y la home inglesa bajó de 28
+> hojas de estilo a 7.
+>
+> **Resuelto en el paquete `v1.0.9.5`, pendiente de FTP:** hreflang,
+> contenido de 25 páginas de país y 16 de hub, las 8 páginas de país que
+> devuelven 404, régimen de assets y caché en `/ES/`, metadatos
+> curados, consolidación de archivos duplicados, `llms.txt` en dos
+> idiomas y el plan de enlazado interno.
+>
+> **Detectado en septiembre y no previsto en este SOW:** las 21 entradas
+> del blog inglés canonicalizan a una URL que redirige (regresión del
+> cambio de base de categoría de agosto), el sitemap español no está
+> declarado en ninguna parte, y hay un duplicado del consejo asesor en
+> español.
+>
+> **Sin cambios respecto a lo previsto aquí:** la Fase 3 sigue siendo el
+> cuello de botella real. 4 keywords orgánicas y 1 visita al mes no se
+> arreglan con trabajo técnico.
+
+---
+
 ## 1. Punto de partida
 
 Re-auditoría completa ejecutada el 7 de agosto de 2026 sobre un crawl propio de **215 URLs reales** (93 en inglés, 122 en español), verificando en vivo códigos de estado, títulos, meta descriptions, H1, canonicals, hreflang, atributo `lang`, directivas robots, conteo de palabras, atributos `alt`, cabeceras HTTP y stack de assets.

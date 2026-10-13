@@ -1,4 +1,15 @@
 # Auditoría SEO — openeb5.com + /ES
+
+> **Revisión superada.** Este documento refleja el sitio tal como estaba
+> el 7 de agosto de 2026. La revisión vigente es
+> [`RE-AUDIT-2026-09.md`](RE-AUDIT-2026-09.md), del 7 de septiembre, que
+> mide qué se cerró de aquí y qué apareció nuevo.
+>
+> Cambios grandes desde esta versión: las páginas ES ya declaran
+> `lang="es"`, el sitemap español ya se genera, 19 de los 27 enlaces
+> rotos están cerrados, y el blog inglés se sirve ahora bajo
+> `/business/` y no `/blog/`.
+
 **Fecha:** 7 de agosto de 2026
 **Método:** crawl BFS propio de 215 URLs, verificación serial de códigos de estado, comparativa de stack de assets entre idiomas, Ahrefs Site Explorer
 **Alcance:** 93 URLs en inglés + 122 URLs en español

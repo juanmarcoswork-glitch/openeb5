@@ -1,68 +1,80 @@
-# openeb5.com — SEO Audit (May 2026)
+# openeb5.com + /ES — Auditoría SEO
 
-> 🔍 Ver la auditoría SEO completa en [GitHub Pages](https://juanmarcoswork-glitch.github.io/openeb5-seo-audit/) o `/docs/`.
+> 📊 **Panel en vivo:** https://juanmarcoswork-glitch.github.io/openeb5/seo-audit/
 
-Carpeta de trabajo para la auditoría SEO completa de **https://openeb5.com/** (Open EB5 — USCIS-approved EB-5 Regional Center, McAllen, TX).
+Carpeta de trabajo de la auditoría SEO de **openeb5.com** y **openeb5.com/ES/** (Open EB5, Centro Regional EB-5 aprobado por USCIS, McAllen, Texas).
 
-## Resumen rápido
+## Estado actual: 13 de octubre de 2026
 
-- **Health Score: 29/100 (Critical)**
-- **Stack:** WordPress 6.9.4 + Yoast + Elementor Pro + Slider Revolution + WooCommerce + 23 plugins activos
-- **Visibilidad orgánica (US, SEMrush):** 20 keywords · 0 tráfico estimado · Authority Score 2/100
-- **Industria:** YMYL (Your Money or Your Life) — inversión + inmigración
-
-## Archivos clave
-
-| Archivo | Propósito |
+| | |
 |---|---|
-| [`FULL-AUDIT-REPORT.md`](FULL-AUDIT-REPORT.md) | Reporte ejecutivo + scoring completo |
-| [`ACTION-PLAN.md`](ACTION-PLAN.md) | 47 acciones priorizadas (P0–P3) |
-| [`reports/technical-seo.md`](reports/technical-seo.md) | Caching, hreflang, seguridad, plugins, sitemap |
-| [`reports/content-eeat.md`](reports/content-eeat.md) | YMYL, E-E-A-T, gaps de contenido, country pages |
-| [`reports/schema-markup.md`](reports/schema-markup.md) | JSON-LD listo para pegar (Org, FAQ, Article, Person…) |
-| [`reports/performance-cwv.md`](reports/performance-cwv.md) | Core Web Vitals (sintético) + plugin bloat |
-| [`reports/geo-ai-readiness.md`](reports/geo-ai-readiness.md) | AI Overviews, ChatGPT, Perplexity, plantilla llms.txt |
-| [`reports/backlinks-competitive.md`](reports/backlinks-competitive.md) | Backlinks, anchor texts, gap competitivo, keyword targets |
-| [`data/`](data/) | Snapshots crudos (HTML, headers, sitemaps, robots.txt) |
+| **Score** | **70/100** en vivo · **84** proyectado con el paquete rehecho sobre el tema v1.1.x en vivo |
+| **Alcance** | 138 URLs de los dos sitemaps (73 EN + 65 ES) + 27 destinos de enlace interno |
+| **Sector** | YMYL (inmigración + inversión) |
+| **Stack** | Dos instalaciones de WordPress separadas, tema custom `openeb5` en ambas, Yoast, Elementor, NitroPack (solo EN) |
+| **Visibilidad orgánica** | 10 keywords · 19 visitas/mes estimadas (12 Oct 2026). Eran 4 y 1 en agosto. El blog EN entra en el top 10 |
 
-## Top-5 hallazgos críticos
+## Revisiones
 
-1. Homepage `<title>` = "OpenEB5 - openeb5" (sin keywords, marca en minúscula)
-2. `Cache-Control: no-store` + PHPSESSID por visita → caché y CDN rotos
-3. Sin hreflang en sitio EN/ES + 18 páginas de país; blog ES no está en sitemap
-4. Cero menciones de USCIS.gov en pillar guide; sin abogado nombrado, sin disclaimers SEC, sin número de Regional Center visible
-5. Schema mínimo y roto (Organization en minúsculas, BreadcrumbList con 1 item, sin LocalBusiness, sin FAQ, sin Article en blog)
+| Documento | Fecha | Alcance | Score |
+|---|---|---|---:|
+| [`RE-AUDIT-2026-10.md`](RE-AUDIT-2026-10.md) | 13 Oct 2026 | **Vigente.** EN + ES, 138 URLs | 70 |
+| [`RE-AUDIT-2026-09.md`](RE-AUDIT-2026-09.md) | 7 Sep 2026 | EN + ES, 130 URLs | 68 |
+| [`AUDIT-2026-08-EN-ES.md`](AUDIT-2026-08-EN-ES.md) | 7 Ago 2026 | EN + ES, 215 URLs. Primera auditoría del sitio español | 58 |
+| [`SCOPE-OF-WORK-2026-08.md`](SCOPE-OF-WORK-2026-08.md) | 7 Ago 2026 | Plan de 30 días + fases 2 y 3 | — |
+| [`FULL-AUDIT-REPORT.md`](FULL-AUDIT-REPORT.md) | 11 May 2026 | Histórico. Solo inglés, tema Consultio | 29 |
+| [`ACTION-PLAN.md`](ACTION-PLAN.md) | 11 May 2026 | Histórico. 47 acciones P0-P3 | — |
 
-## Top-5 quick wins (≤4h cada uno)
+El score baja de 62 (junio, solo inglés) a 58 (agosto) porque cambia el **alcance de la medición**, no porque hubiera retroceso: en agosto se empieza a medir también `/ES/`, que nunca se había auditado.
 
-1. Corregir nombre "Open EB5" en Yoast (cascada global)
-2. Reescribir title + meta de homepage
-3. Instalar WP Rocket + Cloudflare
-4. Eliminar plugins inútiles (WooCommerce, YITH ×2, crypto-widgets, Flickr, etc.)
-5. Publicar `/llms.txt`
+## Los tres hallazgos que definen el trabajo
 
-## Métricas competitivas (US, SEMrush)
+1. **El sitio español es el activo orgánico.** Cinco de las siete posiciones registradas apuntan a `/ES/` (#6 Argentina, #7 España, #8 Chile, #9 México para "eb5"), y es justo el que quedó fuera de las Fases 1-4.
+2. **Son dos instalaciones de WordPress, no un sitio multiidioma.** Derivar URLs del otro idioma desde `home_url()` fue la causa del hreflang invertido y del árbol fantasma `/ES/ES/`, que sobrevivió tres auditorías porque en el sitio inglés el mismo código funciona.
+3. **Sin enlaces entrantes no hay competencia posible.** 4 keywords orgánicas y 1 visita al mes. Lo técnico ya está casi resuelto; lo que falta es autoridad, y eso es la Fase 3 del SOW.
 
-| Dominio | Authority | Keywords | Tráfico |
-|---|---|---|---|
-| **openeb5.com** | **2** | **20** | **0** |
-| eb5investors.com | 35 | 9,174 | 6,333 |
-| iiusa.org | 34 | 2,121 | 5,486 |
-| eb5affiliatenetwork.com | — | 2,862 | 1,288 |
-| civitascapital.com | — | 609 | 2,755 |
+## Estructura
 
-## Siguiente paso — Ahrefs cross-check
+```
+├── RE-AUDIT-2026-09.md          revisión vigente
+├── AUDIT-2026-08-EN-ES.md       revisión anterior
+├── SCOPE-OF-WORK-2026-08.md     alcance, fases y entregables
+├── docs/
+│   ├── index.html               landing de GitHub Pages
+│   ├── seo-audit/index.html     panel interactivo (el entregable que ve el cliente)
+│   └── theme-preview/           mockup del tema, ya en producción
+├── data/                        scripts de crawl y verificación
+└── reports/                     informes por área (mayo 2026)
+```
 
-Cuando adjuntes openeb5.com a Ahrefs:
-- Validar DR/RD vs SEMrush AS 2
-- Ahrefs Content Gap con seeds: eb5investors.com, iiusa.org, civitascapital.com, eb5capital.com
-- Ahrefs Site Audit para validar issues técnicos
-- Brand Radar para SOV de "Open EB5" en LLMs
-- Setear keyword tracking con 15-25 targets (lista en `backlinks-competitive.md` §5)
+## Scripts de verificación
 
-Comparte la data y se cruza con esta auditoría para refinar el plan de 90 días.
+En [`data/`](data/). Todos leen del sitio en vivo, no de snapshots.
+
+| Script | Qué hace |
+|---|---|
+| `reaudit.py` | Crawl y extracción de `title`, `description`, `H1`, `canonical`, `hreflang`, `lang`, palabras, `alt`, scripts, hojas de estilo y bundles de plugin |
+| `check_anchors.py` | Comprueba si cada ancla del plan de enlazado interno existe en la página de origen |
+| `test_autolink_full.py` | Puerto del algoritmo de `inc/internal-links.php` a Python. Verifica contra el HTML real que ningún ancla genere un `<a>` anidado y que el número de enlaces crezca exactamente en el número de anclas aplicadas |
+| `xlsx2csv.py` | Convierte a CSV los XLSX del plan de enlazado |
+
+```bash
+# Reunir las URLs de los dos sitemaps y recrawlear
+cd data && python reaudit.py urls.json crawl.json
+
+# Verificar el enlazado interno antes de desplegar
+python test_autolink_full.py
+```
+
+**Advertencia:** con más de 6 hilos el servidor devuelve 503 esporádicos. Toda incidencia debe reverificarse en serie antes de reportarla.
+
+## Condiciones de trabajo
+
+El sitio se despliega **solo por FTP y sin staging**, y en julio de 2026 hubo un incidente de corrupción de archivos en una transferencia. Todo cambio de plantilla se entrega como ZIP con manifiesto MD5, se extrae desde cPanel File Manager y se verifica con `md5sum -c`. No se suben `.php` sueltos.
+
+No hay binario `php` en la máquina de trabajo: el lint se hace con `php-parser` (npm) antes de cada entrega. Un manifiesto MD5 comprueba la transferencia, no la sintaxis.
 
 ---
 
-**Fecha de auditoría:** 2026-05-11
-**Herramientas:** WebFetch, curl, SEMrush MCP, análisis sintético de HTML/headers
+**Preparado por:** Juan Marcos · SEO Specialist
+**Última actualización:** 13 de octubre de 2026
