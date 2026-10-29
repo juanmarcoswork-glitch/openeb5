@@ -4,21 +4,22 @@
 
 Carpeta de trabajo de la auditoría SEO de **openeb5.com** y **openeb5.com/ES/** (Open EB5, Centro Regional EB-5 aprobado por USCIS, McAllen, Texas).
 
-## Estado actual: 13 de octubre de 2026
+## Estado actual: 29 de octubre de 2026
 
 | | |
 |---|---|
-| **Score** | **70/100** en vivo · **84** proyectado con el paquete rehecho sobre el tema v1.1.x en vivo |
-| **Alcance** | 138 URLs de los dos sitemaps (73 EN + 65 ES) + 27 destinos de enlace interno |
+| **Score** | **87/100** en vivo · 47 de 56 tareas cerradas |
+| **Alcance** | 130 URLs de los dos sitemaps (69 EN + 61 ES) + 28 destinos de enlace interno |
 | **Sector** | YMYL (inmigración + inversión) |
 | **Stack** | Dos instalaciones de WordPress separadas, tema custom `openeb5` en ambas, Yoast, Elementor, NitroPack (solo EN) |
-| **Visibilidad orgánica** | 10 keywords · 19 visitas/mes estimadas (12 Oct 2026). Eran 4 y 1 en agosto. El blog EN entra en el top 10 |
+| **Visibilidad orgánica** | 17 keywords · 36 visitas/mes estimadas (28 Oct 2026). Eran 4 y 1 en agosto |
 
 ## Revisiones
 
 | Documento | Fecha | Alcance | Score |
 |---|---|---|---:|
-| [`RE-AUDIT-2026-10.md`](RE-AUDIT-2026-10.md) | 13 Oct 2026 | **Vigente.** EN + ES, 138 URLs | 70 |
+| [`RE-AUDIT-2026-10-29.md`](RE-AUDIT-2026-10-29.md) | 29 Oct 2026 | **Vigente.** EN + ES, 130 URLs | 87 |
+| [`RE-AUDIT-2026-10.md`](RE-AUDIT-2026-10.md) | 13 Oct 2026 | EN + ES, 138 URLs | 70 |
 | [`RE-AUDIT-2026-09.md`](RE-AUDIT-2026-09.md) | 7 Sep 2026 | EN + ES, 130 URLs | 68 |
 | [`AUDIT-2026-08-EN-ES.md`](AUDIT-2026-08-EN-ES.md) | 7 Ago 2026 | EN + ES, 215 URLs. Primera auditoría del sitio español | 58 |
 | [`SCOPE-OF-WORK-2026-08.md`](SCOPE-OF-WORK-2026-08.md) | 7 Ago 2026 | Plan de 30 días + fases 2 y 3 | — |
@@ -77,4 +78,4 @@ No hay binario `php` en la máquina de trabajo: el lint se hace con `php-parser`
 ---
 
 **Preparado por:** Juan Marcos · SEO Specialist
-**Última actualización:** 13 de octubre de 2026
+**Última actualización:** 29 de octubre de 2026
